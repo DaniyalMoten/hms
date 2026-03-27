@@ -52,7 +52,6 @@ class AppServiceProvider extends ServiceProvider
         Validator::extend('recaptcha', ValidRecaptcha::class);
         app()->useLangPath(base_path('lang'));
         Schema::defaultStringLength(191);
-        \Illuminate\Support\Facades\URL::forceScheme('https');
         Blade::if('module', function ($name, $module = null) {
             $module = $module->where('name', $name)->first();
             //            $module
