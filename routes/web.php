@@ -194,6 +194,11 @@ Route::middleware('auth', 'verified', 'xss', 'checkUserStatus')->group(function 
         Route::post('documents/{document}/update', [DocumentController::class, 'update']);
     });
 
+    Route::middleware('role:Patient|Doctor')->group(function () {
+        Route::get('/chat', \App\Http\Livewire\ChatComponent::class)->name('chat.index');
+        Route::get('/chat/{userId}', \App\Http\Livewire\ChatComponent::class)->name('chat');
+    });
+
     Route::middleware('role:Admin|Patient|Doctor|Receptionist')->group(function () {
         // Routes for Patients Cases listing
         Route::prefix('patient')->group(function () {

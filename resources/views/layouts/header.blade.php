@@ -26,6 +26,8 @@
                 </a>
             </div>
         </li>
+
+        @livewire('chat-notification-component')
         <li class="px-sm-3 px-2">
             <div class="dropdown custom-dropdown d-flex align-items-center py-4">
                 <button class="btn hide-arrow p-0 position-relative" type="button" id="dropdownMenuButton1"
