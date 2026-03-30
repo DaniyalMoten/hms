@@ -46,6 +46,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        if (str_contains(config('app.url'), 'https://') || request()->header('x-forwarded-proto') === 'https') {
+            \Illuminate\Support\Facades\URL::forceScheme('https');
+        }
         Paginator::useBootstrap();
         Module::observe(ModuleObserver::class);
         Setting::observe(SettingObserver::class);

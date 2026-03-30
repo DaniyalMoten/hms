@@ -86,7 +86,7 @@
 
     @if (!$selectedContactId)
         <!-- CONTACTS DIRECTORY -->
-        <div class="container mt-4" style="width:1064px;">
+        <div class="container mt-4" style="width:1064px;" wire:poll.5000ms="loadContacts">
             <div class="row mb-3    ">
                 <div class="col-12">
                     <h3 class="fw-bold">My Appointments / Doctors</h3>
@@ -96,13 +96,23 @@
             <div class="row">
                 @forelse($contacts as $contact)
                     <div class="col-md-4 col-lg-3 mb-4">
-                        <div class="card contact-card h-100 text-center p-4">
+                        <div class="card contact-card h-100 text-center p-4 position-relative">
+                            @if($contact->unread_count > 0)
+                                <span class="position-absolute top-0 end-0 mt-2 me-2 badge rounded-pill bg-danger" style="z-index: 1;">
+                                    {{ $contact->unread_count > 9 ? '9+' : $contact->unread_count }} New
+                                </span>
+                            @endif
                             <img src="{{ $contact->api_image_url }}" alt="Avatar" class="rounded-circle mx-auto mb-3"
                                 width="80" height="80" style="object-fit: cover;">
                             <h5 class="fw-bold text-dark">{{ $contact->full_name }}</h5>
-                            <p class="text-muted small mb-3">{{ explode('\\', $contact->owner_type)[2] ?? '' }}</p>
+                            <p class="text-muted small mb-2">{{ explode('\\', $contact->owner_type)[2] ?? '' }}</p>
+                            @if($contact->unread_count > 0)
+                                <p class="text-danger small fw-bold mb-3"><i class="fas fa-envelope text-danger"></i> {{ $contact->unread_count }} Unread Message(s)</p>
+                            @else
+                                <div class="mb-3"></div> <!-- spacing to maintain height -->
+                            @endif
                             <div class="mt-auto">
-                                <a href="{{ route('chat', $contact->id) }}" class="btn btn-primary w-100 rounded-pill">
+                                <a href="{{ route('chat', $contact->id) }}" class="btn btn-primary w-100 rounded-pill {{ $contact->unread_count > 0 ? 'btn-danger border-0' : '' }}">
                                     <i class="fas fa-comment-dots me-2"></i> Chat
                                 </a>
                             </div>

@@ -50,6 +50,14 @@ class ChatComponent extends Component
                 ->whereIn('owner_id', $doctorIds)
                 ->get();
         }
+
+        $userId = Auth::id();
+        foreach ($this->contacts as $contact) {
+            $contact->unread_count = ChatMessage::where('sender_id', $contact->id)
+                ->where('receiver_id', $userId)
+                ->whereNull('read_at')
+                ->count();
+        }
     }
 
     public function selectContact($contactId)
