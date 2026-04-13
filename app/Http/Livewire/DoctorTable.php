@@ -1,58 +1,44 @@
 <?php
-
 namespace App\Http\Livewire;
-
 use App\Models\Doctor;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Auth;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-
 class DoctorTable extends LivewireTableComponent
 {
     public $buttonComponent = 'doctors.add-button';
-
     public $filterButtonComponent = 'doctors.filter-button';
-
     public $FilterComponent = ['doctors.filter-button', Doctor::STATUS_ARR];
-
     protected $model = Doctor::class;
-
     protected $listeners = ['refresh' => '$refresh', 'changeFilter', 'resetPage'];
-
     public function resetPage($pageName = 'page')
     {
         $rowsPropertyData = $this->getRows()->toArray();
         $prevPageNum = $rowsPropertyData['current_page'] - 1;
         $prevPageNum = $prevPageNum > 0 ? $prevPageNum : 1;
         $pageNum = count($rowsPropertyData['data']) > 0 ? $rowsPropertyData['current_page'] : $prevPageNum;
-
         $this->setPage($pageNum, $pageName);
     }
-
     public function configure(): void
     {
         $this->setPrimaryKey('id')
             ->setDefaultSort('doctors.created_at', 'desc')
             ->setQueryStringStatus(false);
-
         $this->setTdAttributes(function (Column $column, $row, $columnIndex, $rowIndex) {
             if ($column->isField('specialist') || $column->isField('qualification') || $column->isField('status')) {
                 return [
                     'class' => 'p-5',
                 ];
             }
-
             return [];
         });
     }
-
     public function changeFilter($param, $value)
     {
         $this->resetPage($this->getComputedPageName());
         $this->statusFilter = $value;
         $this->setBuilder($this->builder());
     }
-
     public function columns(): array
     {
         if (! Auth::user()->hasRole('Patient|Doctor|Case Manager|Nurse|Lab Technician|Pharmacist')) {
@@ -70,9 +56,7 @@ class DoctorTable extends LivewireTableComponent
             $qualification = Column::make(__('messages.user.qualification'),
                 'doctorUser.qualification')->sortable()->hideIf(1);
         }
-
         return [
-
             Column::make(__('messages.case.doctor'), 'doctorUser.first_name')
                 ->view('doctors.templates.columns.name')
                 ->searchable()
@@ -86,7 +70,6 @@ class DoctorTable extends LivewireTableComponent
             $actionBtn,
         ];
     }
-
     public function builder(): Builder
     {
         /** @var Doctor $query */
@@ -101,7 +84,6 @@ class DoctorTable extends LivewireTableComponent
                 $q->where('status', 0);
             }
         });
-
         return $query;
     }
 }

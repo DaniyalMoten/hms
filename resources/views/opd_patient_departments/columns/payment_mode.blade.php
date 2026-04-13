@@ -5,4 +5,3 @@
         <span class="badge bg-light-success">{{ $row->payment_mode_name }}</span>
     @endif    
 </div>
-

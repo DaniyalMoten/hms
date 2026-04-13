@@ -17,7 +17,6 @@
                                     class="badge bg-light-{{ $userData->status === 1 ? 'success' : 'danger' }} fw-bolder ms-2 fs-8 py-1 px-3">{{ ($userData->status === 1) ? __('messages.common.active') : __('messages.common.de_active') }}</span>
                             </div>
                             <div class="d-flex flex-wrap fw-bold fs-6 mb-4 pe-2">
-
                                 <a href="mailto:{{$userData->email}}"
                                    class="d-flex align-items-center text-gray-400 text-hover-primary mb-2 me-2">
                                     <span class="svg-icon svg-icon-4 me-1">

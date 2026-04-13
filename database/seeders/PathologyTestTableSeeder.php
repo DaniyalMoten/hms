@@ -1,11 +1,8 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Models\Charge;
 use App\Models\PathologyTest;
 use Illuminate\Database\Seeder;
-
 class PathologyTestTableSeeder extends Seeder
 {
     /**

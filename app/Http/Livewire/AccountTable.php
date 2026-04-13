@@ -1,55 +1,40 @@
 <?php
-
 namespace App\Http\Livewire;
-
 use App\Models\Account;
 use App\Models\Accountant;
 use Illuminate\Database\Eloquent\Builder;
 use Livewire\WithPagination;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-
 class AccountTable extends LivewireTableComponent
 {
     use WithPagination;
-
     public $showButtonOnHeader = true;
-
     public $showFilterOnHeader = true;
-
     public $paginationIsEnabled = true;
-
     public $buttonComponent = 'accounts.add-button';
-
     public $FilterComponent = ['accounts.filter-button', Accountant::FILTER_STATUS_ARR, Account::ACCOUNT_TYPES];
-
     protected $model = Account::class;
-
     protected $listeners = ['refresh' => '$refresh', 'changeFilter', 'changeTypeFilter', 'resetPage'];
-
     public function changeTypeFilter($param, $value)
     {
         $this->resetPage($this->getComputedPageName());
         $this->typeFilter = $value;
         $this->setBuilder($this->builder());
     }
-
     public function changeFilter($param, $value)
     {
         $this->resetPage($this->getComputedPageName());
         $this->statusFilter = $value;
         $this->setBuilder($this->builder());
     }
-
     public function resetPage($pageName = 'page')
     {
         $rowsPropertyData = $this->getRows()->toArray();
         $prevPageNum = $rowsPropertyData['current_page'] - 1;
         $prevPageNum = $prevPageNum > 0 ? $prevPageNum : 1;
         $pageNum = count($rowsPropertyData['data']) > 0 ? $rowsPropertyData['current_page'] : $prevPageNum;
-
         $this->setPage($pageNum, $pageName);
     }
-
     public function configure(): void
     {
         $this->setPrimaryKey('id')
@@ -62,11 +47,9 @@ class AccountTable extends LivewireTableComponent
                     'width' => '8%',
                 ];
             }
-
             return [];
         });
     }
-
     public function columns(): array
     {
         return [
@@ -84,11 +67,9 @@ class AccountTable extends LivewireTableComponent
                 ->view('accounts.action'),
         ];
     }
-
     public function builder(): Builder
     {
         $query = Account::select('accounts.*');
-
         $query->when(isset($this->statusFilter), function (Builder $q) {
             if ($this->statusFilter == 1) {
                 $q->where('status', $this->statusFilter);
@@ -97,14 +78,12 @@ class AccountTable extends LivewireTableComponent
                 $q->where('status', Account::INACTIVE);
             }
         });
-
         $query->when(isset($this->typeFilter), function (Builder $q) {
             if ($this->typeFilter == 0) {
             } else {
                 $q->where('type', $this->typeFilter);
             }
         });
-
         return $query;
     }
 }

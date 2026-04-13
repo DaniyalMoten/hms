@@ -1,10 +1,7 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Models\Medicine;
 use Illuminate\Database\Seeder;
-
 class MedicineTableSeeder extends Seeder
 {
     /**

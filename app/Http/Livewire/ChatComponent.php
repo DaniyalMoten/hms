@@ -53,10 +53,18 @@ class ChatComponent extends Component
 
         $userId = Auth::id();
         foreach ($this->contacts as $contact) {
+            $lastUnread = ChatMessage::where('sender_id', $contact->id)
+                ->where('receiver_id', $userId)
+                ->whereNull('read_at')
+                ->latest()
+                ->first();
+                
             $contact->unread_count = ChatMessage::where('sender_id', $contact->id)
                 ->where('receiver_id', $userId)
                 ->whereNull('read_at')
                 ->count();
+                
+            $contact->last_unread_message = $lastUnread ? $lastUnread->message : null;
         }
     }
 

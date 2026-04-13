@@ -1,11 +1,8 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Models\Charge;
 use App\Models\RadiologyTest;
 use Illuminate\Database\Seeder;
-
 class RadiologyTestTableSeeder extends Seeder
 {
     /**
@@ -35,7 +32,6 @@ class RadiologyTestTableSeeder extends Seeder
                 'standard_charge' => Charge::where('charge_category_id', 2)->value('standard_charge'),
             ],
         ];
-
         foreach ($input as $data) {
             RadiologyTest::create($data);
         }

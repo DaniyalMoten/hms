@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Exports\VaccinatedPatientExport;
 use App\Http\Requests\CreateVaccinatedPatientRequest;
 use App\Http\Requests\UpdateVaccinatedPatientRequest;
@@ -16,26 +14,21 @@ use Illuminate\Http\Response;
 use Illuminate\View\View;
 use Maatwebsite\Excel\Facades\Excel;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
-
 class VaccinatedPatientController extends AppBaseController
 {
     /**
      * @var VaccinatedPatientRepository
      */
     private $vaccinatedPatientRepository;
-
     public function __construct(VaccinatedPatientRepository $vaccinatedPatientRepository)
     {
         $this->vaccinatedPatientRepository = $vaccinatedPatientRepository;
     }
-
     public function index()
     {
         $data = $this->vaccinatedPatientRepository->getVaccinatedPatientData();
-
         return view('vaccinated_patients.index')->with($data);
     }
-
     public function store(CreateVaccinatedPatientRequest $request)
     {
         try {
@@ -45,18 +38,15 @@ class VaccinatedPatientController extends AppBaseController
                 return $this->sendError(__('messages.vaccinated_patient.already_registered_dose'));
             }
             $this->vaccinatedPatientRepository->create($input);
-
             return $this->sendSuccess(__('messages.vaccinated_patient.vaccinate_patient').' '.__('messages.common.saved_successfully'));
         } catch (Exception $e) {
             return $this->sendError($e->getMessage());
         }
     }
-
     public function edit(VaccinatedPatients $vaccinatedPatient)
     {
         return $this->sendResponse($vaccinatedPatient, 'Vaccinated Patients retrieved successfully.');
     }
-
     public function update(UpdateVaccinatedPatientRequest $request, VaccinatedPatients $vaccinatedPatient)
     {
         try {
@@ -71,24 +61,20 @@ class VaccinatedPatientController extends AppBaseController
                 }
             }
             $this->vaccinatedPatientRepository->update($input, $vaccinatedPatient->id);
-
             return $this->sendSuccess(__('messages.vaccinated_patient.vaccinate_patient').' '.__('messages.common.updated_successfully'));
         } catch (Exception $e) {
             return $this->sendError($e->getMessage());
         }
     }
-
     public function destroy(VaccinatedPatients $vaccinatedPatient)
     {
         try {
             $vaccinatedPatient->delete();
-
             return $this->sendSuccess(__('messages.vaccinated_patient.vaccinate_patient').' '.__('messages.common.deleted_successfully'));
         } catch (Exception $e) {
             return $this->sendError($e->getMessage());
         }
     }
-
     public function vaccinatedPatientExport()
     {
         return Excel::download(new VaccinatedPatientExport, 'vaccinated_patient-'.time().'.xlsx');

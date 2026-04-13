@@ -1,7 +1,6 @@
 <div>
     @if ($paginator->hasPages())
-        @php(isset($this->numberOfPaginatorsRendered[$paginator->getPageName()]) ? $this->numberOfPaginatorsRendered[$paginator->getPageName()]++ : $this->numberOfPaginatorsRendered[$paginator->getPageName()] = 1)
-        
+        @php(isset($this->numberOfPaginatorsRendered[$paginator->getPageName()]) ? $this->numberOfPaginatorsRendered[$paginator->getPageName()]++ : $this->numberOfPaginatorsRendered[$paginator->getPageName()] = 1)        
         <nav>
             <ul class="pagination">
                  Previous Page Link 
@@ -14,14 +13,12 @@
                         <button type="button" dusk="previousPage{{ $paginator->getPageName() == 'page' ? '' : '.' . $paginator->getPageName() }}" class="page-link" wire:click="previousPage('{{ $paginator->getPageName() }}')" wire:loading.attr="disabled" rel="prev" aria-label="@lang('pagination.previous')">&lsaquo;</button>
                     </li>
                 @endif
-
                  Pagination Elements 
                 @foreach ($elements as $element)
                      "Three Dots" Separator 
                     @if (is_string($element))
                         <li class="page-item disabled" aria-disabled="true"><span class="page-link">{{ $element }}</span></li>
                     @endif
-
                      Array Of Links 
                     @if (is_array($element))
                         @foreach ($element as $page => $url)
@@ -33,7 +30,6 @@
                         @endforeach
                     @endif
                 @endforeach
-
                  Next Page Link 
                 @if ($paginator->hasMorePages())
                     <li class="page-item">

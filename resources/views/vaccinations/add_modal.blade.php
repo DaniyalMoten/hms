@@ -15,14 +15,12 @@
                         {{ Form::label('name', __('messages.vaccination.name').(':'), ['class' => 'form-label']) }}
                         <span class="required"></span>
                         {{ Form::text('name', null, ['id'=>'vaccinationName','class' => 'form-control','required']) }}
-                    </div>
-                    
+                    </div>                    
                     <div class="form-group col-sm-12 mb-5">
                         {{ Form::label('manufactured_by', __('messages.vaccination.manufactured_by').(':'),['class' => 'form-label  mb-3']) }}
                         <span class="required"></span>
                         {{ Form::text('manufactured_by', null, ['id'=>'vaccinationManufacturedBy','class' => 'form-control','required']) }}
                     </div>
-
                     <div class="form-group col-sm-12 mb-5">
                         {{ Form::label('brand', __('messages.vaccination.brand').(':'),['class' => 'form-label fs-6 mb-3']) }}
                         <span class="required"></span>

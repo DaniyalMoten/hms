@@ -24,9 +24,7 @@
                 {{Form::hidden('isEdit',true,['class'=>'isEdit'])}}
                 <div class="card-body p-12">
                     {{ Form::model($patientAdmission, ['route' => ['patient-admissions.update', $patientAdmission->id], 'method' => 'patch', 'id' => 'editPatientAdmission']) }}
-
                     @include('patient_admissions.fields')
-
                     {{ Form::close() }}
                 </div>
             </div>

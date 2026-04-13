@@ -176,7 +176,6 @@
         </li>
     @endmodule
 @endrole
-
 @role('Admin|Lab Technician')
     @module('Blood Banks', $modules)
         <li
@@ -305,7 +304,6 @@
         </li>
     @endmodule
 @endrole
-
 @role('Admin|Receptionist')
     @module('Insurances', $modules)
         <li
@@ -571,7 +569,6 @@
         </li>
     @endmodule
 @endrole
-
 @role('Admin|Pharmacist|Lab Technician')
     @module('Medicines', $modules)
         <li
@@ -581,7 +578,6 @@
         </li>
     @endmodule
 @endrole
-
 @role('Admin|Pharmacist|Lab Technician')
     @module('Medicines', $modules)
         <li
@@ -592,7 +588,6 @@
             </a>
         </li>
         @endmodule @endrole
-
         @role('Admin|Receptionist')
             @module('Radiology Categories', $modules)
                 <li
@@ -677,7 +672,6 @@
                 </li>
             @endmodule
         @endrole
-
         @role('Admin|Accountant')
             @module('Income', $modules)
                 <li
@@ -1065,7 +1059,6 @@
                 </a>
             </li>
         @endmodule
-
         @module('Operation', $modules)
             <li
                 class="nav-item position-relative mx-xl-3 mb-3 mb-xl-0 {{ Request::is('settings*', 'currency-settings*', 'hospital-schedules', 'operation-categories*', 'operations*') ? '' : 'd-none' }}">

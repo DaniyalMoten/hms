@@ -1,10 +1,7 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Models\PathologyCategory;
 use Illuminate\Database\Seeder;
-
 class PathologyCategoryTableSeeder extends Seeder
 {
     /**

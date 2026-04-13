@@ -91,7 +91,6 @@
                 $style = 'style=';
                 $background = 'background-image:';
                 ?>
-
                 <div class="image-picker">
                     <div class="image previewImage" id="receptionistPreviewImage"
                         {{ $style }}"{{ $background }}

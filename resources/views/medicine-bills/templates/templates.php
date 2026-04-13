@@ -16,10 +16,7 @@
         <i class="fa fa-trash text-danger delete-bill-bulk-item pointer"></i>
     </td>
 </tr>
-
-
 </script>
-
 <script id="medicineBillTemplate" type="text/x-jsrender">
     <tr>
     <td class="table__item-desc">
@@ -70,5 +67,4 @@
             </a>
         </td>
     </tr>
-
 </script>

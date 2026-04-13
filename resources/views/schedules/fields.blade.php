@@ -22,7 +22,6 @@
             {{ Form::text('per_patient_time', null, ['id'=>'perPatientTime', 'class' => 'form-control perPatientTime'.(getLoggedInUser()->thememode ? ' bg-light' : ' bg-white'), 'required']) }}
         </div>
     @endif
-
     <div class="col-lg-12 col-md-12 col-sm-12 schedulesCon">
         <table
             class="schedules-table schedules-table-bordered table table-striped">
@@ -34,26 +33,27 @@
             </thead>
             <tbody class="schedule-container text-gray-600 fw-bold">
             @foreach($data['availableOn'] as $days)
+                @php
+                    $currentDay = isset($scheduleDays) ? $scheduleDays->where('available_on', $days)->first() : null;
+                @endphp
                 <tr>
                     <td class="schedules-table-td">
-                        {{ Form::text('available_on[]', isset($scheduleDays)?$scheduleDays[$loop->iteration-1]->available_on:$days,
+                        {{ Form::text('available_on[]', $currentDay ? $currentDay->available_on : $days,
             ['class' => 'form-control availableOn','required','id' => 'availableOn-'.($loop->iteration-1),'readonly']) }}
                     </td>
                     <td class="schedules-table-td position-relative">
-                        {{ Form::text('available_from[]', isset($scheduleDays)?$scheduleDays[$loop->iteration-1]->available_from:"00:00:00",['id'=>'availableFrom-'.($loop->iteration-1), 'class' => 'form-control availableFrom hospitalScheduleFrom-'.$loop->iteration.(getLoggedInUser()->thememode ? ' bg-light' : ' bg-white'), 'required','autocomplete' => 'off']) }}
+                        {{ Form::text('available_from[]', $currentDay ? $currentDay->available_from : "00:00:00",['id'=>'availableFrom-'.($loop->iteration-1), 'class' => 'form-control availableFrom hospitalScheduleFrom-'.$loop->iteration.(getLoggedInUser()->thememode ? ' bg-light' : ' bg-white'), 'required','autocomplete' => 'off']) }}
                     </td>
                     <td class="schedules-table-td position-relative">
-                        {{ Form::text('available_to[]', isset($scheduleDays)?$scheduleDays[$loop->iteration-1]->available_to:"00:00:00",
+                        {{ Form::text('available_to[]', $currentDay ? $currentDay->available_to : "00:00:00",
             ['id'=>'availableTo-'.($loop->iteration-1), 'class' => 'form-control availableTo hospitalScheduleTo-'.$loop->iteration.(getLoggedInUser()->thememode ? ' bg-light' : ' bg-white'), 'required','autocomplete' => 'off']) }}
                     </td>
                     <td class="text-center schedules-table-td">
-                        {{--                        @if(!$loop->first)--}}
                         <a title="copy-previous"
                            class="btn action-btn btn-primary btn-sm copy-btn cpy-btn{{ $loop->iteration-1 }}" href="javascript:void(0)"
                            data-id="{{ $loop->iteration-1 }}">
                             <i class="fa fa-copy action-icon"></i>
                         </a>
-                        {{--                        @endif--}}
                     </td>
                 </tr>
             @endforeach

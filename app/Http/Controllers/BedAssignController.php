@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Exports\BedAssignExport;
 use App\Http\Requests\CreateBedAssignRequest;
 use App\Http\Requests\UpdateBedAssignRequest;
@@ -23,30 +21,24 @@ use Illuminate\Routing\Redirector;
 use Illuminate\View\View;
 use Maatwebsite\Excel\Facades\Excel;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
-
 class BedAssignController extends AppBaseController
 {
     /** @var BedAssignRepository */
     private $bedAssignRepository;
-
     public function __construct(BedAssignRepository $bedAssignRepo)
     {
         $this->bedAssignRepository = $bedAssignRepo;
     }
-
     public function index()
     {
         $data['statusArr'] = BedAssign::STATUS_ARR;
-
         return view('bed_assigns.index', $data);
     }
-
     public function create(Request $request)
     {
         $bedId = $request->get('bed_id', null);
         $beds = $this->bedAssignRepository->getBeds();
         $cases = $this->bedAssignRepository->getCases();
-
         return view('bed_assigns.create', compact('cases', 'beds', 'bedId'));
     }
 
@@ -62,16 +54,13 @@ class BedAssignController extends AppBaseController
         $assign_date = Carbon::parse($input['assign_date'])->toDateString();
         if (! empty($input['birth_date']) && $assign_date < $input['birth_date']) {
             Flash::error(__('messages.bed_assign.assign_date_should_not_be_smaller_than_patient_birth_date'));
-
             return redirect()->back()->withInput($input);
         }
         $this->bedAssignRepository->store($input);
         $this->bedAssignRepository->createNotification($input);
         Flash::success(__('messages.bed_assign.bed_assign').' '.__('messages.common.saved_successfully'));
-
         return redirect(route('bed-assigns.index'));
     }
-
     public function show(BedAssign $bedAssign)
     {
         return view('bed_assigns.show')->with('bedAssign', $bedAssign);
@@ -82,10 +71,8 @@ class BedAssignController extends AppBaseController
         $beds = $this->bedAssignRepository->getPatientBeds($bedAssign);
         $cases = $this->bedAssignRepository->getPatientCases($bedAssign);
         $ipd_patient = $bedAssign->ipdPatient ? $bedAssign->ipdPatient->ipd_number : null;
-
         return view('bed_assigns.edit', compact('cases', 'beds', 'bedAssign', 'ipd_patient'));
     }
-
     public function update(BedAssign $bedAssign, UpdateBedAssignRequest $request)
     {
         $input = $request->all();
@@ -98,12 +85,10 @@ class BedAssignController extends AppBaseController
         $assign_date = Carbon::parse($input['assign_date'])->toDateString();
         if (! empty($birthDate) && $assign_date < $input['birth_date']) {
             Flash::error(__('messages.bed_assign.assign_date_should_not_be_smaller_than_patient_birth_date'));
-
             return redirect()->back()->withInput($input);
         }
         $bedAssign = $this->bedAssignRepository->update($input, $bedAssign);
         Flash::success(__('messages.bed_assign.bed_assign').' '.__('messages.common.updated_successfully'));
-
         return redirect(route('bed-assigns.index'));
     }
 
@@ -111,27 +96,21 @@ class BedAssignController extends AppBaseController
     {
         $bedAssign->bed->update(['is_available' => 1]);
         $this->bedAssignRepository->delete($bedAssign->id);
-
         return $this->sendSuccess(__('messages.bed_assign.bed_assign').' '.__('messages.common.deleted_successfully'));
     }
-
     public function activeDeactiveStatus(int $id)
     {
         $bedAssign = BedAssign::findOrFail($id);
         $status = ! $bedAssign->status;
         $bedAssign->update(['status' => $status]);
-
         return $this->sendSuccess(__('messages.common.status_updated_successfully'));
     }
-
     public function bedStatus()
     {
         $bedTypes = BedType::with(['beds.bedAssigns.patient.patientUser'])->get();
         $patientAdmissions = PatientAdmission::whereHas('bed')->with('bed.bedType')->get();
-
         return view('bed_status.index', compact('bedTypes', 'patientAdmissions'));
     }
-
     public function bedAssignExport()
     {
         return Excel::download(new BedAssignExport, 'bed-assigns-'.time().'.xlsx');
@@ -140,7 +119,6 @@ class BedAssignController extends AppBaseController
     public function getIpdPatientsList(Request $request)
     {
         $ipdPatients = $this->bedAssignRepository->getIpdPatients($request->get('id'));
-
         return $this->sendResponse($ipdPatients, 'Retrieved successfully');
     }
 }

@@ -1,30 +1,21 @@
 <?php
-
 namespace App\Http\Livewire;
-
 use App\Models\ChargeCategory;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-
 class ChargeCategoryTable extends LivewireTableComponent
 {
     public $buttonComponent = 'charge_categories.templates.button.add-button';
-
     public $showButtonOnHeader = true;
-
     protected $model = ChargeCategory::class;
-
     protected $listeners = ['refresh' => '$refresh', 'resetPage'];
-
     public function resetPage($pageName = 'page')
     {
         $rowsPropertyData = $this->getRows()->toArray();
         $prevPageNum = $rowsPropertyData['current_page'] - 1;
         $prevPageNum = $prevPageNum > 0 ? $prevPageNum : 1;
         $pageNum = count($rowsPropertyData['data']) > 0 ? $rowsPropertyData['current_page'] : $prevPageNum;
-
         $this->setPage($pageNum, $pageName);
     }
-
     public function configure(): void
     {
         $this->setPrimaryKey('id')
@@ -36,11 +27,9 @@ class ChargeCategoryTable extends LivewireTableComponent
                     'class' => 'p-5',
                 ];
             }
-
             return [];
         });
     }
-
     public function columns(): array
     {
         return [
@@ -60,7 +49,6 @@ class ChargeCategoryTable extends LivewireTableComponent
                 ->searchable(),
             Column::make(__('messages.common.action'), 'id')
                 ->view('charge_categories.action'),
-
         ];
     }
 }

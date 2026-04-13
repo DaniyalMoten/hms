@@ -1,12 +1,9 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Models\BedAssign;
 use App\Models\PatientCase;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
-
 class BedAssignTableSeeder extends Seeder
 {
     /**
@@ -32,7 +29,6 @@ class BedAssignTableSeeder extends Seeder
                 'status' => 1,
             ],
         ];
-
         foreach ($input as $data) {
             BedAssign::create($data);
         }

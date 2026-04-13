@@ -1,11 +1,8 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Models\PatientAdmission;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
-
 class PatientAdmissionTableSeeder extends Seeder
 {
     /**
@@ -37,7 +34,6 @@ class PatientAdmissionTableSeeder extends Seeder
                 'status' => 1,
             ],
         ];
-
         foreach ($input as $data) {
             PatientAdmission::create($data);
         }

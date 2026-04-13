@@ -11,7 +11,6 @@
                 <a class="btn btn-outline-primary float-end"
                    href="{{ route('users.index') }}">{{ __('messages.common.back') }}</a>
             </div>
-
             <div class="col-12">
                 @include('layouts.errors')
             </div>
@@ -22,7 +21,6 @@
                     {{Form::hidden('phoneNo',old('prefix_code').old('phone'),['class'=>'phoneNo'])}}
                     {{Form::hidden('defaultAvatarImageUrl',asset('assets/img/avatar.png'),['class'=>'defaultAvatarImageUrl'])}}
                     {{Form::hidden('isEdit',true,['class'=>'isEdit'])}}
-
                     {{ Form::model($user, ['route' => ['users.update', $user->id], 'files' => 'true', 'method' => 'patch', 'id' => 'editUserForm']) }}
                     @include('users.fields')
                     {{ Form::close() }}

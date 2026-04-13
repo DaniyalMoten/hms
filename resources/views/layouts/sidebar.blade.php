@@ -7,15 +7,13 @@
     <div class="aside-menu-container__aside-logo flex-column-auto">
         <a data-turbo="false" href="{{ url('/') }}" data-toggle="tooltip" data-placement="right"
             class="text-decoration-none sidebar-logo" title="{{ getAppName() }}" target="_blank">
-            <img src="{{ asset($settingValue['app_logo']['value']) }}" alt="Logo" width="50px" height="50px"
+            <img src="{{ asset($settingValue['app_logo']['value']) }}" alt="Logo" width="100%"
                 class="image" />
-            <span class="navbar-brand-name text-dark text-decoration-none logo ps-2">{{ getAppName() }}</span>
+            
         </a>
-
         <button type="button" class="btn px-0 aside-menu-container__aside-menubar d-lg-block d-none sidebar-btn">
             <i class="fa-solid fa-bars fs-1"></i>
         </button>
-
     </div>
     <!--end::Brand-->
     <form class="d-flex position-relative aside-menu-container__aside-search search-control py-3 mt-1">

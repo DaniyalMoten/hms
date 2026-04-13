@@ -24,7 +24,6 @@
                         {{Form::hidden('isEdit',false,['class'=>'isEdit'])}}
                         {{Form::hidden('downloadDocument_url',url('visitor-download'),['id'=>'userDownloadDocumentUrl'])}}
                         {{Form::hidden('doctorRole',array_search('Doctor', $role),['id'=>'userDoctorRole'])}}
-
                         {{ Form::open(['route' => ['users.index'], 'method'=>'post', 'files' => true, 'id' => 'createUserForm']) }}
                         @include('users.fields')
                         {{ Form::close() }}

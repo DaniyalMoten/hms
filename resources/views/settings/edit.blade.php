@@ -31,7 +31,6 @@
     </div>
 @endsection
 {{-- JS File :-assets/js/settings/setting.js --}}
-            
 @section('page_scripts')
     {{--    <script src="{{ asset('assets/js/int-tel/js/intlTelInput.min.js') }}"></script>--}}
     {{--    <script src="{{ asset('assets/js/int-tel/js/utils.min.js') }}"></script>--}}

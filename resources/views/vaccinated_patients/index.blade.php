@@ -17,5 +17,4 @@
         </div>
     </div>
 @endsection
-
 {{--JS File :- assets/js/vaccinated_patients/vaccinated_patients.js--}}

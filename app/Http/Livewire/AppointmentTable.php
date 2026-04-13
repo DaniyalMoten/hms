@@ -1,42 +1,29 @@
 <?php
-
 namespace App\Http\Livewire;
-
 use App\Models\Appointment;
 use App\Models\Doctor;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Auth;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-
 class AppointmentTable extends LivewireTableComponent
 {
     protected $model = Appointment::class;
-
     public $showButtonOnHeader = true;
-
     public $showFilterOnHeader = true;
-
     public $buttonComponent = 'appointments.add-button';
-
     protected $FilterComponent = ['appointments.filter-button', Appointment::STATUS_ARR];
-
     //    protected $listeners = ['refresh' => '$refresh', 'changeFilter', 'changeDateFilter' ];
     protected $startDate = '';
-
     protected $endDate = '';
-
     protected $listeners = ['refresh' => '$refresh', 'changeFilter', 'resetPage', 'changeDateFilter'];
-
     public function resetPage($pageName = 'page')
     {
         $rowsPropertyData = $this->getRows()->toArray();
         $prevPageNum = $rowsPropertyData['current_page'] - 1;
         $prevPageNum = $prevPageNum > 0 ? $prevPageNum : 1;
         $pageNum = count($rowsPropertyData['data']) > 0 ? $rowsPropertyData['current_page'] : $prevPageNum;
-
         $this->setPage($pageNum, $pageName);
     }
-
     public function changeDateFilter($param, $value)
     {
         $this->resetPage($this->getComputedPageName());
@@ -44,7 +31,6 @@ class AppointmentTable extends LivewireTableComponent
         $this->endDate = $value[1];
         $this->setBuilder($this->builder());
     }
-
     public function changeFilter($param, $value)
     {
         $this->resetPage($this->getComputedPageName());
@@ -53,7 +39,6 @@ class AppointmentTable extends LivewireTableComponent
         $this->statusFilter = $value[2];
         $this->setBuilder($this->builder());
     }
-
     public function configure(): void
     {
         $this->setDefaultSort('appointments.created_at', 'desc');
@@ -61,7 +46,6 @@ class AppointmentTable extends LivewireTableComponent
         $this->setPrimaryKey('id');
         $this->setQueryStringStatus(false);
     }
-
     public function columns(): array
     {
         return [
@@ -94,7 +78,6 @@ class AppointmentTable extends LivewireTableComponent
                 ->view('appointments.action'),
         ];
     }
-
     public function builder(): Builder
     {
         /** @var Appointment $query */
@@ -113,7 +96,6 @@ class AppointmentTable extends LivewireTableComponent
             $query = Appointment::query()->select('appointments.*')->with('patient', 'doctor',
                 'department')->where('doctor_id', $doctorId->id);
         }
-
         $query->when(isset($this->statusFilter), function (Builder $q) {
             if ($this->statusFilter == 2) {
             } else {
@@ -123,7 +105,6 @@ class AppointmentTable extends LivewireTableComponent
         $query->when(isset($this->startDate) && $this->endDate, function (Builder $q) {
             $q->whereBetween('opd_date', [$this->startDate, $this->endDate]);
         });
-
         return $query;
     }
 }

@@ -1,9 +1,6 @@
 <?php
-
 use Illuminate\Support\Str;
-
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Default Cache Store
@@ -14,9 +11,7 @@ return [
     | not explicitly specified when executing a given caching function.
     |
     */
-
     'default' => env('CACHE_DRIVER', 'file'),
-
     /*
     |--------------------------------------------------------------------------
     | Cache Stores
@@ -30,31 +25,25 @@ return [
     |         "memcached", "redis", "dynamodb", "octane", "null"
     |
     */
-
     'stores' => [
-
         'apc' => [
             'driver' => 'apc',
         ],
-
         'array' => [
             'driver' => 'array',
             'serialize' => false,
         ],
-
         'database' => [
             'driver' => 'database',
             'table' => 'cache',
             'connection' => null,
             'lock_connection' => null,
         ],
-
         'file' => [
             'driver' => 'file',
             'path' => storage_path('framework/cache/data'),
             'lock_path' => storage_path('framework/cache/data'),
         ],
-
         'memcached' => [
             'driver' => 'memcached',
             'persistent_id' => env('MEMCACHED_PERSISTENT_ID'),
@@ -73,13 +62,11 @@ return [
                 ],
             ],
         ],
-
         'redis' => [
             'driver' => 'redis',
             'connection' => 'cache',
             'lock_connection' => 'default',
         ],
-
         'dynamodb' => [
             'driver' => 'dynamodb',
             'key' => env('AWS_ACCESS_KEY_ID'),
@@ -92,9 +79,7 @@ return [
         'octane' => [
             'driver' => 'octane',
         ],
-
     ],
-
     /*
     |--------------------------------------------------------------------------
     | Cache Key Prefix
@@ -105,7 +90,5 @@ return [
     | that reason, you may prefix every cache key to avoid collisions.
     |
     */
-
     'prefix' => env('CACHE_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_cache_'),
-
 ];

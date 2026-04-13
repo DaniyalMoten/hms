@@ -55,7 +55,6 @@
             </div>
         </div>
     </div>
-
     <div class="mt-7 overflow-hidden">
         <ul class="nav nav-tabs mb-5 pb-1 overflow-auto flex-nowrap text-nowrap" id="myTab" role="tablist">
             <li class="nav-item position-relative me-7 mb-3" role="presentation">
@@ -85,7 +84,6 @@
                 </button>
             </li>
         </ul>
-
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="opdOverview" role="tabpanel"
                  aria-labelledby="opdPatientOverview">

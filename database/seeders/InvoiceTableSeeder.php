@@ -1,13 +1,10 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Models\Invoice;
 use App\Repositories\InvoiceRepository;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\App;
-
 class InvoiceTableSeeder extends Seeder
 {
     /**
@@ -65,7 +62,6 @@ class InvoiceTableSeeder extends Seeder
                 ],
             ],
         ];
-
         foreach ($input as $key => $value) {
             /** @var InvoiceRepository $invoice */
             $invoice = App::make(InvoiceRepository::class);

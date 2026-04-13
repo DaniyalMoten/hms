@@ -18,7 +18,6 @@
                         </li>
                     @endif
                 @endif
-
                  Next Page Link 
                 @if ($paginator->hasMorePages())
                     @if(method_exists($paginator,'getCursorName'))

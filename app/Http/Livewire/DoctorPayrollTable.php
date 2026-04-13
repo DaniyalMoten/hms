@@ -1,36 +1,27 @@
 <?php
-
 namespace App\Http\Livewire;
-
 use App\Models\Doctor;
 use App\Models\EmployeePayroll;
 use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-
 class DoctorPayrollTable extends LivewireTableComponent
 {
     protected $model = EmployeePayroll::class;
-
     public $docId;
-
     protected $listeners = ['refresh' => '$refresh', 'resetPage'];
-
     public function resetPage($pageName = 'page')
     {
         $rowsPropertyData = $this->getRows()->toArray();
         $prevPageNum = $rowsPropertyData['current_page'] - 1;
         $prevPageNum = $prevPageNum > 0 ? $prevPageNum : 1;
         $pageNum = count($rowsPropertyData['data']) > 0 ? $rowsPropertyData['current_page'] : $prevPageNum;
-
         $this->setPage($pageNum, $pageName);
     }
-
     public function configure(): void
     {
         $this->setPrimaryKey('id')
             ->setDefaultSort('employee_payrolls.created_at', 'desc')
             ->setQueryStringStatus(false);
-
         $this->setThAttributes(function (Column $column) {
             if ($column->isField('basic_salary') || $column->isField('allowance') || $column->isField('deductions') || $column->isField('net_salary')) {
                 return [
@@ -38,20 +29,16 @@ class DoctorPayrollTable extends LivewireTableComponent
                     'style' => 'padding-right: 2rem !important',
                 ];
             }
-
             return [];
         });
     }
-
     public function mount(string $docId): void
     {
         $this->docId = $docId;
     }
-
     public function columns(): array
     {
         return [
-
             Column::make(__('messages.employee_payroll.payroll_id'), 'id')
                 ->hideIf('id'),
             Column::make(__('messages.employee_payroll.payroll_id'), 'payroll_id')
@@ -80,16 +67,13 @@ class DoctorPayrollTable extends LivewireTableComponent
             Column::make(__('messages.common.status'), 'status')
                 ->view('doctors.templates.doctorPayroll.status')
                 ->sortable(),
-
         ];
     }
-
     public function builder(): Builder
     {
         /** @var EmployeePayroll $query */
         //        $query = EmployeePayroll::where('type','=',2)
         //                                ->where('owner_id',$this->docId);
-
         $query = EmployeePayroll::whereHasMorph(
             'owner', [
                 Doctor::class,
@@ -100,7 +84,6 @@ class DoctorPayrollTable extends LivewireTableComponent
                     });
                 }
             })->where('owner_id', $this->docId)->with('owner.doctorUser')->select('employee_payrolls.*');
-
         return $query;
     }
 }

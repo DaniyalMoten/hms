@@ -1,12 +1,9 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Repositories\PatientRepository;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\App;
-
 class PatientTableSeeder extends Seeder
 {
     /**
@@ -24,7 +21,6 @@ class PatientTableSeeder extends Seeder
                 'status' => 1,
                 'email_verified_at' => Carbon::now(),
             ],
-            /*
             [
                 'first_name'        => 'Pravin',
                 'last_name'         => 'Parekh',
@@ -34,9 +30,7 @@ class PatientTableSeeder extends Seeder
                 'status'            => 1,
                 'email_verified_at' => Carbon::now(),
             ],
-            */
         ];
-
         foreach ($input as $key => $value) {
             /** @var PatientRepository $patient */
             $patient = App::make(PatientRepository::class);

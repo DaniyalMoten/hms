@@ -129,7 +129,7 @@
                                         @endif
                                     </td>
                                     <td class="py-4 border-bottom-0">{{ $medicine->day }} Day</td>
-                                    <td class="py-4 border-bottom-0">{{ App\Models\Prescription::DOSE_INTERVAL[$medicine->dose_interval] }}</td>
+                                    <td class="py-4 border-bottom-0">{{ App\Models\Prescription::DOSE_INTERVAL[$medicine->dose_interval] ?? 'N/A' }}</td>
                                 </tr>
 {{--                            @endforeach--}}
                             @break

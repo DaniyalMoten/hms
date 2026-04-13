@@ -1,11 +1,8 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Repositories\PackageRepository;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\App;
-
 class PackageTableSeeder extends Seeder
 {
     /**
@@ -49,7 +46,6 @@ class PackageTableSeeder extends Seeder
                 ],
             ],
         ];
-
         foreach ($input as $key => $value) {
             /** @var PackageRepository $package */
             $package = App::make(PackageRepository::class);

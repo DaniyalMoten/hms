@@ -1,10 +1,7 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Models\DoctorDepartment;
 use Illuminate\Database\Seeder;
-
 class DoctorDepartmentTableSeeder extends Seeder
 {
     /**

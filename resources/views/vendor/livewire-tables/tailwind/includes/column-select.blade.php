@@ -27,7 +27,6 @@
                     </button>
                 </span>
             </div>
-
             <div
                     x-cloak
                     x-show="open"

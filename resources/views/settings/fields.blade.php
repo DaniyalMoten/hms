@@ -4,7 +4,6 @@
         {{ Form::label('app_name', __('messages.setting.app_name').':') }}<span class="required">*</span>
         {{ Form::text('app_name', $settings['app_name'], ['class' => 'form-control', 'required']) }}
     </div>
-
     <!-- Company Name Field -->
     <div class="form-group col-sm-6">
         {{ Form::label('company_name', __('messages.setting.company_name').':') }}<span class="required">*</span>
@@ -12,13 +11,11 @@
     </div>
 </div>
 <div class="row">
-
     <!-- Hospital Email Field -->
     <div class="form-group col-sm-6">
         {{ Form::label('hospital_email', __('messages.setting.hospital_email').':') }}<span class="required">*</span>
         {{ Form::email('hospital_email', $settings['hospital_email'], ['class' => 'form-control', 'required']) }}
     </div>
-
     <!-- Hospital Phone Field -->
     <div class="form-group col-sm-6 hospitalPhone">
         {{ Form::label('hospital_phone', __('messages.setting.hospital_phone').':') }}<span
@@ -28,27 +25,23 @@
         <span id="valid-msg" class="text-success d-none fw-400 fs-small mt-2">✓ &nbsp; Valid</span>
         <span id="error-msg" class="text-danger d-none fw-400 fs-small mt-2"></span>
     </div>
-
     <!-- Hospital From Day Field -->
     <div class="form-group col-sm-6">
         {{ Form::label('hospital_from_day', __('messages.setting.hospital_from_day').':') }}<span
             class="required">*</span>
         {{ Form::text('hospital_from_day', $settings['hospital_from_day'], ['class' => 'form-control', 'required']) }}
     </div>
-
     <!-- Hospital From Time Field -->
     <div class="form-group col-sm-6">
         {{ Form::label('hospital_from_time', __('messages.setting.hospital_from_time').':') }}<span
                 class="required">*</span>
         {{ Form::text('hospital_from_time', $settings['hospital_from_time'], ['class' => 'form-control', 'required']) }}
     </div>
-
     <!-- Address Field -->
     <div class="form-group col-sm-6">
         {{ Form::label('hospital_address', __('messages.setting.address').':') }}<span class="required">*</span>
         {{ Form::text('hospital_address', $settings['hospital_address'], ['class' => 'form-control', 'required']) }}
     </div>
-
     <!-- Currency Field -->
     <div class="form-group col-sm-6">
         {{ Form::label('current_currency', __('messages.setting.currency').':') }}<span class="required">*</span>

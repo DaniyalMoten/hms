@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers\Web;
-
 use App\Http\Controllers\AppBaseController;
 use App\Models\Bed;
 use App\Models\Doctor;
@@ -23,17 +21,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
 use Illuminate\View\View;
-
 class WebController extends AppBaseController
 {
     /** @var AppointmentRepository */
     private $appointmentRepository;
-
     public function __construct(AppointmentRepository $appointmentRepository)
     {
         $this->appointmentRepository = $appointmentRepository;
     }
-
     public function index()
     {
         $totalbeds = Bed::count();
@@ -55,24 +50,20 @@ class WebController extends AppBaseController
             compact('doctorsDepartments', 'doctors', 'todayNotice', 'testimonials', 'totalbeds',
                 'totalDoctorNurses', 'totalPatient', 'doctorAppointments', 'frontSetting', 'frontServices'));
     }
-
     public function demo()
     {
         return \view('web.demo.index');
     }
-
     public function modulesOfHms()
     {
         return \view('web.modules_of_hms.index');
     }
-
     public function changeLanguage(Request $request)
     {
         Session::put('languageName', $request->input('languageName'));
 
         return redirect()->back();
     }
-
     public function aboutUs()
     {
         $frontSetting = FrontSetting::whereType(FrontSetting::ABOUT_US)->pluck('value', 'key')->toArray();
@@ -89,14 +80,12 @@ class WebController extends AppBaseController
         return view('web.home.about_us',
             compact('frontSetting', 'totalbeds', 'totalDoctorNurses', 'totalPatient', 'testimonials', 'doctors'));
     }
-
     public function appointmentFromOther(Request $request)
     {
         $data = $request->all();
 
         return redirect()->route('appointment')->with(['data' => $data]);
     }
-
     public function appointment()
     {
         $departments = $this->appointmentRepository->getDoctorDepartments();
@@ -104,14 +93,12 @@ class WebController extends AppBaseController
 
         return view('web.home.appointment', compact('departments', 'doctors'));
     }
-
     public function services()
     {
         $frontServices = FrontService::paginate(8);
 
         return view('web.home.services', compact('frontServices'));
     }
-
     public function doctors()
     {
         $doctors = Doctor::withCount(['appointments', 'patients'])->with('department',
@@ -122,21 +109,18 @@ class WebController extends AppBaseController
 
         return view('web.home.doctors', compact('doctors'));
     }
-
     public function termsOfService()
     {
         $frontSetting = FrontSetting::whereType(FrontSetting::HOME_PAGE)->pluck('value', 'key')->toArray();
 
         return view('web.home.terms-of-service', compact('frontSetting'));
     }
-
     public function privacyPolicy()
     {
         $frontSetting = FrontSetting::whereType(FrontSetting::HOME_PAGE)->pluck('value', 'key')->toArray();
 
         return view('web.home.privacy-policy', compact('frontSetting'));
     }
-
     public function workingHours()
     {
         $hospitalSchedules = HospitalSchedule::all()->sortBy('day_of_week');
@@ -145,14 +129,12 @@ class WebController extends AppBaseController
 
         return view('web.home.working-hours', compact('hospitalSchedules', 'weekDay', 'doctors'));
     }
-
     public function testimonials()
     {
         $testimonials = Testimonial::with('media')->get();
 
         return view('web.home.testimonials', compact('testimonials'));
     }
-
     public function setLanguage(Request $request)
     {
         Session::put('languageName', $request['languageName']);

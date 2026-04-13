@@ -1,38 +1,26 @@
 <?php
-
 namespace App\Http\Livewire;
-
 use App\Models\Charge;
 use App\Models\ChargeCategory;
 use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-
 class ChargeTable extends LivewireTableComponent
 {
     public $showButtonOnHeader = true;
-
     public $showFilterOnHeader = true;
-
     public $paginationIsEnabled = true;
-
     public $buttonComponent = 'charges.templates.button.add-button';
-
     public $FilterComponent = ['charges.templates.button.filter-button', ChargeCategory::FILTER_CHARGE_TYPES];
-
     protected $model = Charge::class;
-
     protected $listeners = ['refresh' => '$refresh', 'changeFilter', 'resetPage'];
-
     public function resetPage($pageName = 'page')
     {
         $rowsPropertyData = $this->getRows()->toArray();
         $prevPageNum = $rowsPropertyData['current_page'] - 1;
         $prevPageNum = $prevPageNum > 0 ? $prevPageNum : 1;
         $pageNum = count($rowsPropertyData['data']) > 0 ? $rowsPropertyData['current_page'] : $prevPageNum;
-
         $this->setPage($pageNum, $pageName);
     }
-
     public function configure(): void
     {
         $this->setPrimaryKey('id')
@@ -44,7 +32,6 @@ class ChargeTable extends LivewireTableComponent
                     'class' => 'p-5',
                 ];
             }
-
             return [];
         });
         $this->setThAttributes(function (Column $column) {
@@ -54,18 +41,15 @@ class ChargeTable extends LivewireTableComponent
                     'style' => 'padding-right: 7rem !important',
                 ];
             }
-
             return [];
         });
     }
-
     public function changeFilter($param, $value)
     {
         $this->resetPage($this->getComputedPageName());
         $this->statusFilter = $value;
         $this->setBuilder($this->builder());
     }
-
     public function columns(): array
     {
         return [
@@ -87,14 +71,12 @@ class ChargeTable extends LivewireTableComponent
                 ->view('charges.action'),
         ];
     }
-
     /**
      * @return Builder|Charge|\Illuminate\Database\Query\Builder
      */
     public function builder(): Builder
     {
         $query = Charge::whereHas('chargeCategory')->with('chargeCategory')->select('charges.*');
-
         $query->when(isset($this->statusFilter), function (Builder $q) {
             if ($this->statusFilter == 1) {
                 $q->where('charges.charge_type', 1);
@@ -112,7 +94,6 @@ class ChargeTable extends LivewireTableComponent
                 $q->where('charges.charge_type', 5);
             }
         });
-
         return $query;
     }
 }

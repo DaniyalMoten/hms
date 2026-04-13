@@ -64,7 +64,6 @@
             </a>
         </li>
     @endmodule
-
     {{-- ipds/opds --}}
     <?php
     $ipd = getMenuLinks(\App\Models\User::MAIN_IPD);
@@ -81,7 +80,6 @@
             </a>
         </li>
     @endif
-
     {{-- ipds/opds --}}
     <?php
     $opd = getMenuLinks(\App\Models\User::MAIN_OPD);
@@ -98,7 +96,6 @@
             </a>
         </li>
     @endif
-
     {{-- Billing --}}
     <?php
     $billingMGT = getMenuLinks(\App\Models\User::MAIN_BILLING_MGT);
@@ -118,7 +115,6 @@
             </a>
         </li>
     @endif
-
     <?php
     $bedMGT = getMenuLinks(\App\Models\User::MAIN_BED_MGT);
     ?>
@@ -135,7 +131,6 @@
             </a>
         </li>
     @endif
-
     {{-- Blood Bank dropdown --}}
     <?php
     $bloodbankMGT = getMenuLinks(\App\Models\User::MAIN_BLOOD_BANK_MGT);
@@ -152,7 +147,6 @@
             </a>
         </li>
     @endif
-
     {{-- Documents Mgt --}}
     <?php
     $documentMGT = getMenuLinks(\App\Models\User::MAIN_DOCUMENT);
@@ -166,7 +160,6 @@
             </a>
         </li>
     @endif
-
     {{-- Doctors dropdown --}}
     <?php
     $doctorMGT = getMenuLinks(\App\Models\User::MAIN_DOCTOR);
@@ -182,7 +175,6 @@
             </a>
         </li>
     @endif
-
     <?php
     $prescriptionMGT = getMenuLinks(\App\Models\User::MAIN_PRESCRIPTION);
     ?>
@@ -194,11 +186,8 @@
             </a>
         </li>
     @endif
-
     {{-- @module('Doctor Departments',$modules) --}}
-
     {{-- @endmodule --}}
-
     {{-- Diagnosis Test --}}
     <?php
     $diagnosisMGT = getMenuLinks(\App\Models\User::MAIN_DIAGNOSIS);
@@ -213,7 +202,6 @@
             </a>
         </li>
     @endif
-
     {{-- Enquiries --}}
     @module('Enquires', $modules)
         <li class="nav-item  {{ Request::is('enquiries*') || Request::is('enquiry*') ? 'active' : '' }}">
@@ -223,7 +211,6 @@
             </a>
         </li>
     @endmodule
-
     {{-- Finance --}}
     <?php
     $financeMGT = getMenuLinks(\App\Models\User::MAIN_FINANCE);
@@ -238,7 +225,6 @@
             </a>
         </li>
     @endif
-
     {{-- Front office --}}
     <?php
     $frontOfficeMGT = getMenuLinks(\App\Models\User::MAIN_FRONT_OFFICE);
@@ -255,7 +241,6 @@
             </a>
         </li>
     @endif
-
     {{-- Front settings --}}
     <li
         class="nav-item {{ Request::is('front-settings*', 'notice-boards*', 'testimonials*', 'front-cms-services*') ? 'active' : '' }}">
@@ -268,7 +253,6 @@
             <span class="d-none">{{ __('messages.front_cms_services') }}</span>
         </a>
     </li>
-
     {{-- Hospital Charges --}}
     <?php
     $hospitalCharge = getMenuLinks(\App\Models\User::MAIN_HOSPITAL_CHARGE);
@@ -284,7 +268,6 @@
             </a>
         </li>
     @endif
-
     {{-- Inventory Management  --}}
     <?php
     $inventoryMgt = getMenuLinks(\App\Models\User::MAIN_INVENTORY);
@@ -302,7 +285,6 @@
             </a>
         </li>
     @endif
-
     {{-- Live Consultation --}}
     <?php
     $liveConsultation = getMenuLinks(\App\Models\User::MAIN_LIVE_CONSULATION);
@@ -316,7 +298,6 @@
             </a>
         </li>
     @endif
-
     {{-- Medicines dropdown --}}
     <?php
     $medicineMgt = getMenuLinks(\App\Models\User::MAIN_MEDICINES);
@@ -332,7 +313,6 @@
             </a>
         </li>
     @endif
-
     {{-- Cases Mgt --}}
     <?php
     $patientCaseMgt = getMenuLinks(\App\Models\User::MAIN_PATIENT_CASE);
@@ -351,7 +331,6 @@
             </a>
         </li>
     @endif
-
     {{-- Pathology --}}
     <?php
     $pathologyMgt = getMenuLinks(\App\Models\User::MAIN_PATHOLOGY);
@@ -366,7 +345,6 @@
             </a>
         </li>
     @endif
-
     {{-- Hospital Activities dropdown --}}
     <?php
     $reportMgt = getMenuLinks(\App\Models\User::MAIN_REPORT);
@@ -384,7 +362,6 @@
             </a>
         </li>
     @endif
-
     {{-- Radiology --}}
     <?php
     $radiology = getMenuLinks(\App\Models\User::MAIN_RADIOLOGY);
@@ -399,7 +376,6 @@
             </a>
         </li>
     @endif
-
     {{-- Services dropdown --}}
     <?php
     $serviceMgt = getMenuLinks(\App\Models\User::MAIN_SERVICE);
@@ -418,7 +394,6 @@
             </a>
         </li>
     @endif
-
     {{-- sms/mail --}}
     <?php
     $smsMailMgt = getMenuLinks(\App\Models\User::MAIN_SMS_MAIL);
@@ -436,7 +411,6 @@
             </a>
         </li>
     @endif
-
     {{-- Settings --}}
     <li
         class="nav-item  {{ Request::is('settings*', 'hospital-schedules*', 'currency-settings*', 'operation-categories*', 'operations*') ? 'active' : '' }}">
@@ -447,7 +421,6 @@
             <span class="d-none">{{ __('messages.sidebar_setting') }}</span>
         </a>
     </li>
-
     {{-- Vaccination --}}
     <?php
     $vaccinationsPatient = getMenuLinks(\App\Models\User::MAIN_VACCINATION_MGT);
@@ -474,7 +447,6 @@
                 </a>
             </li>
         @endmodule
-
         <?php
         $bedDoctorMGT = getMenuLinks(\App\Models\User::MAIN_DOCTOR_BED_MGT);
         ?>
@@ -488,7 +460,6 @@
                 </a>
             </li>
         @endif
-
         @module('Doctors', $modules)
             <li class="nav-item  {{ Request::is('employee/doctor*', 'schedules*', 'doctors*') ? 'active' : '' }}">
                 <a class="nav-link  d-flex align-items-center py-3" href="{{ url('employee/doctor') }}">
@@ -499,7 +470,6 @@
                 </a>
             </li>
         @endmodule
-
         <?php
         $prescriptionMGT = getMenuLinks(\App\Models\User::MAIN_PRESCRIPTION);
         ?>
@@ -511,7 +481,6 @@
                 </a>
             </li>
         @endif
-
         @module('Documents', $modules)
             <li class="nav-item  {{ Request::is('documents*') ? 'active' : '' }}">
                 <a class="nav-link  d-flex align-items-center py-3" href="{{ route('documents.index') }}">
@@ -520,7 +489,6 @@
                 </a>
             </li>
         @endmodule
-
         {{-- Diagnosis Test --}}
         <?php
         $diagnosisDoctorMGT = getMenuLinks(\App\Models\User::MAIN_DIAGNOSIS);
@@ -535,7 +503,6 @@
                 </a>
             </li>
         @endif
-
         {{-- Front settings --}}
         @module('Employee Noticeboard', $modules)
             <li class="nav-item {{ Request::is('employee/notice-board*') ? 'active' : '' }}">
@@ -546,7 +513,6 @@
                 </a>
             </li>
         @endmodule
-
         {{-- ipds/opds --}}
         <?php
         $ipd = getMenuLinks(\App\Models\User::MAIN_IPD);
@@ -563,7 +529,6 @@
                 </a>
             </li>
         @endif
-
         {{-- ipds/opds --}}
         <?php
         $opd = getMenuLinks(\App\Models\User::MAIN_OPD);
@@ -580,7 +545,6 @@
                 </a>
             </li>
         @endif
-
         {{-- Live Consultation --}}
         <?php
         $liveConsultation = getMenuLinks(\App\Models\User::MAIN_LIVE_CONSULATION);
@@ -594,7 +558,6 @@
                 </a>
             </li>
         @endif
-
         {{-- My Payrolls --}}
         @module('My Payrolls', $modules)
             <li class="nav-item {{ Request::is('employee/payroll*', 'employee-payrolls*') ? 'active' : '' }}">
@@ -603,7 +566,6 @@
                     <span class="aside-menu-title">{{ __('messages.my_payrolls') }}</span>
                 </a>
             </li>
-
             {{-- Patients --}}
             <?php
             $patientDoctorCaseMgt = getMenuLinks(\App\Models\User::MAIN_PATIENT_CASE);
@@ -618,7 +580,6 @@
                     </a>
                 </li>
             @endif
-
             {{-- Reports --}}
             <?php
             $reportDoctorMgt = getMenuLinks(\App\Models\User::MAIN_REPORT);
@@ -636,7 +597,6 @@
                     </a>
                 </li>
             @endif
-
             {{-- SMS --}}
             @module('SMS', $modules)
                 <li class="nav-item {{ Request::is('sms*') ? 'active' : '' }}">
@@ -648,7 +608,6 @@
             @endmodule
         @endmodule
     @endrole
-
     @role('Case Manager')
         @module('Doctors', $modules)
             <li class="nav-item  {{ Request::is('employee/doctor*') ? 'active' : '' }}">
@@ -658,7 +617,6 @@
                 </a>
             </li>
         @endmodule
-
         {{-- Notice Boards --}}
         @module('Employee Noticeboard', $modules)
             <li class="nav-item  {{ Request::is('employee/notice-board*') ? 'active' : '' }}">
@@ -668,7 +626,6 @@
                     <span class="d-none">{{ __('messages.notice_boards') }}</span>
                 </a>
             </li>
-
             {{-- Live Meeting --}}
             @module('Live Meetings', $modules)
                 <li class="nav-item  {{ Request::is('live-meeting*') ? 'active' : '' }}">
@@ -678,7 +635,6 @@
                     </a>
                 </li>
             @endmodule
-
             @module('My Payrolls', $modules)
                 <li class="nav-item  {{ Request::is('employee/payroll*', 'employee-payrolls*') ? 'active' : '' }}">
                     <a class="nav-link  d-flex align-items-center py-3" href="{{ route('payroll') }}">
@@ -687,7 +643,6 @@
                     </a>
                 </li>
             @endmodule
-
             {{-- Patient admissions and Cases --}}
             <?php
             $patientCaseMangerCaseMgt = getMenuLinks(\App\Models\User::MAIN_CASE_MANGER_PATIENT_CASE);
@@ -703,7 +658,6 @@
                     </a>
                 </li>
             @endif
-
             {{-- Ambulances and Ambulance Calls --}}
             <?php
             $serviceCaseMangerCaseMgt = getMenuLinks(\App\Models\User::MAIN_CASE_MANGER_SERVICE);
@@ -719,7 +673,6 @@
                     </a>
                 </li>
             @endif
-
             {{-- Mail and SMS --}}
             <?php
             $smsMailCaseManagerMgt = getMenuLinks(\App\Models\User::MAIN_SMS_MAIL);
@@ -737,7 +690,6 @@
             @endif
         @endmodule
     @endrole
-
     @role('Receptionist')
         {{-- Appointments --}}
         @module('Appointments', $modules)
@@ -748,7 +700,6 @@
                 </a>
             </li>
         @endmodule
-
         {{-- Doctors --}}
         @module('Doctors', $modules)
             <li class="nav-item  {{ Request::is('doctors*') ? 'active' : '' }}">
@@ -758,7 +709,6 @@
                 </a>
             </li>
         @endmodule
-
         {{-- Diagnosis Test --}}
         <?php
         $diagnosisReceptionistMGT = getMenuLinks(\App\Models\User::MAIN_DIAGNOSIS);
@@ -773,7 +723,6 @@
                 </a>
             </li>
         @endif
-
         {{-- Enquires --}}
         @module('Enquires', $modules)
             <li class="nav-item  {{ Request::is('enquiries*') || Request::is('enquiry*') ? 'active' : '' }}">
@@ -783,7 +732,6 @@
                 </a>
             </li>
         @endmodule
-
         {{-- Front office --}}
         <?php
         $frontReceptionistOfficeMGT = getMenuLinks(\App\Models\User::MAIN_FRONT_OFFICE);
@@ -800,7 +748,6 @@
                 </a>
             </li>
         @endif
-
         @module('Employee Noticeboard', $modules)
             <li class="nav-item {{ Request::is('employee/notice-board', 'testimonials*') ? 'active' : '' }}">
                 <a class="nav-link  d-flex align-items-center py-3" href="{{ url('employee/notice-board') }}">
@@ -810,7 +757,6 @@
                 </a>
             </li>
         @endmodule
-
         {{-- Hospital Charges --}}
         <?php
         $ReceptionisthospitalCharge = getMenuLinks(\App\Models\User::MAIN_HOSPITAL_CHARGE);
@@ -827,7 +773,6 @@
                 </a>
             </li>
         @endif
-
         {{-- ipds/opds --}}
         <?php
         $ipd = getMenuLinks(\App\Models\User::MAIN_IPD);
@@ -844,7 +789,6 @@
                 </a>
             </li>
         @endif
-
         {{-- ipds/opds --}}
         <?php
         $opd = getMenuLinks(\App\Models\User::MAIN_OPD);
@@ -861,7 +805,6 @@
                 </a>
             </li>
         @endif
-
         {{-- Live Meeting --}}
         @module('Live Meetings', $modules)
             <li class="nav-item  {{ Request::is('live-meeting*') ? 'active' : '' }}">
@@ -872,7 +815,6 @@
                 </a>
             </li>
         @endmodule
-
         @module('My Payrolls', $modules)
             <li class="nav-item {{ Request::is('employee/payroll*', 'employee-payrolls*') ? 'active' : '' }}">
                 <a class="nav-link  d-flex align-items-center py-3" href="{{ route('payroll') }}">
@@ -881,7 +823,6 @@
                 </a>
             </li>
         @endmodule
-
         {{-- Cases Mgt --}}
         <?php
         $receptionistPatientCaseMgt = getMenuLinks(\App\Models\User::MAIN_PATIENT_CASE);
@@ -898,7 +839,6 @@
                 </a>
             </li>
         @endif
-
         {{-- Pathology --}}
         <?php
         $receptionistPathologyMgt = getMenuLinks(\App\Models\User::MAIN_PATHOLOGY);
@@ -913,7 +853,6 @@
                 </a>
             </li>
         @endif
-
         {{-- Radiology --}}
         <?php
         $receptionistRadiology = getMenuLinks(\App\Models\User::MAIN_RADIOLOGY);
@@ -928,7 +867,6 @@
                 </a>
             </li>
         @endif
-
         {{-- Services dropdown --}}
         <?php
         $receptionistServiceMgt = getMenuLinks(\App\Models\User::MAIN_SERVICE);
@@ -947,7 +885,6 @@
                 </a>
             </li>
         @endif
-
         {{-- Mail and SMS --}}
         <?php
         $receptionistSmsMailMgt = getMenuLinks(\App\Models\User::MAIN_SMS_MAIL);
@@ -965,7 +902,6 @@
                 </a>
             </li>
         @endif
-
         {{-- @module('Testimonial',$modules) --}}
         {{-- <li class="nav-item"> --}}
         {{--    <a class="nav-link  d-flex align-items-center py-3 ps-0 {{ Request::is('testimonials*') ? 'active' : '' }}" --}}
@@ -977,7 +913,6 @@
         {{-- </li> --}}
         {{-- @endmodule --}}
     @endrole
-
     @role('Pharmacist')
         @module('Doctors', $modules)
             <li class="nav-item  {{ Request::is('employee/doctor*') ? 'active' : '' }}">
@@ -987,7 +922,6 @@
                 </a>
             </li>
         @endmodule
-
         @module('Prescriptions', $modules)
             <li class="nav-item  {{ Request::is('employee/prescriptions*') ? 'active' : '' }}">
                 <a class="nav-link  d-flex align-items-center py-3" href="{{ url('employee/prescriptions') }}">
@@ -996,7 +930,6 @@
                 </a>
             </li>
         @endmodule
-
         @module('Employee Noticeboard', $modules)
             <li class="nav-item  {{ Request::is('employee/notice-board*') ? 'active' : '' }}">
                 <a class="nav-link  d-flex align-items-center py-3" href="{{ url('employee/notice-board') }}">
@@ -1006,7 +939,6 @@
                 </a>
             </li>
         @endmodule
-
         {{-- Live Meeting --}}
         @module('Live Meetings', $modules)
             <li class="nav-item  {{ Request::is('live-meeting*') ? 'active' : '' }}">
@@ -1016,7 +948,6 @@
                 </a>
             </li>
         @endmodule
-
         {{-- Medicines --}}
         <?php
         $medicinePharmacistMgt = getMenuLinks(\App\Models\User::MAIN_MEDICINES);
@@ -1032,7 +963,6 @@
                 </a>
             </li>
         @endif
-
         @module('My Payrolls', $modules)
             <li class="nav-item {{ Request::is('employee/payroll*', 'employee-payrolls*') ? 'active' : '' }}">
                 <a class="nav-link  d-flex align-items-center py-3" href="{{ route('payroll') }}">
@@ -1041,7 +971,6 @@
                 </a>
             </li>
         @endmodule
-
         @module('Pathology Tests', $modules)
             <li class="nav-item  {{ Request::is('pathology-tests*') ? 'active' : '' }}">
                 <a class="nav-link  d-flex align-items-center py-3" href="{{ route('pathology.test.index') }}">
@@ -1050,7 +979,6 @@
                 </a>
             </li>
         @endmodule
-
         @module('Radiology Tests', $modules)
             <li class="nav-item {{ Request::is('radiology-tests*') ? 'active' : '' }}">
                 <a class="nav-link  d-flex align-items-center py-3" href="{{ route('radiology.test.index') }}">
@@ -1060,7 +988,6 @@
                 </a>
             </li>
         @endmodule
-
         {{-- SMS --}}
         @module('SMS', $modules)
             <li class="nav-item {{ Request::is('sms*') ? 'active' : '' }}">
@@ -1071,7 +998,6 @@
             </li>
         @endmodule
     @endrole
-
     @role('Nurse')
         {{-- Bed Manager --}}
         <?php $bedNurseMGT = getMenuLinks(\App\Models\User::MAIN_BED_MGT);
@@ -1087,7 +1013,6 @@
                 </a>
             </li>
         @endif
-
         @module('Employee Noticeboard', $modules)
             <li class="nav-item  {{ Request::is('employee/notice-board*') ? 'active' : '' }}">
                 <a class="nav-link  d-flex align-items-center py-3" href="{{ url('employee/notice-board') }}">
@@ -1097,7 +1022,6 @@
                 </a>
             </li>
         @endmodule
-
         {{-- Live Meeting --}}
         @module('Live Meetings', $modules)
             <li class="nav-item {{ Request::is('live-meeting*') ? 'active' : '' }}">
@@ -1107,7 +1031,6 @@
                 </a>
             </li>
         @endmodule
-
         {{-- My Payrolls --}}
         @module('My Payrolls', $modules)
             <li class="nav-item  {{ Request::is('employee/payroll*', 'employee-payroll*') ? 'active' : '' }}">
@@ -1117,7 +1040,6 @@
                 </a>
             </li>
         @endmodule
-
         {{-- Medicines --}}
         <?php
         $medicinePharmacistMgt = getMenuLinks(\App\Models\User::MAIN_MEDICINES);
@@ -1133,7 +1055,6 @@
                 </a>
             </li>
         @endif
-
         @module('Prescriptions', $modules)
             <li class="nav-item {{ Request::is('prescriptions*') ? 'active' : '' }}">
                 <a class="nav-link  d-flex align-items-center py-3" href="{{ route('prescriptions.index') }}">
@@ -1142,7 +1063,6 @@
                 </a>
             </li>
         @endmodule
-
         <li class="nav-item  {{ Request::is('diagnosis-categories*', 'patient-diagnosis-test*') ? 'active' : '' }}">
             <a class="nav-link  d-flex align-items-center py-3" href="{{ route('patient.diagnosis.test.index') }}">
                 <span class="aside-menu-icon me-3"><i class="fas fa-diagnoses"></i></span>
@@ -1151,7 +1071,6 @@
                 <span class="d-none">{{ __('messages.patient_diagnosis_test.diagnosis_test') }}</span>
             </a>
         </li>
-
         <?php
         $reportMgt = getMenuLinks(\App\Models\User::MAIN_REPORT);
         ?>
@@ -1168,8 +1087,6 @@
                 </a>
             </li>
         @endif
-
-
         <li class="nav-item  {{ Request::is('doctors*', 'doctor-departments*', 'schedules*') ? 'active' : '' }}">
             <a class="nav-link  d-flex align-items-center py-3" href="{{ route('doctors.index') }}">
                 <span class="aside-menu-icon me-3"><i class="fa fa-user-md"></i></span>
@@ -1180,7 +1097,6 @@
             </a>
         </li>
     @endrole
-
     @role('Lab Technician')
         {{-- Blood Bank dropdown --}}
         <?php
@@ -1198,7 +1114,6 @@
                 </a>
             </li>
         @endif
-
         @module('Doctors', $modules)
             <li class="nav-item {{ Request::is('employee/doctor*') ? 'active' : '' }}">
                 <a class="nav-link  d-flex align-items-center py-3" href="{{ url('employee/doctor') }}">
@@ -1207,7 +1122,6 @@
                 </a>
             </li>
         @endmodule
-
         {{-- Diagnosis Test --}}
         <?php
         $diagnosiLabMGT = getMenuLinks(\App\Models\User::MAIN_DIAGNOSIS);
@@ -1222,7 +1136,6 @@
                 </a>
             </li>
         @endif
-
         {{-- Front Settings --}}
         @module('Employee Noticeboard', $modules)
             <li class="nav-item  {{ Request::is('employee/notice-board*') ? 'active' : '' }}">
@@ -1233,7 +1146,6 @@
                 </a>
             </li>
         @endmodule
-
         {{-- Live Meeting --}}
         @module('Live Meetings', $modules)
             <li class="nav-item  {{ Request::is('live-meeting*') ? 'active' : '' }}">
@@ -1243,7 +1155,6 @@
                 </a>
             </li>
         @endmodule
-
         {{-- Medicines --}}
         <?php
         $medicinelabMgt = getMenuLinks(\App\Models\User::MAIN_MEDICINES);
@@ -1259,7 +1170,6 @@
                 </a>
             </li>
         @endif
-
         {{-- My Payrolls --}}
         @module('My Payrolls', $modules)
             <li class="nav-item {{ Request::is('employee/payroll*', 'employee-payrolls*') ? 'active' : '' }}">
@@ -1269,7 +1179,6 @@
                 </a>
             </li>
         @endmodule
-
         {{-- Pathologies --}}
         @module('Pathology Tests', $modules)
             <li class="nav-item  {{ Request::is('pathology-tests*') ? 'active' : '' }}">
@@ -1280,7 +1189,6 @@
                 </a>
             </li>
         @endmodule
-
         @module('Radiology Tests', $modules)
             <li class="nav-item  {{ Request::is('radiology-tests*') ? 'active' : '' }}">
                 <a class="nav-link  d-flex align-items-center py-3" href="{{ route('radiology.test.index') }}">
@@ -1291,7 +1199,6 @@
             </li>
         @endmodule
     @endrole
-
     @role('Accountant')
         {{-- Account Manager dropdown --}}
         <?php
@@ -1311,7 +1218,6 @@
                 </a>
             </li>
         @endif
-
         {{-- Finance --}}
         <?php
         $financeAccountantMGT = getMenuLinks(\App\Models\User::MAIN_FINANCE);
@@ -1326,7 +1232,6 @@
                 </a>
             </li>
         @endif
-
         {{-- Notice Boards --}}
         @module('Employee Noticeboard', $modules)
             <li class="nav-item {{ Request::is('employee/notice-board*') ? 'active' : '' }}">
@@ -1337,7 +1242,6 @@
                 </a>
             </li>
         @endmodule
-
         {{-- Live Meeting --}}
         @module('Live Meetings', $modules)
             <li class="nav-item  {{ Request::is('live-meeting*') ? 'active' : '' }}">
@@ -1347,7 +1251,6 @@
                 </a>
             </li>
         @endmodule
-
         {{-- My Payrolls --}}
         @module('My Payrolls', $modules)
             <li class="nav-item  {{ Request::is('employee/payroll*') ? 'active' : '' }}">
@@ -1357,7 +1260,6 @@
                 </a>
             </li>
         @endmodule
-
         {{-- Services --}}
         @module('Services', $modules)
             <li class="nav-item {{ Request::is('services*') ? 'active' : '' }}">
@@ -1367,7 +1269,6 @@
                 </a>
             </li>
         @endmodule
-
         {{-- SMS --}}
         @module('SMS', $modules)
             <li class="nav-item  {{ Request::is('sms*') ? 'active' : '' }}">
@@ -1378,7 +1279,6 @@
             </li>
         @endmodule
     @endrole
-
     @role('Patient')
         @module('Appointments', $modules)
             <li class="nav-item  {{ Request::is('appointments*') ? 'active' : '' }}">
@@ -1388,7 +1288,6 @@
                 </a>
             </li>
         @endmodule
-
         @module('Bills', $modules)
             <li class="nav-item  {{ Request::is('employee/bills*') ? 'active' : '' }}">
                 <a class="nav-link  d-flex align-items-center py-3" href="{{ url('employee/bills') }}">
@@ -1397,7 +1296,6 @@
                 </a>
             </li>
         @endmodule
-
         {{-- Documents --}}
         @module('Documents', $modules)
             <li class="nav-item  {{ Request::is('documents*') ? 'active' : '' }}">
@@ -1407,7 +1305,6 @@
                 </a>
             </li>
         @endmodule
-
         @module('Employee Noticeboard', $modules)
             <li class="nav-item  {{ Request::is('employee/notice-board*') ? 'active' : '' }}">
                 <a class="nav-link  d-flex align-items-center py-3" href="{{ url('employee/notice-board') }}">
@@ -1417,7 +1314,6 @@
                 </a>
             </li>
         @endmodule
-
         {{-- ipds/opds --}}
         <li class="nav-item  {{ Request::is('patient/my-ipds*') ? 'active' : '' }}">
             <a class="nav-link  d-flex align-items-center py-3" href="{{ route('patient.ipd') }}"
@@ -1430,7 +1326,6 @@
                 <span class="d-none">{{ __('messages.opd_patients') }}</span>
             </a>
         </li>
-
         <li class="nav-item  {{ Request::is('opds*', 'patient/my-opds*') ? 'active' : '' }}">
             <a class="nav-link  d-flex align-items-center py-3" href="{{ route('patient.opd') }}"
                 title="{{ __('messages.ipd_opd') }}">
@@ -1442,7 +1337,6 @@
                 <span class="d-none">{{ __('messages.opd_patients') }}</span>
             </a>
         </li>
-
         @module('Invoices', $modules)
             <li class="nav-item  {{ Request::is('employee/invoices*') ? 'active' : '' }}">
                 <a class="nav-link  d-flex align-items-center py-3" href="{{ url('employee/invoices') }}">
@@ -1451,7 +1345,6 @@
                 </a>
             </li>
         @endmodule
-
         {{-- Live Consultation --}}
         @module('Live Consultations', $modules)
             <li class="nav-item  {{ Request::is('live-consultation*') ? 'active' : '' }}">
@@ -1461,7 +1354,6 @@
                 </a>
             </li>
         @endmodule
-
         @module('Patient Cases', $modules)
             <li class="nav-item  {{ Request::is('patient/my-cases*') ? 'active' : '' }}">
                 <a class="nav-link  d-flex align-items-center py-3" href="{{ url('patient/my-cases') }}">
@@ -1470,7 +1362,6 @@
                 </a>
             </li>
         @endmodule
-
         @module('Patient Admissions', $modules)
             <li class="nav-item  {{ Request::is('employee/patient-admissions*') ? 'active' : '' }}">
                 <a class="nav-link  d-flex align-items-center py-3" href="{{ url('employee/patient-admissions') }}">
@@ -1479,7 +1370,6 @@
                 </a>
             </li>
         @endmodule
-
         @module('Prescriptions', $modules)
             <li class="nav-item {{ Request::is('patient/my-prescriptions*') ? 'active' : '' }}">
                 <a class="nav-link  d-flex align-items-center py-3" href="{{ route('prescriptions.list') }}">
@@ -1488,7 +1378,6 @@
                 </a>
             </li>
         @endmodule
-
         @module('Vaccinated Patients', $modules)
             <li class="nav-item  {{ Request::is('patient/my-vaccinated*') ? 'active' : '' }}">
                 <a class="nav-link  d-flex align-items-center py-3" href="{{ route('patient.vaccinated') }}">
@@ -1497,7 +1386,6 @@
                 </a>
             </li>
         @endmodule
-
         {{-- Patient Reports --}}
         <?php
         $reportMgt = getMenuLinks(\App\Models\User::MAIN_REPORT);

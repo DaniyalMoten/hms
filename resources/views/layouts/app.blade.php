@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
 <head>
     <meta charset="UTF-8">
     <title>@yield('title') | {{ getAppName() }}</title>
@@ -24,7 +23,6 @@
         <link href="{{ asset(mix('assets/css/style.css')) }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset(mix('assets/css/plugins.css')) }}" rel="stylesheet" type="text/css" />
     @endif
-
     {{--    @livewireStyles --}}
     {{--    <script src="{{ asset('livewire/livewire.css') }}"></script> --}}
     @yield('css')
@@ -42,7 +40,6 @@
     <script src="{{ asset(mix('js/pages.js')) }}"></script>
     <script src="https://js.stripe.com/v3/"></script>
     <script src="https://npmcdn.com/flatpickr@4.5.2/dist/l10n"></script>
-
     @yield('page_scripts')
     <script>
         {{-- let defaultImage = "{{ asset('assets/img/avatar.png') }}"; --}}
@@ -62,14 +59,12 @@
         $(document).ready(function() {
             $('.alert').delay(5000).slideUp(300)
         })
-
         $('.alert').delay(5000).slideUp(300, function() {
             $('.alert').attr('style', 'display:none')
         })
     </script>
     @yield('scripts')
 </head>
-
 <body>
     <div class="d-flex flex-column flex-root">
         <div class="d-flex flex-row flex-column-fluid">
@@ -88,7 +83,6 @@
                     @include('layouts.footer')
                 </div>
             </div>
-
             @include('user_profile.edit_profile_modal')
             @include('user_profile.change_password_modal')
         </div>
@@ -120,5 +114,4 @@
         {{ Form::hidden('okVariable', __('messages.common.ok'), ['class' => 'okVariable']) }}
     </div>
 </body>
-
 </html>

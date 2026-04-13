@@ -1,36 +1,25 @@
 <?php
-
 namespace App\Http\Livewire;
-
 use App\Models\PatientCase;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Auth;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-
 class CaseTable extends LivewireTableComponent
 {
     protected $model = PatientCase::class;
-
     public $showButtonOnHeader = true;
-
     public $showFilterOnHeader = true;
-
     public $buttonComponent = 'patient_cases.add-button';
-
     public $FilterComponent = ['patient_cases.filter-button', PatientCase::FILTER_STATUS_ARR];
-
     protected $listeners = ['refresh' => '$refresh', 'changeFilter', 'resetPage'];
-
     public function resetPage($pageName = 'page')
     {
         $rowsPropertyData = $this->getRows()->toArray();
         $prevPageNum = $rowsPropertyData['current_page'] - 1;
         $prevPageNum = $prevPageNum > 0 ? $prevPageNum : 1;
         $pageNum = count($rowsPropertyData['data']) > 0 ? $rowsPropertyData['current_page'] : $prevPageNum;
-
         $this->setPage($pageNum, $pageName);
     }
-
     public function configure(): void
     {
         $this->setPrimaryKey('id')
@@ -43,18 +32,15 @@ class CaseTable extends LivewireTableComponent
                     'style' => 'padding-right: 6rem !important',
                 ];
             }
-
             return [];
         });
     }
-
     public function changeFilter($param, $value)
     {
         $this->resetPage($this->getComputedPageName());
         $this->statusFilter = $value;
         $this->setBuilder($this->builder());
     }
-
     public function columns(): array
     {
         if (! Auth::user()->hasRole('Patient')) {
@@ -75,7 +61,6 @@ class CaseTable extends LivewireTableComponent
                 ->view('patient_cases.templates.column.phone')
                 ->sortable()->searchable();
         }
-
         return [
             Column::make('Id', 'id')
                 ->hideIf('id')
@@ -105,7 +90,6 @@ class CaseTable extends LivewireTableComponent
             $actionButton,
         ];
     }
-
     public function builder(): Builder
     {
         $query = PatientCase::query()->select('patient_cases.*')->with('patient', 'doctor');
@@ -121,7 +105,6 @@ class CaseTable extends LivewireTableComponent
                 $q->where('patient_cases.status', $this->statusFilter);
             }
         });
-
         return $query;
     }
 }

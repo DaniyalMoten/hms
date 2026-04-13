@@ -15,5 +15,4 @@
                 @include('partials.modal.templates.templates')
         </div>
 @endsection
-
 {{--JS File :- assets/js/vaccinations/vaccinations.js--}}

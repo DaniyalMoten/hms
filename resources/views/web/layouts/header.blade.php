@@ -7,7 +7,7 @@
         <div class="row align-items-center">
             <div class="col-lg-1 col-4">
                 <a href="{{ url('/') }}" class="header-logo">
-                    <img src="{{ getLogoUrl() }}" alt="Infy HMS" class="img-fluid" />
+                    <img src="{{ getLogoUrl() }}" alt="Infy HMS" class="img-fluid" width="100%" />
                 </a>
             </div>
             <div class="col-lg-11 col-8 ps-0">

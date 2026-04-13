@@ -1,12 +1,9 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Models\AdvancedPayment;
 use App\Models\PatientCase;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
-
 class AdvancedPaymentTableSeeder extends Seeder
 {
     /**
@@ -28,7 +25,6 @@ class AdvancedPaymentTableSeeder extends Seeder
                 'date' => Carbon::now(),
             ],
         ];
-
         foreach ($input as $data) {
             AdvancedPayment::create($data);
         }

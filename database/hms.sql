@@ -6,40 +6,30 @@
 -- Generation Time: Sep 19, 2023 at 01:34 PM
 -- Server version: 8.0.33
 -- PHP Version: 8.1.20
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
-
-
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
-
 --
 -- Database: `e-hms`
 --
-
 -- --------------------------------------------------------
-
 --
 -- Table structure for table `accountants`
 --
-
 CREATE TABLE `accountants` (
   `id` int UNSIGNED NOT NULL,
   `user_id` bigint UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
 -- --------------------------------------------------------
-
 --
 -- Table structure for table `accounts`
 --
-
 CREATE TABLE `accounts` (
   `id` int UNSIGNED NOT NULL,
   `name` varchar(160) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -49,13 +39,10 @@ CREATE TABLE `accounts` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
 -- --------------------------------------------------------
-
 --
 -- Table structure for table `addresses`
 --
-
 CREATE TABLE `addresses` (
   `id` bigint UNSIGNED NOT NULL,
   `owner_id` int DEFAULT NULL,
@@ -67,13 +54,10 @@ CREATE TABLE `addresses` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
 -- --------------------------------------------------------
-
 --
 -- Table structure for table `admins`
 --
-
 CREATE TABLE `admins` (
   `id` bigint UNSIGNED NOT NULL,
   `user_id` int NOT NULL,
@@ -82,20 +66,15 @@ CREATE TABLE `admins` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
 --
 -- Dumping data for table `admins`
 --
-
 INSERT INTO `admins` (`id`, `user_id`, `is_default`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 1, '1', '2023-09-19 08:02:53', '2023-09-19 08:02:53', NULL);
-
 -- --------------------------------------------------------
-
 --
 -- Table structure for table `advanced_payments`
 --
-
 CREATE TABLE `advanced_payments` (
   `id` int UNSIGNED NOT NULL,
   `patient_id` bigint UNSIGNED NOT NULL,
@@ -106,13 +85,10 @@ CREATE TABLE `advanced_payments` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `currency_symbol` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
 -- --------------------------------------------------------
-
 --
 -- Table structure for table `ambulances`
 --
-
 CREATE TABLE `ambulances` (
   `id` int UNSIGNED NOT NULL,
   `vehicle_number` varchar(160) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -127,13 +103,10 @@ CREATE TABLE `ambulances` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
 -- --------------------------------------------------------
-
 --
 -- Table structure for table `ambulance_calls`
 --
-
 CREATE TABLE `ambulance_calls` (
   `id` int UNSIGNED NOT NULL,
   `patient_id` int UNSIGNED NOT NULL,
@@ -145,13 +118,10 @@ CREATE TABLE `ambulance_calls` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `currency_symbol` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
 -- --------------------------------------------------------
-
 --
 -- Table structure for table `appointments`
 --
-
 CREATE TABLE `appointments` (
   `id` bigint UNSIGNED NOT NULL,
   `patient_id` int UNSIGNED NOT NULL,
@@ -163,13 +133,10 @@ CREATE TABLE `appointments` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
 -- --------------------------------------------------------
-
 --
 -- Table structure for table `beds`
 --
-
 CREATE TABLE `beds` (
   `id` int UNSIGNED NOT NULL,
   `bed_type` int UNSIGNED NOT NULL,
@@ -182,13 +149,10 @@ CREATE TABLE `beds` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `currency_symbol` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
 -- --------------------------------------------------------
-
 --
 -- Table structure for table `bed_assigns`
 --
-
 CREATE TABLE `bed_assigns` (
   `id` int UNSIGNED NOT NULL,
   `bed_id` int UNSIGNED NOT NULL,
@@ -202,13 +166,10 @@ CREATE TABLE `bed_assigns` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
 -- --------------------------------------------------------
-
 --
 -- Table structure for table `bed_types`
 --
-
 CREATE TABLE `bed_types` (
   `id` int UNSIGNED NOT NULL,
   `title` varchar(160) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -216,13 +177,10 @@ CREATE TABLE `bed_types` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
 -- --------------------------------------------------------
-
 --
 -- Table structure for table `bills`
 --
-
 CREATE TABLE `bills` (
   `id` int UNSIGNED NOT NULL,
   `bill_id` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -234,13 +192,10 @@ CREATE TABLE `bills` (
   `patient_admission_id` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `currency_symbol` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
 -- --------------------------------------------------------
-
 --
 -- Table structure for table `bill_items`
 --
-
 CREATE TABLE `bill_items` (
   `id` int UNSIGNED NOT NULL,
   `item_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -253,7 +208,6 @@ CREATE TABLE `bill_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
-
 --
 -- Table structure for table `birth_reports`
 --

@@ -1,35 +1,24 @@
 <?php
-
 namespace App\Http\Livewire;
-
 use App\Models\CaseHandler;
 use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-
 class CaseHandlerTable extends LivewireTableComponent
 {
     protected $model = CaseHandler::class;
-
     public $showButtonOnHeader = true;
-
     public $showFilterOnHeader = true;
-
     public $buttonComponent = 'case_handlers.add-button';
-
     public $FilterComponent = ['case_handlers.filter-button', CaseHandler::STATUS_ARR];
-
     protected $listeners = ['refresh' => '$refresh', 'changeFilter', 'resetPage'];
-
     public function resetPage($pageName = 'page')
     {
         $rowsPropertyData = $this->getRows()->toArray();
         $prevPageNum = $rowsPropertyData['current_page'] - 1;
         $prevPageNum = $prevPageNum > 0 ? $prevPageNum : 1;
         $pageNum = count($rowsPropertyData['data']) > 0 ? $rowsPropertyData['current_page'] : $prevPageNum;
-
         $this->setPage($pageNum, $pageName);
     }
-
     public function configure(): void
     {
         $this->setPrimaryKey('id')
@@ -41,18 +30,15 @@ class CaseHandlerTable extends LivewireTableComponent
                     'class' => 'pt-5',
                 ];
             }
-
             return [];
         });
     }
-
     public function changeFilter($param, $value)
     {
         $this->resetPage($this->getComputedPageName());
         $this->statusFilter = $value;
         $this->setBuilder($this->builder());
     }
-
     public function columns(): array
     {
         return [
@@ -80,7 +66,6 @@ class CaseHandlerTable extends LivewireTableComponent
                 ->view('case_handlers.action'),
         ];
     }
-
     public function builder(): Builder
     {
         /** @var CaseHandler $query */
@@ -91,7 +76,6 @@ class CaseHandlerTable extends LivewireTableComponent
                 $q->where('status', $this->statusFilter);
             }
         });
-
         return $query;
     }
 }

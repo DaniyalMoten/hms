@@ -1,8 +1,6 @@
 @aware(['component'])
-
 @php
     $theme = $component->getTheme();
-
     $customAttributes = [
         'wrapper' => $this->getTableWrapperAttributes(),
         'table' => $this->getTableAttributes(),
@@ -10,7 +8,6 @@
         'tbody' => $this->getTbodyAttributes(),
     ];
 @endphp
-
 @if ($theme === 'tailwind')
     <div {{
         $attributes->merge($customAttributes['wrapper'])
@@ -35,7 +32,6 @@
                 @if ($component->reorderIsEnabled())
                     wire:sortable="{{ $component->getReorderMethod() }}"
                 @endif
-
                 {{
                     $attributes->merge($customAttributes['tbody'])
                         ->class(['bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-none' => $customAttributes['tbody']['default'] ?? true])
@@ -44,7 +40,6 @@
             >
                 {{ $slot }}
             </tbody>
-
             @if (isset($tfoot))
                 <tfoot>
                     {{ $tfoot }}
@@ -86,7 +81,6 @@
             >
                 {{ $slot }}
             </tbody>
-
             @if (isset($tfoot))
                 <tfoot>
                     {{ $tfoot }}

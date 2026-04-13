@@ -1,13 +1,9 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Models\Department;
 use Illuminate\Database\Seeder;
-
 class DepartmentsSeeder extends Seeder
-{
-    /**
+{/**
      * Run the database seeds.
      */
     public function run(): void
@@ -23,7 +19,6 @@ class DepartmentsSeeder extends Seeder
             'Case Manager',
             'Lab Technician',
         ];
-
         foreach ($input as $value) {
             Department::create([
                 'name' => $value,

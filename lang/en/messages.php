@@ -1,7 +1,5 @@
 <?php
-
 return [
-
     /*
     |--------------------------------------------------------------------------
     | All Titles and static string in blade files
@@ -150,7 +148,6 @@ return [
     'report_id' => 'Report ID',
     'yearly_income_expense_chart' => 'Yearly Income Expense Chart',
     'sms_mail' => 'SMS/Mail',
-
     'language' => [
         'Arabic' => 'Arabic',
         'Chinese' => 'Chinese',
@@ -162,14 +159,12 @@ return [
         'Spanish' => 'Spanish',
         'Turkish' => 'Spanish',
     ],
-
     //roles
     'role' => [
         'new_role' => 'New Role',
         'edit_role' => 'Edit Role',
         'select_role' => 'Select Role',
     ],
-
     //user keys
     'user' => [
         'user' => 'User',
@@ -216,7 +211,6 @@ return [
         'phone_number_must_be_10_digits' => 'The phone number must be 10 digits long',
         'valid_email' => 'Please enter valid email',
     ],
-
     //common keys
     'common' => [
         'change' => 'Change',
@@ -303,13 +297,11 @@ return [
         'username_and_password_required' => 'username and password required',
         'meeting_finished_or_cancelled' => 'This meeting is finished or cancelled',
       ],
-
     'hospital_schedules' => [
         'exists_doctor_schedule' => 'Some doctors have scheduled their days in given unchecked days, so are you sure you want to perform this operation?',
         'schedule_not_available' => 'Currently user not able to create a hospital schedule if hospital schedule is not available',
         'this_day_hospital_is_closed' => 'This Day Hospital is Closed.',
     ],
-
     'months' => [
         'jan' => 'January',
         'feb' => 'February',
@@ -324,7 +316,6 @@ return [
         'nov' => 'November',
         'dec' => 'December',
     ],
-
     'weekdays' => [
         'sun' => 'SUN',
         'mon' => 'MON',
@@ -334,7 +325,6 @@ return [
         'fri' => 'FRI',
         'sat' => 'SAT',
     ],
-
     // receptionist keys
     'receptionist' => [
         'receptionist' => 'Receptionist',
@@ -344,7 +334,6 @@ return [
         'edit_receptionist' => 'Edit Receptionist',
         'profile_must_be_image' => 'The profile image must be a image',
     ],
-
     // insurance keys
     'insurance' => [
         'insurance' => 'Insurance',
@@ -363,7 +352,6 @@ return [
         'diseases_charge' => 'Diseases charge',
         'total_amount' => 'Total Amount',
     ],
-
     //doctor department
     'doctor_department' => [
         'doctor_departments' => 'Doctor Departments',
@@ -375,7 +363,6 @@ return [
         'description' => 'Description',
         'doctor_field_required' => 'Doctor field is required'
     ],
-
     // investigation reports
     'investigation_report' => [
         'investigation_reports' => 'Investigation Reports',
@@ -391,7 +378,6 @@ return [
         'attachment' => 'Attachment',
         'birth_date_validation' => 'Investigation report date should not be smaller than patient birth date.',
     ],
-
     // pharmacist keys
     'pharmacist' => [
         'new_pharmacist' => 'New Pharmacist',
@@ -399,7 +385,6 @@ return [
         'pharmacists' => 'Pharmacist',
         'pharmacist_details' => 'Pharmacist Details',
     ],
-
     // death reports keys
     'death_report' => [
         'death_report' => 'Death Report',
@@ -415,7 +400,6 @@ return [
         'cant_create_report_because_the_patient_has_been_dead' => 'Can\'t create report because the patient has been dead.',
         'data_should_not_be_smaller_than_patient_birth_date' => 'Date should not be smaller than patient birth date.',
     ],
-
     // birth reports keys
     'birth_report' => [
         'birth_report' => 'Birth Report',
@@ -431,7 +415,6 @@ return [
         'data_should_not_be_smaller_than_patient_birth_date' => 'Date should not be smaller than patient birth date.',
         'patient_birth_date_not_found' => 'Patient Birth Date not found.',
     ],
-
     // accountant keys
     'accountant' => [
         'new_accountant' => 'New Accountant',
@@ -440,7 +423,6 @@ return [
         'accountant' => 'Accountant',
         'accountant_details' => 'Accountant Details',
     ],
-
     // employee payroll keys
     'employee_payroll' => [
         'employee_payroll' => 'Employee Payroll',
@@ -464,7 +446,6 @@ return [
         'employees_list_not_found' => 'Employees List not found',
         'employee_payroll_deduction' => 'Deductions cannot be greater than Basic salary + Allowance',
     ],
-
     // operation reports keys
     'operation_report' => [
         'operation_report' => 'Operation Report',
@@ -479,7 +460,6 @@ return [
         'description' => 'Description',
         'data_should_not_be_smaller_than_patient_birth_date' => 'Date should not be smaller than patient birth date.',
     ],
-
     // accounts keys
     'account' => [
         'account' => 'Account',
@@ -495,7 +475,6 @@ return [
         'credit' => 'Credit',
         'debit' => 'Debit',
     ],
-
     // invoices keys
     'invoice' => [
         'invoice_id' => 'Invoice ID',
@@ -527,7 +506,6 @@ return [
         'patient_overview' => 'PATIENT OVERVIEW',
         'in_percentage' => 'In Percentage',
     ],
-
     //nurses
     'nurse' => [
         'nurse' => 'Nurse',
@@ -538,7 +516,6 @@ return [
         'birth_date' => 'Birth Date',
         'choose' => 'Choose',
     ],
-
     //patient
     'patient' => [
         'new_patient' => 'New Patient',
@@ -551,7 +528,6 @@ return [
         'patient_name_already_taken' => 'The patient name has already been taken',
         'patient_field_required' => 'The patient field is required',
     ],
-
     // payments keys
     'payment' => [
         'payment' => 'Payment',
@@ -569,7 +545,6 @@ return [
         'your_payment_is_successfully_completed' => 'Your Payment is successfully completed',
         'payment_failed' => 'Sorry! Payment is failed, Try again after some time',
     ],
-
     // advanced payments keys
     'advanced_payment' => [
         'advanced_payment' => 'Advance Payment',
@@ -583,7 +558,6 @@ return [
         'date' => 'Date',
         'patient_name' => 'Patient Name',
     ],
-
     // beds keys
     'bed' => [
         'bed' => 'New Bed',
@@ -602,7 +576,6 @@ return [
         'bed_id' => 'Bed ID',
         'select_bed_type' => 'Select Bed Type',
     ],
-
     // bed types keys
     'bed_type' => [
         'bed_type' => 'Bed Type',
@@ -613,7 +586,6 @@ return [
         'title' => 'Title',
         'description' => 'Description',
     ],
-
     'doctor' => [
         'new_doctor' => 'New Doctor',
         'edit_doctor' => 'Edit Doctor',
@@ -622,7 +594,6 @@ return [
         'name' => 'Name',
         'doctor_name_already_taken' => 'The doctor\'s name has already been taken'
     ],
-
     // bed assigns keys
     'bed_assign' => [
         'bed_assign' => 'Bed Assign',
@@ -643,7 +614,6 @@ return [
         'assign_date_should_not_be_smaller_than_patient_birth_date' => 'Bed Assign date should not be smaller than patient birth date.',
         'ipd_patient_department_field_required' => 'The IPD patient department field is required',
     ],
-
     // packages keys
     'package' => [
         'package' => 'Package',
@@ -661,7 +631,6 @@ return [
         'amount' => 'Amount',
         'select_service' => 'Select Service',
     ],
-
     // bills keys
     'bill' => [
         'print_bill' => 'Print Bill',
@@ -700,7 +669,6 @@ return [
         'calculate' => 'Calculate',
         'note_Bill' => 'Note: After adding charge you must need to re-generate Bill.',
     ],
-
     // blood donors keys
     'blood_donor' => [
         'blood_donor' => 'Blood Donor',
@@ -715,7 +683,6 @@ return [
         'donation_date' => 'Donation Date',
         'last_donation_date' => 'Last Donation Date',
     ],
-
     // blood banks keys
     'hospital_blood_bank' => [
         'blood_bank' => 'Blood Bank',
@@ -726,7 +693,6 @@ return [
         'blood_group' => 'Blood Group',
         'remained_bags' => 'Remained Bags',
     ],
-
     //Case
     'case' => [
         'case' => 'Case',
@@ -743,7 +709,6 @@ return [
         'description' => 'Description',
         'case_date_should_not_be_smaller_than_patient_birth_date' => 'Case date should not be smaller than patient birth date',
     ],
-
     //services
     'service' => [
         'service' => 'Service',
@@ -755,7 +720,6 @@ return [
         'given' => 'Given',
         'not_given' => 'Not Given',
     ],
-
     //appointments
     'appointment' => [
         'new_appointment' => 'New Appointment',
@@ -802,27 +766,23 @@ return [
         'appointment_exists' => 'Appointment already exists',
         'old_patient_email_exists' => 'Email already exists, please select old patient.',
     ],
-
     'case_handler' => [
         'case_handler' => 'Case Handler',
         'new_case_handler' => 'New Case Handler',
         'edit_case_handler' => 'Edit Case Handler',
         'case_handler_detail' => 'Case Handler Details',
     ],
-
     'lab_tech' => [
         'lab_technician' => 'Lab Technician',
         'new_lab_tech' => 'New Lab Technician',
         'edit_lab_tech' => 'Edit Lab Technician',
         'lab_tech_detail' => 'Lab Technician Details',
     ],
-
     'doc_type' => [
         'new_doc_type' => 'New Document Type',
         'edit_doc_type' => 'Edit Document Type',
         'name' => 'Name',
     ],
-
     'document' => [
         'document' => 'Document',
         'documents' => 'Documents',
@@ -843,7 +803,6 @@ return [
         'validate_doc_type' => 'The document must be a file of type: jpeg, jpg, png, pdf, doc, docx, webp',
         'select_attachment' => 'Please select attachment.',
     ],
-
     'patient_admission' => [
         'patient_admission' => 'Patient Admission',
         'new_patient_admission' => 'New Patient Admission',
@@ -870,7 +829,6 @@ return [
         'admission_date_should_not_be_smaller_than_patient_birth_date' => 'Admission date should not be smaller than patient birth date',
         'Admission_field_required' => 'The Admission id field is required.'
     ],
-
     'setting' => [
         'app_name' => 'Application Name',
         'company_name' => 'Company Name',
@@ -888,7 +846,6 @@ return [
         'social_details' => 'Social Details',
         'country_code' => 'Country Code',
     ],
-
     'currency' => [
         'currency' => 'Currency',
         'new_currency' => 'New Currency',
@@ -900,7 +857,6 @@ return [
         'you_can_find_out_here' => 'you can find out here',
         'currency_setting_not_found' => 'Currency Setting not found',
     ],
-
     'schedule' => [
         'new' => 'New Schedule',
         'edit' => 'Edit Schedule',
@@ -921,7 +877,6 @@ return [
         'available_to_time_greater_than_zero' => 'Available To time must be greater than Zero',
         'available_time_less_than_hospital_schedule_time' => 'Available To time must be less than hospital schedule time',
     ],
-
     'notice_board' => [
         'notice_board' => 'Notice Board',
         'new' => 'New Notice Board',
@@ -931,7 +886,6 @@ return [
         'description' => 'Description',
         'created_at' => 'Created At',
     ],
-
     'my_payroll' => [
         'my_payrolls' => 'My Payrolls',
         'basic_salary' => 'Basic Salary',
@@ -971,7 +925,6 @@ return [
         'category_field_required' => 'The Category field is required',
         'brand_field_required' => 'The Brand  field is required.',
     ],
-
     'profile' => [
         'change_language' => 'Change Language',
         'language' => 'Language',
@@ -982,7 +935,6 @@ return [
         'phone' => 'Phone',
         'profile' => 'Profile',
     ],
-
     'dashboard' => [
         'dashboard' => 'Dashboard',
         'total_invoices' => 'Invoice Amount',
@@ -999,7 +951,6 @@ return [
         'no_enquiries_yet' => 'No Enquiries Yet',
         'no_notice_yet' => 'No Notice Yet',
     ],
-
     // enquiries keys
     'enquiry' => [
         'name' => 'Name',
@@ -1016,20 +967,17 @@ return [
         'send_enquiry' => 'Send Enquiry',
         'enquiry_send_successfully' => 'Enquiry send successfully',
     ],
-
     'email' => [
         'to' => 'To',
         'subject' => 'Subject',
         'message' => 'Message',
         'attachment' => 'Attachment',
     ],
-
     'verification' => [
         'verify_your_email_address' => 'Verify Your Email Address',
         'verify_message' => 'Before proceeding, please check your email for a verification link.If you did not receive the email,',
         'another_verify_request' => 'click here to request another',
     ],
-
     // ambulances keys
     'ambulance' => [
         'ambulance' => 'Ambulance',
@@ -1047,7 +995,6 @@ return [
         'new_ambulance' => 'New Ambulance',
         'edit_ambulance' => 'Edit Ambulance',
     ],
-
     // ambulance calls keys
     'ambulance_call' => [
         'ambulance_call' => 'Ambulance Call',
@@ -1061,7 +1008,6 @@ return [
         'new_ambulance_call' => 'New Ambulance Call',
         'edit_ambulance_call' => 'Edit Ambulance Call',
     ],
-
     // prescription keys
     'prescription' => [
         'prescription' => 'Prescription',
@@ -1107,7 +1053,6 @@ return [
         'month' => 'Month',
         'no_data_available' => 'No Data Available',
     ],
-
     'charge_category' => [
         'charge_categories' => 'Charge Categories',
         'new_charge_category' => 'New Charge Category',
@@ -1115,7 +1060,6 @@ return [
         'charge_type' => 'Charge Type',
         'charge_category_details' => 'Charge Category Details',
     ],
-
     'charge' => [
         'new_charge' => 'New Charge',
         'edit_charge' => 'Edit Charge',
@@ -1124,7 +1068,6 @@ return [
         'standard_charge' => 'Standard Charge',
         'code' => 'Code',
     ],
-
     // radiology keys
     'radiology_category' => [
         'name' => 'Name',
@@ -1132,7 +1075,6 @@ return [
         'new_radiology_category' => 'New Radiology Category',
         'edit_radiology_category' => 'Edit Radiology Category',
     ],
-
     // pathology keys
     'pathology_category' => [
         'pathology_categories' => 'Pathology Categories',
@@ -1141,7 +1083,6 @@ return [
         'name' => 'Name',
         'select_charge_category' => 'Select Charge Category',
     ],
-
     // radiology test keys
     'radiology_test' => [
         'radiology_tests' => 'Radiology Test',
@@ -1158,7 +1099,6 @@ return [
         'code' => 'Code',
         'standard_charge' => 'Standard Charge',
     ],
-
     //doctor opd charge keys
     'doctor_opd_charge' => [
         'doctor_opd_charge' => 'Doctor OPD Charge',
@@ -1168,7 +1108,6 @@ return [
         'standard_charge' => 'Standard Charge',
         'doctor' => 'Doctor',
     ],
-
     // pathology test keys
     'pathology_test' => [
         'pathology_tests' => 'Pathology Test',
@@ -1186,7 +1125,6 @@ return [
         'charge_category' => 'Charge Category',
         'standard_charge' => 'Standard Charge',
     ],
-
     //expenses keys
     'expense' => [
         'expense' => 'Expense',
@@ -1205,7 +1143,6 @@ return [
         'expense_details' => 'Expense Details',
         'document_error' => 'The document must be a file of type: jpeg, jpg, png, pdf, doc, docx.',
     ],
-
     //income keys
     'incomes' => [
         'incomes' => 'Incomes',
@@ -1224,7 +1161,6 @@ return [
         'income_details' => 'Income Details',
         'document_error' => 'The document must be a file of type: jpeg, jpg, png, pdf, doc, docx.',
     ],
-
     'bed_status' => [
         'bed_status' => 'Bed Status',
         'assigned_beds' => 'Assigned Beds',
@@ -1235,7 +1171,6 @@ return [
         'admission_date' => 'Admission Date',
         'gender' => 'Gender',
     ],
-
     //Messages keys
     'message' => [
         'message' => 'Message',
@@ -1248,7 +1183,6 @@ return [
         'date' => 'Date',
         'select_user' => 'Select User',
     ],
-
     //SMS keys
     'sms' => [
         'sms' => 'SMS',
@@ -1266,7 +1200,6 @@ return [
         'message_not_greater_than_160_characters' => 'The message may not be greater than 160 characters.',
         'set_credential' => 'Please set your credential',
     ],
-
     //Patient Diagnosis Test
     'patient_diagnosis_test' => [
         'diagnosis' => 'Diagnosis',
@@ -1299,7 +1232,6 @@ return [
         'cholesterol' => 'Cholesterol',
         'print_diagnosis_test' => 'Print Diagnosis Test',
     ],
-
     //Diagnosis Category
     'diagnosis_category' => [
         'diagnosis_category' => 'Diagnosis Category',
@@ -1310,7 +1242,6 @@ return [
         'diagnosis_category_details' => 'Diagnosis Category Details',
         'edit_diagnosis_category' => 'Edit Diagnosis Category',
     ],
-
     // Operation Category
     'operation_category' => [
         'operation_category' => 'Operation Category',
@@ -1319,7 +1250,6 @@ return [
         'edit_operation_category' => 'Edit Operation Category',
         'operation_category_field_required' => 'Operation category field is required.',
     ],
-
     // Operation
     'operation' => [
         'operation' => 'Operation',
@@ -1331,7 +1261,6 @@ return [
         'ot_technician' => 'OT Technician',
         'ot_assistant' => 'OT Assistant',
     ],
-
     // Inventory Management keys
     'item_category' => [
         'item_category' => 'Item Category',
@@ -1340,7 +1269,6 @@ return [
         'edit_item_category' => 'Edit Item Category',
         'name' => 'Name',
     ],
-
     'item' => [
         'item' => 'Item',
         'items' => 'Items',
@@ -1353,7 +1281,6 @@ return [
         'description' => 'Description',
         'available_quantity' => 'Available Quantity',
     ],
-
     'item_stock' => [
         'item_stock' => 'Item Stock',
         'item_stocks' => 'Item Stocks',
@@ -1369,7 +1296,6 @@ return [
         'description' => 'Description',
         'attachment' => 'Attachment',
     ],
-
     'issued_item' => [
         'issued_item' => 'Issued Item',
         'issued_items' => 'Issued Items',
@@ -1392,7 +1318,6 @@ return [
         'quantity_cannot_be_zero' => 'Quantity cannot be zero.',
         'quantity_must_be_less_than_available_quantity' => 'Quantity must be less than Available quantity.'
     ],
-
     'ipd_patient' => [
         'ipd_patient_in' => 'IPD - Patient In',
         'ipd_patient' => 'IPD Patient',
@@ -1421,7 +1346,6 @@ return [
         'the_bed_field_has_a_duplicate_value' => 'The bed field has a duplicate value',
         'the_bed_already_taken' => 'The Bed :input has already been taken',
     ],
-
     'ipd_patient_diagnosis' => [
         'new_ipd_diagnosis' => 'Add Diagnosis',
         'edit_ipd_diagnosis' => 'Edit Diagnosis',
@@ -1430,7 +1354,6 @@ return [
         'document' => 'Document',
         'description' => 'Description',
     ],
-
     'ipd_patient_consultant_register' => [
         'consultant_doctor' => 'Consultant Doctor',
         'consultant_instruction' => 'Consultant Instruction',
@@ -1446,7 +1369,6 @@ return [
         'anesthetist' => 'Anesthetist',
         'anesthesia_type' => 'Anesthesia Type',
     ],
-
     'ipd_patient_charges' => [
         'new_charge' => 'Add Charges',
         'edit_charge' => 'Edit Charges',
@@ -1457,12 +1379,10 @@ return [
         'standard_charge' => 'Standard Charge',
         'applied_charge' => 'Applied Charge',
     ],
-
     'ipd_operation' => [
         'ipd_operation' => 'IPD operation',
         'ipd_operation_created_successfully' => 'IPD operation created successfully',
     ],
-
     'ipd_patient_prescription' => [
         'ipd_no' => 'IPD No',
         'header_note' => 'Header Note',
@@ -1476,7 +1396,6 @@ return [
         'instruction' => 'Instruction',
         'print_prescription' => 'Print Prescription',
     ],
-
     'ipd_patient_timeline' => [
         'timeline' => 'Timeline',
         'new_ipd_timeline' => 'Add Timeline',
@@ -1488,14 +1407,12 @@ return [
         'visible_to_person' => 'Visible To Person',
         'no_timeline_found' => 'No TimeLine Found',
     ],
-
     'ipd_payments' => [
         'add_ipd_payment' => 'Add IPD Payment',
         'edit_ipd_payment' => 'Edit IPD Payment',
         'payment_mode' => 'Payment Mode',
         'make_payment' => 'Make Payment',
     ],
-
     'ipd_bill' => [
         'paid_amount' => 'Paid Amount',
         'total_charges' => 'Total Charges',
@@ -1508,7 +1425,6 @@ return [
         'net_payable_amount' => 'Net Payable Amount',
         'discharge_patient' => 'Discharge Patient',
     ],
-
     'opd_patient' => [
         'opd_patient_out' => 'OPD - Patient Out',
         'opd_patient' => 'OPD Patient',
@@ -1522,14 +1438,12 @@ return [
         'revisits' => 'Revisit',
         'total_visits' => 'Total Visits',
     ],
-
     'opd_payments' => [
         'add_opd_payment' => 'Add Opd Payment',
         'edit_opd_payment' => 'Edit Opd Payment',
         'payment_mode' => 'Payment Mode',
         'make_payment' => 'Make Payment',
     ],
-
     'call_log' => [
         'call_log' => 'Call Log',
         'new' => 'New Call Log',
@@ -1543,7 +1457,6 @@ return [
         'incoming' => 'Incoming',
         'outgoing' => 'Outgoing',
     ],
-
     'visitor' => [
         'visitor' => 'Visitor',
         'new' => 'New Visitor',
@@ -1558,7 +1471,6 @@ return [
         'out_time' => 'Out Time',
         'note' => 'Note',
     ],
-
     'postal' => [
         'postal' => 'Postal',
         'new_receive' => 'New Receive',
@@ -1575,7 +1487,6 @@ return [
         'validate_from_title' => 'The from title is required',
         'validate_to_title' => 'The to title is required.',
     ],
-
     'testimonial' => [
         'testimonial' => 'Testimonial',
         'new_testimonial' => 'New Testimonial',
@@ -1585,7 +1496,6 @@ return [
         'description' => 'Description',
         'profile_error' => 'The document must be a file of type: jpeg, jpg, png.',
     ],
-
     'blood_donation' => [
         'blood_donation' => 'Blood Donation',
         'new_blood_donation' => 'New Blood Donation',
@@ -1594,7 +1504,6 @@ return [
         'bags' => 'Bags',
         'last_donate_date' => 'Last donate date',
     ],
-
     'blood_issue' => [
         'blood_issue' => 'Blood Issue',
         'new_blood_issue' => 'New Blood Issue',
@@ -1606,7 +1515,6 @@ return [
         'amount' => 'Amount',
         'remarks' => 'Remarks',
     ],
-
     'notification' => [
         'all_notification_read_successfully' => 'All Notification Read successfully',
         'notification_read_successfully' => 'Notification Read successfully',
@@ -1614,7 +1522,6 @@ return [
         'mark_all_as_read' => 'Mark All As Read',
         'you_don`t_have_any_new_notification' => 'You don\'t have any new notification',
     ],
-
     'live_consultation' => [
         'live_consultation' => 'Live Consultancy',
         'new_live_consultation' => 'New Live Consultation',
@@ -1646,7 +1553,6 @@ return [
         'add_credentials_for_zoom_meeting' => 'Please, add credentials for zoom meeting.',
         'invalid_access_token' => 'Invalid access token.',
     ],
-
     'vaccination' => [
         'vaccinations' => 'Vaccination',
         'new_vaccination' => 'New Vaccination',
@@ -1656,7 +1562,6 @@ return [
         'brand' => 'Brand',
         'vaccinated' => 'Vaccinated',
     ],
-
     'vaccinated_patient' => [
         'vaccinated_patient' => 'Vaccinated Patient',
         'patient' => 'Patient',
@@ -1673,7 +1578,6 @@ return [
         'vaccinate_patient' => 'Vaccinate Patient',
         'already_registered_dose' => 'The patient is already registered with same vaccine and dose no',
     ],
-
     'front_setting' => [
         'front_setting_details' => 'Front Setting Details',
         'about_us_details' => 'About Us Details',
@@ -1730,20 +1634,17 @@ return [
         'about_us_mission_required' => 'About us mission field is not contain only white space',
 
     ],
-
     'change_password' => [
         'change_password' => 'Change Password',
         'current_password' => 'Current Password',
         'new_password' => 'New Password',
         'confirm_password' => 'Confirm Password',
     ],
-
     'front_services' => [
         'new_service' => 'New Service',
         'edit_service' => 'Edit Service',
         'select_icon_file' => 'Please select icon file',
     ],
-
     'web_home' => [
         'home' => 'Home',
         'services' => 'Services',
@@ -1778,12 +1679,10 @@ return [
         'our_testimonials' => 'Our Testimonials',
         'what_our_patient_say_about_medical_treatments' => 'What Our Patients Say About Our Medical Treatments',
     ],
-
     'web_password' => [
         'please_fill_all_the_required_fields' => 'Please fill all the required fields.',
         'password_and_confirm_password_not_match' => 'Password and Confirm password not match.',
     ],
-
     'web_contact' => [
         'call_today' => 'Call Today',
         'open_hours' => 'Open Hours',
@@ -1802,7 +1701,6 @@ return [
         'write_your_message' => 'Write your message',
         'type_your_message' => 'Type your message',
     ],
-
     'web_menu' => [
         'about' => 'About',
         'our_features' => 'Our Features',
@@ -1814,7 +1712,6 @@ return [
         'copyright' => 'Copyright',
         'all_rights_reserved_by' => 'All Rights Reserved by',
     ],
-
     'web_appointment' => [
         'make_an_appointment' => 'Make an Appointment',
         'call_now_and_get_a_free_consulting' => 'Call Now and Get a Free Consulting',
@@ -1827,7 +1724,6 @@ return [
         'enter_description' => 'Enter Description',
         'select_time' => 'Select Date',
     ],
-
     'web_working_hours' => [
         'opening_hours' => 'Opening Hours',
         'no_yet_opening_hours' => 'No yet Opening Hours',
@@ -1858,7 +1754,6 @@ return [
         'used_quantity' => 'Used Quantity',
         'used_at' => 'Used At',
     ],
-
     'medicine_bills' => [
         'medicine_bills' => 'Medicine Bills',
         'medicine_bill' => 'Medicine Bill',
@@ -1889,7 +1784,6 @@ return [
         'validate_quantity' => 'Quantity should be greater than 0.',
         'quantity_required' => 'Please enter quantity.',
     ],
-
     // subscription plan
     'subscription_plans' => [
         'payment_type' => 'Choose Payment Type',
@@ -1897,5 +1791,4 @@ return [
         'connected' => 'Connected',
         'select_ipd_patient' => 'Select IPD Patient',
     ],
-
 ];

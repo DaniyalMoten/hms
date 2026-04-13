@@ -1,16 +1,12 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Models\BedType;
 use Illuminate\Database\Seeder;
-
 class BedTypeTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     */
-    public function run(): void
+     */public function run(): void
     {
         $input = [
             [
@@ -38,7 +34,6 @@ class BedTypeTableSeeder extends Seeder
                 'description' => 'General Ward Male',
             ],
         ];
-
         foreach ($input as $data) {
             BedType::create($data);
         }

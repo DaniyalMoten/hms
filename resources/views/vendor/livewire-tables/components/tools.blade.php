@@ -1,5 +1,4 @@
 @aware(['component'])
-
 @php
     $theme = $component->getTheme();
 @endphp

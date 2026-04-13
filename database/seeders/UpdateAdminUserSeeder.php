@@ -1,11 +1,8 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Models\admin;
 use App\Models\User;
 use Illuminate\Database\Seeder;
-
 class UpdateAdminUserSeeder extends Seeder
 {
     /**

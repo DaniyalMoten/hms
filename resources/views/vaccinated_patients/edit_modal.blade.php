@@ -22,12 +22,10 @@
                         <span class="required"></span>
                         {{ Form::select('vaccination_id', $vaccinations, null, ['class' => 'form-control', 'required', 'id' => 'editVPatientVaccinationName', 'placeholder' => 'Select Vaccination', 'data-control' => 'select2']) }}
                     </div>
-
                     <div class="form-group col-sm-6 mb-5">
                         {{ Form::label('vaccination_serial_number', __('messages.vaccinated_patient.serial_no') . ':', ['class' => 'form-label']) }}
                         {{ Form::text('vaccination_serial_number', '', ['id' => 'editVPatientSerialNo', 'class' => 'form-control']) }}
                     </div>
-
                     <div class="form-group col-sm-6 mb-5">
                         {{ Form::label('dose_number', __('messages.vaccinated_patient.does_no') . ':', ['class' => 'form-label']) }}
                         <span class="required"></span>

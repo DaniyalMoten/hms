@@ -14,7 +14,6 @@
                    class="dropdown-item add-credential">{{ __('messages.live_consultation.add_credential') }}</a>
             </li>
         </ul>
-
         @if(isZoomTokenExpire())
             <a type="button" class="btn btn-success mr-5 ml-5" href="{{route('zoom.connect')}}">
                 {{ __('messages.subscription_plans.connect_with_zoom') }}

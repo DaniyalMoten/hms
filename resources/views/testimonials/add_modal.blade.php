@@ -29,7 +29,6 @@
                                 $style = 'style=';
                                 $background = 'background-image:';
                                 ?>
-
                                 <div class="image-picker">
                                     <div class="image previewImage" id="testimonialPreviewImage"
                                     {{$style}}"{{$background}} url({{ asset('assets/img/default_image.jpg')}}">

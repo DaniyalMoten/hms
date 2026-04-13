@@ -1,10 +1,7 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Models\FrontSetting;
 use Illuminate\Database\Seeder;
-
 class FrontSettingHomeTableSeeder extends Seeder
 {
     /**

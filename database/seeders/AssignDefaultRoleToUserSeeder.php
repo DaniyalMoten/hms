@@ -1,12 +1,9 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Models\Department;
 use App\Models\Permission;
 use App\Models\User;
 use Illuminate\Database\Seeder;
-
 class AssignDefaultRoleToUserSeeder extends Seeder
 {
     /**
@@ -28,10 +25,8 @@ class AssignDefaultRoleToUserSeeder extends Seeder
         $pharmacistRole = Department::whereName('Pharmacist')->first();
         /** @var Department $accountantRole */
         $accountantRole = Department::whereName('Accountant')->first();
-
         $adminPermissions = Permission::all();
         $adminRole->givePermissionTo($adminPermissions);
-
         $doctorPermissions = Permission::whereIn(
             'name',
             [
@@ -42,7 +37,6 @@ class AssignDefaultRoleToUserSeeder extends Seeder
             ]
         )->get();
         $doctorRole->givePermissionTo($doctorPermissions);
-
         $patientPermissions = Permission::whereIn(
             'name',
             [
@@ -52,7 +46,6 @@ class AssignDefaultRoleToUserSeeder extends Seeder
             ]
         )->get();
         $patientRole->givePermissionTo($patientPermissions);
-
         $nursePermissions = Permission::whereIn(
             'name',
             [
@@ -63,7 +56,6 @@ class AssignDefaultRoleToUserSeeder extends Seeder
             ]
         )->get();
         $nurseRole->givePermissionTo($nursePermissions);
-
         $receptionistPermissions = Permission::whereIn(
             'name',
             [
@@ -74,24 +66,20 @@ class AssignDefaultRoleToUserSeeder extends Seeder
             ]
         )->get();
         $receptionistRole->givePermissionTo($receptionistPermissions);
-
         $pharmacistPermissions = Permission::whereIn(
             'name',
             ['manage_notice_board', 'manage_pharmacists', 'manage_medicines']
         )->get();
         $pharmacistRole->givePermissionTo($pharmacistPermissions);
-
         $accountantPermissions = Permission::whereIn(
             'name',
             ['manage_notice_board', 'manage_pharmacists', 'manage_medicines']
         )->get();
         $accountantRole->givePermissionTo($accountantPermissions);
-
         $roleIds = [];
         if (! empty($adminRole)) {
             $roleIds = $adminRole->id;
         }
-
         /** @var User $user */
         $user = User::first();
         $user->roles()->sync($roleIds);

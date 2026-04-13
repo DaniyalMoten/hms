@@ -1,12 +1,9 @@
 <?php
-
 return [
-
     /*
     |--------------------------------------------------------------------------
     | All Titles and static string in blade files - German Language
     |--------------------------------------------------------------------------
-    |
     */
     //menu.blade keys
     'admin' => 'Admins',
@@ -150,7 +147,6 @@ return [
     'report_id' => 'Berichts-ID',
     'yearly_income_expense_chart' => 'Jährliches Einnahmen-Ausgaben-Diagramm',
     'sms_mail' => 'SMS/Mail',
-
     'language' => [
         'Arabic' => 'Arabisch',
         'Chinese' => 'Chinesisch',
@@ -162,14 +158,12 @@ return [
         'Spanish' => 'Spanisch',
         'Turkish' => 'Türkisch',
     ],
-
     //roles
     'role' => [
         'new_role' => 'Neue Rolle',
         'edit_role' => 'Rolle bearbeiten',
         'select_role' => 'Wählen Sie Rolle aus',
     ],
-
     //user keys
     'user' => [
         'user' => 'Benutzer',
@@ -216,7 +210,6 @@ return [
         'phone_number_must_be_10_digits' => 'Die Telefonnummer muss 10 Ziffern lang sein',
         'valid_email' => 'Bitte eine gültige Email eingeben',
     ],
-
     //common keys
     'common' => [
         'change' => 'Ändern',
@@ -300,13 +293,11 @@ return [
         'username_and_password_required' => 'Benutzername und Passwort erforderlich',
         'meeting_finished_or_cancelled' => 'Dieses Treffen wurde beendet oder abgesagt',
     ],
-
     'hospital_schedules' => [
         'exists_doctor_schedule' => 'Einige Ärzte haben ihre Tage in bestimmten ungeprüften Tagen geplant, also sind Sie sicher, dass Sie diese Operation durchführen möchten?',
         'schedule_not_available' => 'Aktuell kann der Benutzer keinen Krankenhausplan erstellen, wenn der Krankenhausplan nicht verfügbar ist.',
         'this_day_hospital_is_closed' => 'An diesem Tag ist das Krankenhaus geschlossen.',
     ],
-
     'months' => [
         'jan' => 'Januar',
         'feb' => 'Februar',
@@ -321,7 +312,6 @@ return [
         'nov' => 'November',
         'dec' => 'Dezember',
     ],
-
     'weekdays' => [
         'sun' => 'SONNE',
         'mon' => 'MO',
@@ -331,7 +321,6 @@ return [
         'fri' => 'FR',
         'sat' => 'SA',
     ],
-
     // receptionist keys
     'receptionist' => [
         'receptionist' => 'Rezeptionistin',
@@ -341,7 +330,6 @@ return [
         'edit_receptionist' => 'Empfangsdame bearbeiten',
         'profile_must_be_image' => 'Das Profilbild muss ein Bild sein',
     ],
-
     // insurance keys
     'insurance' => [
         'insurance' => 'Versicherung',
@@ -360,7 +348,6 @@ return [
         'diseases_charge' => 'Krankheitsgebühr',
         'total_amount' => 'Gesamtmenge',
     ],
-
     //doctor department
     'doctor_department' => [
         'doctor_departments' => 'Arztabteilungen',
@@ -372,7 +359,6 @@ return [
         'description' => 'Beschreibung',
         'doctor_field_required' => 'Das Feld „Arzt“ ist erforderlich'
     ],
-
     // investigation reports
     'investigation_report' => [
         'investigation_reports' => 'Untersuchungsberichte',
@@ -388,7 +374,6 @@ return [
         'attachment' => 'Anhang',
         'birth_date_validation' => 'Das Datum des Untersuchungsberichts sollte nicht kleiner sein als das Geburtsdatum des Patienten.',
     ],
-
     // pharmacist keys
     'pharmacist' => [
         'new_pharmacist' => 'Neuer Apotheker',
@@ -396,7 +381,6 @@ return [
         'pharmacists' => 'Apothekerinnen',
         'pharmacist_details' => 'Apotheker Details',
     ],
-
     // death reports keys
     'death_report' => [
         'death_report' => 'Todesbericht',
@@ -412,7 +396,6 @@ return [
         'cant_create_report_because_the_patient_has_been_dead' => 'Bericht kann nicht erstellt werden, da der Patient verstorben ist.',
         'data_should_not_be_smaller_than_patient_birth_date' => 'Das Datum darf nicht kleiner sein als das Geburtsdatum des Patienten.',
     ],
-
     // birth reports keys
     'birth_report' => [
         'birth_report' => 'Geburtsbericht',
@@ -428,7 +411,6 @@ return [
         'data_should_not_be_smaller_than_patient_birth_date' => 'Das Datum sollte nicht kleiner als das Geburtsdatum des Patienten sein.',
         'patient_birth_date_not_found' => 'Geburtsdatum des Patienten nicht gefunden.',
     ],
-
     // accountant keys
     'accountant' => [
         'new_accountant' => 'Neuer Buchhalter',
@@ -436,7 +418,6 @@ return [
         'accountants' => 'Buchhalterinnen',
         'accountant_details' => 'Buchhalter Details',
     ],
-
     // employee payroll keys
     'employee_payroll' => [
         'employee_payroll' => 'Mitarbeiterabrechnung',
@@ -460,7 +441,6 @@ return [
         'employees_list_not_found' => 'Mitarbeiterliste nicht gefunden',
         'employee_payroll_deduction' => 'Abzüge dürfen nicht größer sein als Grundgehalt + Zulage',
     ],
-
     // operation reports keys
     'operation_report' => [
         'operation_report' => 'Betriebsbericht',
@@ -475,7 +455,6 @@ return [
         'description' => 'Beschreibung',
         'data_should_not_be_smaller_than_patient_birth_date' => 'Das Datum darf nicht kleiner sein als das Geburtsdatum des Patienten.',
     ],
-
     // accounts keys
     'account' => [
         'account' => 'Konto',
@@ -491,7 +470,6 @@ return [
         'credit' => 'Anerkennung',
         'debit' => 'Lastschrift',
     ],
-
     // invoices keys
     'invoice' => [
         'invoice_id' => 'Rechnungs-ID',
@@ -523,7 +501,6 @@ return [
         'patient_overview' => 'PATIENTENÜBERSICHT',
         'in_percentage' => 'In Prozent',
     ],
-
     //nurses
     'nurse' => [
         'nurse' => 'Krankenschwester',
@@ -534,7 +511,6 @@ return [
         'birth_date' => 'Geburtsdatum',
         'choose' => 'Wählen',
     ],
-
     //patient
     'patient' => [
         'new_patient' => 'Neuer Patient',
@@ -547,7 +523,6 @@ return [
         'patient_name_already_taken' => 'Der Patientenname ist bereits vergeben',
         'patient_field_required' => 'Das Patientenfeld ist erforderlich',
     ],
-
     // payments keys
     'payment' => [
         'payment' => 'Zahlung',
@@ -565,7 +540,6 @@ return [
         'your_payment_is_successfully_completed' => 'Ihre Zahlung wurde erfolgreich abgeschlossen',
         'payment_failed' => 'Entschuldigung! Die Zahlung ist fehlgeschlagen. Bitte versuchen Sie es später erneut',
     ],
-
     // advanced payments keys
     'advanced_payment' => [
         'advanced_payment' => 'Vorauszahlung',
@@ -579,7 +553,6 @@ return [
         'date' => 'Datum',
         'patient_name' => 'Patientenname',
     ],
-
     // beds keys
     'bed' => [
         'bed' => 'Neues Bett',
@@ -598,7 +571,6 @@ return [
         'bed_id' => 'Bett Id',
         'select_bed_type' => 'Wählen Sie den Betttyp aus',
     ],
-
     // bed types keys
     'bed_type' => [
         'bed_type' => 'Betttyp',
@@ -609,7 +581,6 @@ return [
         'title' => 'Titel',
         'description' => 'Beschreibung',
     ],
-
     'doctor' => [
         'new_doctor' => 'Neuer Doktor',
         'edit_doctor' => 'Doktor bearbeiten',
@@ -617,7 +588,6 @@ return [
         'specialist' => 'Spezialistin',
         'doctor_name_already_taken' => 'Der Name des Arztes ist bereits vergeben'
     ],
-
     // bed assigns keys
     'bed_assign' => [
         'bed_assign' => 'Bett zuweisen',
@@ -638,7 +608,6 @@ return [
         'assign_date_should_not_be_smaller_than_patient_birth_date' => 'Das Zuweisungsdatum sollte nicht kleiner als das Geburtsdatum des Patienten sein.',
         'ipd_patient_department_field_required' => 'Das Feld IPD-Patientenabteilung ist erforderlich',
     ],
-
     // packages keys
     'package' => [
         'package' => 'Paket',
@@ -656,7 +625,6 @@ return [
         'amount' => 'Menge',
         'select_service' => 'Wählen Sie Service',
     ],
-
     // bills keys
     'bill' => [
         'print_bill' => 'Rechnung drucken',
@@ -694,7 +662,6 @@ return [
         'update_bill' => 'Rechnung aktualisieren',
         'calculate' => 'Berechnung',
     ],
-
     // blood donors keys
     'blood_donor' => [
         'blood_donor' => 'Blutspender',
@@ -709,7 +676,6 @@ return [
         'donation_date' => 'Spendendatum',
         'last_donation_date' => 'Letztes Spendendatum',
     ],
-
     // blood banks keys
     'hospital_blood_bank' => [
         'blood_bank' => 'Blutbank',
@@ -720,7 +686,6 @@ return [
         'blood_group' => 'Blutgruppe',
         'remained_bags' => 'Verbleibende Taschen',
     ],
-
     //Case
     'case' => [
         'case' => 'Fall',
@@ -737,7 +702,6 @@ return [
         'description' => 'Beschreibung',
         'case_date_should_not_be_smaller_than_patient_birth_date' => 'Das Fall-Datum sollte nicht kleiner sein als das Geburtsdatum des Patienten',
     ],
-
     //services
     'service' => [
         'service' => 'Dienstleistung',
@@ -749,7 +713,6 @@ return [
         'given' => 'Gegeben',
         'not_given' => 'Nicht angegeben',
     ],
-
     //appointments
     'appointment' => [
         'new_appointment' => 'Neuer Termin',
@@ -796,27 +759,23 @@ return [
         'appointment_exists' => 'Patienten-E-Mail existiert bereits',
         'old_patient_email_exists' => 'E-Mail existiert bereits, bitte alten Patienten auswählen.',
     ],
-
     'case_handler' => [
         'case_handler' => 'Fallbearbeiter',
         'new_case_handler' => 'Neuer Case Handler',
         'edit_case_handler' => 'Fallbearbeiter bearbeiten',
         'case_handler_detail' => 'Details zur Fallbearbeitung',
     ],
-
     'lab_tech' => [
         'lab_technician' => 'Labortechniker',
         'new_lab_tech' => 'Neuer Labortechniker',
         'edit_lab_tech' => 'Labortechniker bearbeiten',
         'lab_tech_detail' => 'Details zum Labortechniker',
     ],
-
     'doc_type' => [
         'new_doc_type' => 'Neuer Dokumenttyp',
         'edit_doc_type' => 'Dokumenttyp bearbeiten',
         'name' => 'Name',
     ],
-
     'document' => [
         'document' => 'Dokumentieren',
         'new_document' => 'Neues Dokument',
@@ -839,7 +798,6 @@ return [
         'validate_doc_type' => 'Das Dokument muss eine Datei vom Typ: jpeg, jpg, png, pdf, doc, docx, webp sein',
         'select_attachment' => 'Bitte Anhang auswählen.',
     ],
-
     'patient_admission' => [
         'patient_admission' => 'Patientenaufnahme',
         'new_patient_admission' => 'Neue Patientenaufnahme',
@@ -866,7 +824,6 @@ return [
         'admission_date_should_not_be_smaller_than_patient_birth_date' => 'Das Aufnahmedatum darf nicht kleiner sein als das Geburtsdatum des Patienten',
         'Admission_field_required' => 'Das Feld „Zulassungs-ID“ ist erforderlich.'
     ],
-
     'setting' => [
         'app_name' => 'Anwendungsname',
         'company_name' => 'Firmenname',
@@ -884,7 +841,6 @@ return [
         'social_details' => 'Soziale Details',
         'country_code' => 'Ländervorwahl',
     ],
-
     'currency' => [
         'currency' => 'Währung',
         'new_currency' => 'Neue Währung',
@@ -896,7 +852,6 @@ return [
         'you_can_find_out_here' => 'das erfährst du hier',
         'currency_setting_not_found' => 'Währungseinstellung nicht gefunden',
     ],
-
     'schedule' => [
         'new' => 'Neue Terminplanung',
         'edit' => 'Zeitplan bearbeiten',
@@ -917,7 +872,6 @@ return [
         'available_to_time_greater_than_zero' => 'Verfügbare bis Uhrzeit muss größer als Null sein',
         'available_time_less_than_hospital_schedule_time' => 'Verfügbare bis Uhrzeit muss kleiner sein als die Krankenhaus-Öffnungszeit',
     ],
-
     'notice_board' => [
         'notice_board' => 'Schild',
         'new' => 'Neues Schwarzes Brett',
@@ -927,7 +881,6 @@ return [
         'description' => 'Beschreibung',
         'created_at' => 'hergestellt in',
     ],
-
     'my_payroll' => [
         'my_payrolls' => 'Meine Gehaltsabrechnungen',
         'basic_salary' => 'Grundgehalt',
@@ -935,7 +888,6 @@ return [
         'deductions' => 'Abzüge',
         'net_salary' => 'Nettogehalt',
     ],
-
     'medicine' => [
         'medicine' => 'Medizin',
         'medicine_category' => 'Medizin Kategorie',
@@ -972,7 +924,6 @@ return [
         'category_field_required' => 'Das Feld „Kategorie“ ist erforderlich',
         'brand_field_required' => 'Das Feld „Marke“ ist erforderlich.',
     ],
-
     'profile' => [
         'change_language' => 'Sprache ändern',
         'language' => 'Sprache',
@@ -983,7 +934,6 @@ return [
         'phone' => 'Telefon',
         'profile' => 'Profil',
     ],
-
     'dashboard' => [
         'dashboard' => 'Instrumententafel',
         'total_invoices' => 'Rechnungsbetrag',
@@ -1000,7 +950,6 @@ return [
         'no_enquiries_yet' => 'Noch keine Anfragen',
         'no_notice_yet' => 'Noch keine Ankündigung',
     ],
-
     // enquiries keys
     'enquiry' => [
         'name' => 'Name',
@@ -1017,20 +966,17 @@ return [
         'send_enquiry' => 'Anfrage absenden',
         'enquiry_send_successfully' => 'Anfrage erfolgreich gesendet',
     ],
-
     'email' => [
         'to' => 'Zu',
         'subject' => 'Gegenstand',
         'message' => 'Botschaft',
         'attachment' => 'Anhänge',
     ],
-
     'verification' => [
         'verify_your_email_address' => 'Bestätige deine Email-Adresse.',
         'verify_message' => 'Bevor Sie fortfahren, überprüfen Sie bitte Ihre E-Mail auf einen Bestätigungslink. Wenn Sie die E-Mail nicht erhalten haben,',
         'another_verify_request' => 'Klicken Sie hier, um eine weitere anzufordern',
     ],
-
     // ambulances keys
     'ambulance' => [
         'ambulance' => 'Krankenwagen',
@@ -1048,7 +994,6 @@ return [
         'new_ambulance' => 'Neuer Krankenwagen',
         'edit_ambulance' => 'Krankenwagen bearbeiten',
     ],
-
     // ambulance calls keys
     'ambulance_call' => [
         'ambulance_call' => 'Krankenwagenanruf',
@@ -1062,7 +1007,6 @@ return [
         'new_ambulance_call' => 'Neuer Krankenwagenanruf',
         'edit_ambulance_call' => 'Krankenwagenanruf bearbeiten',
     ],
-
     // prescription keys
     'prescription' => [
         'reference_id' => 'Referenz ID',
@@ -1107,7 +1051,6 @@ return [
         'before_meal' => 'vor dem Essen',
         'no_data_available' => 'keine Daten gefunden',
     ],
-
     'charge_category' => [
         'charge_categories' => 'Gebührenkategorien',
         'new_charge_category' => 'Neue Gebührenkategorie',
@@ -1115,7 +1058,6 @@ return [
         'charge_type' => 'Ladungsart',
         'charge_category_details' => 'Details zur Gebührenkategorie',
     ],
-
     'charge' => [
         'new_charge' => 'Neue Gebühr',
         'edit_charge' => 'Gebühr bearbeiten',
@@ -1124,7 +1066,6 @@ return [
         'standard_charge' => 'Normaltarif',
         'code' => 'Code',
     ],
-
     // radiology keys
     'radiology_category' => [
         'name' => 'Name',
@@ -1132,7 +1073,6 @@ return [
         'new_radiology_category' => 'Neu Radiologie Kategorie',
         'edit_radiology_category' => 'Bearbeiten Radiologie Kategorie',
     ],
-
     // pathology keys
     'pathology_category' => [
         'pathology_categories' => 'Pathologiekategorien',
@@ -1141,7 +1081,6 @@ return [
         'name' => 'Name',
         'select_charge_category' => 'Gebührenkategorie auswählen',
     ],
-
     // radiology test keys
     'radiology_test' => [
         'radiology_tests' => 'Radiologische Tests',
@@ -1158,7 +1097,6 @@ return [
         'code' => 'Code',
         'standard_charge' => 'Normaltarif',
     ],
-
     //doctor opd charge keys
     'doctor_opd_charge' => [
         'doctor_opd_charge' => 'OPD-Gebühr des Arztes',
@@ -1169,7 +1107,6 @@ return [
         'standard_charge' => 'Normaltarif',
         'doctor' => 'Arzt',
     ],
-
     // pathology test keys
     'pathology_test' => [
         'pathology_tests' => 'Pathologie Tests',
@@ -1186,9 +1123,7 @@ return [
         'report_days' => 'Tage melden',
         'charge_category' => 'Gebührenkategorie',
         'standard_charge' => 'Normaltarif',
-
     ],
-
     //expenses keys
     'expense' => [
         'expense' => 'Aufwand',
@@ -1207,7 +1142,6 @@ return [
         'select_expense_head' => 'Wählen Sie Expense Head',
         'document_error' => 'Das Dokument muss eine Dateityp sein: jpeg, jpg, png, pdf, doc, docx.',
     ],
-
     //income keys
     'incomes' => [
         'incomes' => 'Einkommen',
@@ -1226,7 +1160,6 @@ return [
         'select_income_head' => 'Wählen Sie Income Head',
         'document_error' => 'Das Dokument muss eine Dateityp sein: jpeg, jpg, png, pdf, doc, docx.',
     ],
-
     'bed_status' => [
         'bed_status' => 'Bettstatus',
         'assigned_beds' => 'Zugewiesene Betten',
@@ -1237,7 +1170,6 @@ return [
         'admission_date' => 'Aufnahmedatum',
         'gender' => 'Geschlecht',
     ],
-
     //Messages keys
     'message' => [
         'message' => 'Botschaft',
@@ -1250,7 +1182,6 @@ return [
         'date' => 'Datum',
         'select_user' => 'Wähle den Benutzer',
     ],
-
     //SMS keys
     'sms' => [
         'sms' => 'SMS',
@@ -1268,7 +1199,6 @@ return [
         'message_not_greater_than_160_characters' => 'Die Nachricht darf nicht mehr als 160 Zeichen enthalten.',
         'set_credential' => 'Bitte setzen Sie Ihre Anmeldeinformationen.',
     ],
-
     //Patient Diagnosis Test
     'patient_diagnosis_test' => [
         'diagnosis' => 'Diagnose',
@@ -1301,7 +1231,6 @@ return [
         'cholesterol' => 'Cholesterin',
         'print_diagnosis_test' => 'Diagnosetest drucken',
     ],
-
     //Diagnosis Category
     'diagnosis_category' => [
         'diagnosis_category' => 'Diagnosekategorie',
@@ -1312,7 +1241,6 @@ return [
         'diagnosis_category_details' => 'Details zur Diagnosekategorie',
         'edit_diagnosis_category' => 'Diagnosekategorie bearbeiten',
     ],
-
     // Operation Category
     'operation_category' => [
         'operation_category' => 'Betriebskategorie',
@@ -1321,7 +1249,6 @@ return [
         'edit_operation_category' => 'Kategorie bearbeiten',
         'operation_category_field_required' => 'Das Feld „Vorgangskategorie“ ist erforderlich.',
     ],
-
     // Operation
     'operation' => [
         'operation' => 'Betrieb',
@@ -1333,7 +1260,6 @@ return [
         'ot_technician' => 'OT-Techniker',
         'ot_assistant' => 'OT-Assistent',
     ],
-
     // Inventory Management keys
     'item_category' => [
         'item_category' => 'Artikel kategorie',
@@ -1342,7 +1268,6 @@ return [
         'edit_item_category' => 'Artikel kategorie bearbeiten',
         'name' => 'Name',
     ],
-
     'item' => [
         'item' => 'Artikel',
         'items' => 'Artikel',
@@ -1355,7 +1280,6 @@ return [
         'description' => 'Beschreibung',
         'available_quantity' => 'Verfügbar Menge',
     ],
-
     'item_stock' => [
         'item_stock' => 'Artikel Lager',
         'item_stocks' => 'Artikel Bestände',
@@ -1371,7 +1295,6 @@ return [
         'description' => 'Beschreibung',
         'attachment' => 'Anhang',
     ],
-
     'issued_item' => [
         'issued_item' => 'Ausgestelltes Objekt',
         'issued_items' => 'Ausgestellte Artikel',
@@ -1394,7 +1317,6 @@ return [
         'quantity_cannot_be_zero' => 'Die Menge darf nicht null sein.',
         'quantity_must_be_less_than_available_quantity' => 'Die Menge muss kleiner sein als die verfügbare Menge.',
     ],
-
     'ipd_patient' => [
         'ipd_patient_in' => 'IPD - Patientin',
         'ipd_patient' => 'IPD Patient',
@@ -1423,7 +1345,6 @@ return [
         'the_bed_type_is_required' => 'Das Feld „Bettentyp“ ist erforderlich.',
         'charge_required' => 'Kostenfeld erforderlich.',
     ],
-
     'ipd_patient_diagnosis' => [
         'new_ipd_diagnosis' => 'Diagnose hinzufügen',
         'edit_ipd_diagnosis' => 'Diagnose bearbeiten',
@@ -1432,7 +1353,6 @@ return [
         'document' => 'Dokument',
         'description' => 'Beschreibung',
     ],
-
     'ipd_patient_consultant_register' => [
         'consultant_instruction' => 'Beraterinstruktion',
         'consultant_doctor' => 'Beratender Arzt',
@@ -1448,7 +1368,6 @@ return [
         'anesthetist' => 'Anästhesist',
         'anesthesia_type' => 'Anästhesietyp',
     ],
-
     'ipd_patient_charges' => [
         'new_charge' => 'Gebühren hinzufügen',
         'date' => 'Datum',
@@ -1458,7 +1377,6 @@ return [
         'standard_charge' => 'Standardgebühr',
         'applied_charge' => 'Angewandte Gebühr',
     ],
-
     'ipd_patient_prescription' => [
         'ipd_no' => 'IPD Nr',
         'header_note' => 'Header Hinweis',
@@ -1472,7 +1390,6 @@ return [
         'instruction' => 'Anweisung',
         'print_prescription' => 'Rezept drucken',
     ],
-
     'ipd_patient_timeline' => [
         'timeline' => 'Zeitleiste',
         'new_ipd_timeline' => 'Timeline hinzufügen',
@@ -1484,21 +1401,18 @@ return [
         'visible_to_person' => 'Für die Person sichtbar',
         'no_timeline_found' => 'Keine Zeitleiste gefunden',
     ],
-
     'ipd_operation' => [
         'ipd_operation' => 'IPD-Operation',
         'ipd_operation_created_successfully' => 'IPD-Operation erfolgreich erstellt',
         'operation_field_required' => 'Das Operationsfeld ist erforderlich.',
         'select_operation_date' => 'Bitte wählen Sie das Operationsdatum aus.'
     ],
-
     'ipd_payments' => [
         'add_ipd_payment' => 'Ipd-Zahlung hinzufügen',
         'edit_ipd_payment' => 'IPD-Zahlung bearbeiten',
         'payment_mode' => 'Zahlungsart',
         'make_payment' => 'Zahlung leisten',
     ],
-
     'ipd_bill' => [
         'paid_amount' => 'Bezahlte Menge',
         'total_charges' => 'Gesamte Gebühren',
@@ -1510,7 +1424,6 @@ return [
         'other_charges' => 'Zusatzgebühren',
         'net_payable_amount' => 'Nettobetrag',
     ],
-
     'opd_patient' => [
         'opd_patient_out' => 'OPD – Patient aus',
         'opd_patient' => 'OPD Patient',
@@ -1524,14 +1437,12 @@ return [
         'revisits' => 'Wiederholen',
         'total_visits' => 'Gesamtzahl der Besuche',
     ],
-
     'opd_payments' => [
         'add_opd_payment' => 'Opd Payment hinzufügen',
         'edit_opd_payment' => 'Opd Payment bearbeiten',
         'payment_mode' => 'Zahlungsart',
         'make_payment' => 'Zahlung leisten',
     ],
-
     'call_log' => [
         'call_log' => 'Anrufliste',
         'new' => 'Neues Anrufprotokoll',
@@ -1545,7 +1456,6 @@ return [
         'incoming' => 'Eingehend',
         'outgoing' => 'Ausgehend',
     ],
-
     'visitor' => [
         'visitor' => 'Besucherin',
         'new' => 'Neuer Besucher',
@@ -1560,7 +1470,6 @@ return [
         'out_time' => 'aus der Zeit',
         'note' => 'Hinweis',
     ],
-
     'postal' => [
         'postal' => 'Post',
         'new_receive' => 'Neu empfangen',
@@ -1577,7 +1486,6 @@ return [
         'validate_from_title' => 'Der Absendertitel ist erforderlich.',
         'validate_to_title' => 'Der Empfängertitel ist erforderlich.',
     ],
-
     'testimonial' => [
         'testimonial' => 'Zeugnis',
         'new_testimonial' => 'Neu Zeugnis',
@@ -1587,7 +1495,6 @@ return [
         'description' => 'Beschreibung',
         'profile_error' => 'Das Dokument muss eine Datei vom Typ sein: jpeg, jpg, png.',
     ],
-
     'blood_donation' => [
         'blood_donation' => 'Blutspende',
         'new_blood_donation' => 'Neue Blutspende',
@@ -1596,7 +1503,6 @@ return [
         'bags' => 'Taschen',
         'last_donate_date' => 'Letztes Spendendatum',
     ],
-
     'blood_issue' => [
         'blood_issue' => 'Blutproblem',
         'new_blood_issue' => 'Neues Blutproblem',
@@ -1608,7 +1514,6 @@ return [
         'amount' => 'Menge',
         'remarks' => 'Bemerkungen',
     ],
-
     'notification' => [
         'all_notification_read_successfully' => 'Alle Benachrichtigungen wurden erfolgreich gelesen',
         'notification_read_successfully' => 'Benachrichtigung wurde erfolgreich gelesen',
@@ -1616,7 +1521,6 @@ return [
         'mark_all_as_read' => 'Markiere alle als gelesen',
         'you_don`t_have_any_new_notification' => 'Sie haben keine neue Benachrichtigung',
     ],
-
     'live_consultation' => [
         'live_consultation' => 'Live-Beratung',
         'new_live_consultation' => 'Neue Live-Beratung',
@@ -1647,7 +1551,6 @@ return [
         'user_zoom_credential_saved' => 'Zoom-Anmeldeinformationen des Benutzers erfolgreich gespeichert.',
         'add_credentials_for_zoom_meeting' => 'Bitte fügen Sie Anmeldeinformationen für das Zoom-Meeting hinzu.',
     ],
-
     'vaccination' => [
         'vaccinations' => 'Impfungen',
         'new_vaccination' => 'Neue Impfung',
@@ -1657,7 +1560,6 @@ return [
         'brand' => 'Marke',
         'vaccinated' => 'Geimpft',
     ],
-
     'vaccinated_patient' => [
         'vaccinated_patient' => 'Geimpfter Patient',
         'patient' => 'Geduldig',
@@ -1673,7 +1575,6 @@ return [
         'vaccinate_patient' => 'Patienten impfen',
         'already_registered_dose' => 'Der Patient ist bereits mit demselben Impfstoff und derselben Dosis registriert.',
     ],
-
     'front_setting' => [
         'about_us_title' => 'Titel',
         'about_us_mission' => 'Mission',
@@ -1729,20 +1630,17 @@ return [
         'about_us_description_required' => 'Das Feld "Beschreibung Über uns" darf nicht nur Leerzeichen enthalten',
         'about_us_mission_required' => 'Das Feld "Mission Über uns" darf nicht nur Leerzeichen enthalten',
     ],
-
     'change_password' => [
         'change_password' => 'Kennwort ändern',
         'current_password' => 'Jetziges Passwort',
         'new_password' => 'Neues Kennwort',
         'confirm_password' => 'Kennwort bestätigen',
     ],
-
     'front_services' => [
         'new_service' => 'Neuer Dienst',
         'edit_service' => 'Dienst bearbeiten',
         'select_icon_file' => 'Bitte wählen Sie die Symboldatei aus',
     ],
-
     'web_home' => [
         'home' => 'Heim',
         'services' => 'Dienstleistungen',
@@ -1777,12 +1675,10 @@ return [
         'our_testimonials' => 'Unsere Erfahrungsberichte',
         'what_our_patient_say_about_medical_treatments' => 'Was unsere Patienten über unsere medizinischen Behandlungen sagen',
     ],
-
     'web_password' => [
         'please_fill_all_the_required_fields' => 'Bitte füllen Sie alle Pflichtfelder aus.',
         'password_and_confirm_password_not_match' => 'Passwort und Passwort bestätigen stimmen nicht überein.',
     ],
-
     'web_contact' => [
         'call_today' => 'Ruf heute an',
         'open_hours' => 'Öffnungszeiten',
@@ -1801,7 +1697,6 @@ return [
         'write_your_message' => 'Schreibe deine Nachricht',
         'type_your_message' => 'Geben Sie Ihre Nachricht ein',
     ],
-
     'web_menu' => [
         'about' => 'Über',
         'our_features' => 'Unsere Funktionen',
@@ -1813,7 +1708,6 @@ return [
         'copyright' => 'Urheberrechte ©',
         'all_rights_reserved_by' => 'Alle Rechte vorbehalten von',
     ],
-
     'web_appointment' => [
         'make_an_appointment' => 'Einen Termin machen',
         'call_now_and_get_a_free_consulting' => 'Rufen Sie jetzt an und lassen Sie sich kostenlos beraten',
@@ -1826,12 +1720,10 @@ return [
         'enter_description' => 'Beschreibung eingeben',
         'select_time' => 'Wählen Sie Zeit',
     ],
-
     'web_working_hours' => [
         'opening_hours' => 'Öffnungszeiten',
         'no_yet_opening_hours' => 'Noch keine Öffnungszeiten',
     ],
-
     'purchase_medicine' => [
         'purchase_number' => 'Kaufnummer',
         'total' => 'Gesamt',
@@ -1853,13 +1745,11 @@ return [
         'dose_duration' => 'Dosisdauer',
         'medicine_purchased_successfully' => 'Medikament erfolgreich gekauft',
     ],
-
     'used_medicine' => [
         'used_medicine' => 'Gebrauchte Medizin',
         'used_quantity' => 'Gebrauchte Menge',
         'used_at' => 'Verwendet bei',
     ],
-
     'medicine_bills' => [
         'medicine_bills' => 'Medikamentenabrechnungen',
         'medicine_bill' => 'Medikamentenabrechnung',
@@ -1890,7 +1780,6 @@ return [
         'validate_quantity' => 'Die Menge sollte größer als 0 sein.',
         'quantity_required' => 'Bitte geben Sie die Menge ein.',
     ],
-
     'subscription_plans' => [
         'payment_type' => 'Zahlungsart auswählen',
         'connect_with_zoom' => 'Mit Zoom verbinden',

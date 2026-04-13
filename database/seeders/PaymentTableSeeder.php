@@ -1,11 +1,8 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Models\Payment;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
-
 class PaymentTableSeeder extends Seeder
 {
     /**
@@ -29,7 +26,6 @@ class PaymentTableSeeder extends Seeder
                 'amount' => 2000,
             ],
         ];
-
         foreach ($input as $data) {
             Payment::create($data);
         }

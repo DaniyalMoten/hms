@@ -1,10 +1,7 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Models\RadiologyCategory;
 use Illuminate\Database\Seeder;
-
 class RadiologyCategoryTableSeeder extends Seeder
 {
     /**
@@ -29,7 +26,6 @@ class RadiologyCategoryTableSeeder extends Seeder
                 'name' => 'ECG',
             ],
         ];
-
         foreach ($input as $data) {
             RadiologyCategory::create($data);
         }

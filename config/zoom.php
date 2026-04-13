@@ -1,5 +1,4 @@
 <?php
-
 return [
     'api_key' => env('ZOOM_CLIENT_KEY'),
     'api_secret' => env('ZOOM_CLIENT_SECRET'),

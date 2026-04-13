@@ -10,7 +10,6 @@
     <link rel="canonical" href="{{ route('front') }}"/>
     <link rel="stylesheet" href="{{ asset('favicon.ico') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700"/>
-
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/third-party.css')  }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css')  }}">
     <link href="{{ asset(mix('/assets/css/custom-auth.css')) }}" rel="stylesheet" type="text/css"/>
@@ -32,8 +31,6 @@
     $(document).ready(function () {
         $('.alert').delay(5000).slideUp(300)
     })
-    
-
     $(document).on('click', '.language-select', function () {
         let languageName = $(this).data('id');
         $.ajax({
@@ -45,7 +42,6 @@
             },
         });
     })
-
 </script>
 </body>
 </html>

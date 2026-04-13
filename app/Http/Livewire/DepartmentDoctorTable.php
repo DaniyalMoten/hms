@@ -1,17 +1,12 @@
 <?php
-
 namespace App\Http\Livewire;
-
 use App\Models\Doctor;
 use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-
 class DepartmentDoctorTable extends LivewireTableComponent
 {
     protected $model = Doctor::class;
-
     public $doctorDepartmentId;
-
     public function configure(): void
     {
         $this->setQueryStringStatus(false);
@@ -22,16 +17,13 @@ class DepartmentDoctorTable extends LivewireTableComponent
                     'class' => 'pt-5',
                 ];
             }
-
             return [];
         });
     }
-
     public function mount(string $doctorDepartmentId): void
     {
         $this->doctorDepartmentId = $doctorDepartmentId;
     }
-
     public function columns(): array
     {
         return [
@@ -53,12 +45,10 @@ class DepartmentDoctorTable extends LivewireTableComponent
                 ->sortable(),
         ];
     }
-
     public function builder(): Builder
     {
         /** @var Doctor $query */
         $query = Doctor::with('doctorUser')->where('doctor_department_id', $this->doctorDepartmentId);
-
         return $query;
     }
 }

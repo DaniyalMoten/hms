@@ -22,4 +22,3 @@
 @section('scripts')
     {{-- assets/js/testimonials/testimonial.js --}}
 @endsection
-

@@ -1,7 +1,5 @@
 {{ Form::hidden('medicine_bill', isset($medicineBill) ? $medicineBill->id : null, ['id' => 'medicineBillId']) }}
-
 {{ Form::hidden('medicine_bill_status', isset($medicineBill) ? $medicineBill->payment_status : null, ['id' => 'medicineBillStatus']) }}
-
 <div class="row">
     <div class="row">
         <div class="form-group col-md-3 mb-5">
@@ -33,7 +31,6 @@
         </div>
     </div>
 </div>
-
 <div class="row">
     <div class="col-sm-12">
         <div class="table-responsive-sm medicinePurchaseCreateTable">

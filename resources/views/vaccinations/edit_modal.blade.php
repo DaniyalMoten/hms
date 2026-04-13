@@ -18,13 +18,11 @@
                         <span class="required"></span>
                         {{ Form::text('name', null, ['id'=>'editVaccinationName','class' => 'form-control','required']) }}
                     </div>
-
                     <div class="form-group col-sm-12 mb-5">
                         {{ Form::label('manufactured_by', __('messages.vaccination.manufactured_by').(':'),['class' => 'form-label']) }}
                         <span class="required"></span>
                         {{ Form::text('manufactured_by', null, ['id'=>'editVaccinationManufacturedBy','class' => 'form-control','required']) }}
                     </div>
-
                     <div class="form-group col-sm-12 mb-5">
                         {{ Form::label('brand', __('messages.vaccination.brand').(':'),['class' => 'form-label']) }}
                         <span class="required"></span>

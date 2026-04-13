@@ -27,9 +27,7 @@
                 {{Form::hidden('')}}
                 <div class="card-body p-12">
                     {{ Form::open(['route' => 'patient-admissions.store', 'id' => 'createPatientAdmission']) }}
-
                     @include('patient_admissions.fields')
-
                     {{ Form::close() }}
                 </div>
             </div>

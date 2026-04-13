@@ -1,10 +1,7 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Models\Charge;
 use Illuminate\Database\Seeder;
-
 class ChargeTableSeeder extends Seeder
 {
     /**
@@ -28,7 +25,6 @@ class ChargeTableSeeder extends Seeder
                 'description' => null,
             ],
         ];
-
         foreach ($input as $data) {
             Charge::create($data);
         }

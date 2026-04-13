@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Http\Requests\CreateAdminRequest;
 use App\Http\Requests\UpdateAdminRequest;
 use App\Models\admin;
@@ -10,7 +8,6 @@ use App\Repositories\adminRepository;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 use Laracasts\Flash\Flash;
-
 class adminController extends AppBaseController
 {
     /** @var adminRepository */
@@ -20,36 +17,27 @@ class adminController extends AppBaseController
     {
         $this->adminRepository = $adminRepo;
     }
-
     public function index()
     {
         return view('admins.index');
     }
-
     public function create()
     {
         $bloodGroup = getBloodGroups();
-
         return view('admins.create', compact('bloodGroup'));
     }
-
     public function store(CreateAdminRequest $request)
     {
         $input = $request->all();
         $input['status'] = isset($input['status']) ? 1 : 0;
-
         $this->adminRepository->store($input);
-
         Flash::success(__('messages.admin').' '.__('messages.common.saved_successfully'));
-
         return redirect(route('admins.index'));
     }
-
     public function show($id)
     {
         $admin = $this->adminRepository->find($id);
         //        $admin = admin::where('id', $id)->with('user')->first();
-
         if (empty($admin) && $admin->owner_type != \App\Models\admin::class) {
             return view('errors.404');
         } else {
@@ -63,30 +51,23 @@ class adminController extends AppBaseController
         //
         //        }
     }
-
     public function edit(User $admin)
     {
         $bloodGroup = getBloodGroups();
-
         if (empty($admin) && $admin->owner_type != \App\Models\admin::class) {
             return view('errors.404');
         } else {
             return view('admins.edit', compact('admin', 'bloodGroup'));
         }
     }
-
     public function update(User $admin, UpdateAdminRequest $request)
     {
         $input = $request->all();
         $input['status'] = isset($input['status']) ? 1 : 0;
-
         $admin = $this->adminRepository->update($admin, $input);
-
         Flash::success(__('messages.admin').' '.__('messages.common.updated_successfully'));
-
         return redirect(route('admins.index'));
     }
-
     public function destroy(User $admin)
     {
         if (empty($admin) && $admin->owner_type != \App\Models\admin::class) {
@@ -97,11 +78,9 @@ class adminController extends AppBaseController
             return $this->sendSuccess(__('messages.admin').' '.__('messages.common.deleted_successfully'));
         }
     }
-
     public function activeDeactiveStatus($id)
     {
         $admin = User::findOrFail($id);
-
         if (empty($admin) && $admin->owner_type != \App\Models\admin::class) {
             return $this->sendError(__('messages.admin').' '.__('messages.common.not_found'));
         } else {

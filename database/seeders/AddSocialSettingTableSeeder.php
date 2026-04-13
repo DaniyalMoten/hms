@@ -1,10 +1,7 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Models\Setting;
 use Illuminate\Database\Seeder;
-
 class AddSocialSettingTableSeeder extends Seeder
 {
     /**
@@ -13,7 +10,6 @@ class AddSocialSettingTableSeeder extends Seeder
     public function run(): void
     {
         $favicon = asset('web/img/favicon.png');
-
         Setting::create(['key' => 'favicon', 'value' => $favicon]);
         Setting::create(['key' => 'facebook_url', 'value' => 'https://www.facebook.com/infyom/']);
         Setting::create(['key' => 'twitter_url', 'value' => 'https://twitter.com/infyom?lang=en']);

@@ -1,10 +1,8 @@
 @aware(['component'])
 @props(['rows'])
-
 @php
     $theme = $component->getTheme();
 @endphp
-
 @if ($theme === 'tailwind')
     <div>
         @if ($component->paginationVisibilityIsEnabled())
@@ -28,7 +26,6 @@
                         </p>
                     @endif
                 </div>
-
                 @if ($component->paginationIsEnabled())
                     {{ $rows->links('livewire-tables::specific.tailwind.pagination') }}
                 @endif
@@ -43,7 +40,6 @@
                     <div class="col-12 col-md-6 overflow-auto">
                         {{ $rows->links('livewire-tables::specific.bootstrap-4.pagination') }}
                     </div>
-
                     <div class="col-12 col-md-6 text-center text-md-right text-muted">
                         <span>@lang('Showing')</span>
                         <strong>{{ $rows->count() ? $rows->firstItem() : 0 }}</strong>
@@ -65,7 +61,6 @@
             @endif
         @endif
     </div>
-
     {{-- @elseif ($theme === 'bootstrap-5') --}}
     {{--    <div> --}}
     {{--        @if ($component->paginationVisibilityIsEnabled()) --}}

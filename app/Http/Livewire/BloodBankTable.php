@@ -1,34 +1,23 @@
 <?php
-
 namespace App\Http\Livewire;
-
 use App\Models\BloodBank;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-
 class BloodBankTable extends LivewireTableComponent
 {
     public $showButtonOnHeader = true;
-
     public $showFilterOnHeader = false;
-
     public $paginationIsEnabled = true;
-
     public $buttonComponent = 'blood_banks.add-button';
-
     protected $model = BloodBank::class;
-
     protected $listeners = ['refresh' => '$refresh', 'resetPage'];
-
     public function resetPage($pageName = 'page')
     {
         $rowsPropertyData = $this->getRows()->toArray();
         $prevPageNum = $rowsPropertyData['current_page'] - 1;
         $prevPageNum = $prevPageNum > 0 ? $prevPageNum : 1;
         $pageNum = count($rowsPropertyData['data']) > 0 ? $rowsPropertyData['current_page'] : $prevPageNum;
-
         $this->setPage($pageNum, $pageName);
     }
-
     public function configure(): void
     {
         $this->setPrimaryKey('id')
@@ -38,7 +27,6 @@ class BloodBankTable extends LivewireTableComponent
             return [
                 'class' => 'text-center',
             ];
-
             return [];
         });
         $this->setTdAttributes(function (Column $column, $row, $columnIndex, $rowIndex) {
@@ -48,11 +36,9 @@ class BloodBankTable extends LivewireTableComponent
                     'width' => '8%',
                 ];
             }
-
             return [];
         });
     }
-
     public function columns(): array
     {
         return [

@@ -1,40 +1,30 @@
 <?php
-
 namespace App\Http\Livewire;
-
 use App\Models\BirthReport;
 use App\Models\Doctor;
 use App\Models\Patient;
 use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-
 class BirthReportTable extends LivewireTableComponent
 {
     protected $model = BirthReport::class;
-
     public $showButtonOnHeader = true;
-
     public $buttonComponent = 'birth_reports.add-button';
-
     protected $listeners = ['refresh' => '$refresh', 'changeFilter', 'resetPage'];
-
     public function resetPage($pageName = 'page')
     {
         $rowsPropertyData = $this->getRows()->toArray();
         $prevPageNum = $rowsPropertyData['current_page'] - 1;
         $prevPageNum = $prevPageNum > 0 ? $prevPageNum : 1;
         $pageNum = count($rowsPropertyData['data']) > 0 ? $rowsPropertyData['current_page'] : $prevPageNum;
-
         $this->setPage($pageNum, $pageName);
     }
-
     public function configure(): void
     {
         $this->setPrimaryKey('id')
             ->setDefaultSort('birth_reports.created_at', 'desc')
             ->setQueryStringStatus(false);
     }
-
     public function columns(): array
     {
         return [
@@ -73,7 +63,6 @@ class BirthReportTable extends LivewireTableComponent
                 ->view('birth_reports.action'),
         ];
     }
-
     public function builder(): Builder
     {
         $admin = getLoggedInUser()->hasRole(['Admin']);
@@ -87,7 +76,6 @@ class BirthReportTable extends LivewireTableComponent
             $doctorId = Doctor::where('user_id', getLoggedInUserId())->first();
             $query = BirthReport::with('patient', 'doctor', 'caseFromBirthReport')->where('doctor_id', $doctorId->id);
         }
-
         return $query;
     }
 }

@@ -1,7 +1,5 @@
 <?php
-
 return [
-
     /*
     |--------------------------------------------------------------------------
     | All Titles and static string in blade files - Russian Language
@@ -169,7 +167,6 @@ return [
         'edit_role' => 'Редактировать роль',
         'select_role' => 'Выберите роль',
     ],
-
     //user keys
     'user' => [
         'user' => 'Пользователь',
@@ -216,7 +213,6 @@ return [
         'phone_number_must_be_10_digits' => 'Номер телефона должен состоять из 10 цифр.',
         'valid_email' => 'Пожалуйста, введите действительный адрес электронной почты',
     ],
-
     //common keys
     'common' => [
         'change' => 'Изменять',
@@ -300,13 +296,11 @@ return [
         'username_and_password_required' => 'Требуется имя пользователя и пароль',
         'meeting_finished_or_cancelled' => 'Эта встреча завершена или отменена',
     ],
-
     'hospital_schedules' => [
         'schedule_not_available' => 'В настоящее время пользователь не может создать график работы больницы, если график работы больницы недоступен.',
         'this_day_hospital_is_closed' => 'В этот день больница закрыта.',
         'exists_doctor_schedule' => 'Некоторые врачи запланировали свои дни в указанные непроверенные дни, так что вы уверены, что хотите выполнить эту операцию?',
     ],
-
     'months' => [
         'jan' => 'январь',
         'feb' => 'февраль',
@@ -321,7 +315,6 @@ return [
         'nov' => 'ноябрь',
         'dec' => 'Декабрь',
     ],
-
     'weekdays' => [
         'sun' => 'СОЛНЦЕ',
         'mon' => 'ПН',
@@ -331,7 +324,6 @@ return [
         'fri' => 'ПТ',
         'sat' => 'СИДЕЛ',
     ],
-
     // receptionist keys
     'receptionist' => [
         'receptionist' => 'Портье',
@@ -341,7 +333,6 @@ return [
         'edit_receptionist' => 'Редактировать регистратор',
         'profile_must_be_image' => 'Изображение профиля должно быть изображением',
     ],
-
     // insurance keys
     'insurance' => [
         'insurance' => 'страхование',
@@ -360,7 +351,6 @@ return [
         'diseases_charge' => 'Заряд болезней',
         'total_amount' => 'Общая сумма',
     ],
-
     //doctor department
     'doctor_department' => [
         'doctor_departments' => 'Докторские отделения',
@@ -372,7 +362,6 @@ return [
         'description' => 'Описание',
         'doctor_field_required' => 'Поле врача обязательно'
     ],
-
     // investigation reports
     'investigation_report' => [
         'investigation_reports' => 'Отчеты о расследовании',
@@ -388,7 +377,6 @@ return [
         'attachment' => 'прикрепление',
         'birth_date_validation' => 'Дата отчета об исследовании не должна быть меньше даты рождения пациента.',
     ],
-
     // pharmacist keys
     'pharmacist' => [
         'new_pharmacist' => 'Новый фармацевт',
@@ -396,7 +384,6 @@ return [
         'pharmacists' => 'Фармацевты',
         'pharmacist_details' => 'Сведения о фармацевте',
     ],
-
     // death reports keys
     'death_report' => [
         'death_report' => 'Отчет о смерти',
@@ -412,7 +399,6 @@ return [
         'cant_create_report_because_the_patient_has_been_dead' => 'Нельзя создать отчет, потому что пациент ушел из жизни.',
         'data_should_not_be_smaller_than_patient_birth_date' => 'Дата не должна быть раньше даты рождения пациента.',
     ],
-
     // birth reports keys
     'birth_report' => [
         'birth_report' => 'Отчет о рождении',
@@ -428,7 +414,6 @@ return [
         'data_should_not_be_smaller_than_patient_birth_date' => 'Дата не должна быть меньше даты рождения пациента.',
         'patient_birth_date_not_found' => 'Дата рождения пациента не найдена.',
     ],
-
     // accountant keys
     'accountant' => [
         'new_accountant' => 'Новый бухгалтер',
@@ -436,7 +421,6 @@ return [
         'accountants' => 'бухгалтера',
         'accountant_details' => 'Данные бухгалтера',
     ],
-
     // employee payroll keys
     'employee_payroll' => [
         'employee_payroll' => 'Заработная плата сотрудника',
@@ -459,7 +443,6 @@ return [
         'employees_list_not_found' => 'Список сотрудников не найден',
         'employee_payroll_deduction' => 'Удержания не могут быть больше основной зарплаты + надбавки',
     ],
-
     // operation reports keys
     'operation_report' => [
         'operation_report' => 'Отчет о работе',
@@ -474,7 +457,6 @@ return [
         'description' => 'Описание',
         'data_should_not_be_smaller_than_patient_birth_date' => 'Дата не должна быть раньше даты рождения пациента.',
     ],
-
     // accounts keys
     'account' => [
         'account' => 'учетная запись',
@@ -490,7 +472,6 @@ return [
         'credit' => 'Кредит',
         'debit' => 'Списание средств',
     ],
-
     // invoices keys
     'invoice' => [
         'invoice_id' => 'Идентификатор счета',
@@ -522,7 +503,6 @@ return [
         'patient_overview' => 'ОБЗОР ПАЦИЕНТА',
         'in_percentage' => 'В процентах',
     ],
-
     //nurses
     'nurse' => [
         'nurse' => 'Медсестра',
@@ -533,7 +513,6 @@ return [
         'birth_date' => 'Дата рождения',
         'choose' => 'Выбрать',
     ],
-
     //patient
     'patient' => [
         'new_patient' => 'Новый пациент',
@@ -546,7 +525,6 @@ return [
         'patient_name_already_taken' => 'Имя пациента уже занято',
         'patient_field_required' => 'Поле пациента обязательно',
     ],
-
     // payments keys
     'payment' => [
         'payment' => 'Оплата',
@@ -564,7 +542,6 @@ return [
         'your_payment_is_successfully_completed' => 'Ваш платеж успешно завершен',
         'payment_failed' => 'Извините! Оплата не удалась. Попробуйте еще раз через некоторое время',
     ],
-
     // advanced payments keys
     'advanced_payment' => [
         'advanced_payment' => 'Авансовый платеж',
@@ -578,7 +555,6 @@ return [
         'date' => 'Дата',
         'patient_name' => 'Имя пациента',
     ],
-
     // beds keys
     'bed' => [
         'bed' => 'Новая кровать',
@@ -597,7 +573,6 @@ return [
         'bed_id' => 'Постель Я бы',
         'select_bed_type' => 'Выберите тип кровати',
     ],
-
     // bed types keys
     'bed_type' => [
         'bed_type' => 'Тип кровати',
@@ -608,7 +583,6 @@ return [
         'title' => 'заглавие',
         'description' => 'Описание',
     ],
-
     'doctor' => [
         'new_doctor' => 'Новый Доктор',
         'edit_doctor' => 'Редактировать Доктора',
@@ -616,7 +590,6 @@ return [
         'specialist' => 'специалист',
         'doctor_name_already_taken' => 'Имя врача уже занято.'
     ],
-
     // bed assigns keys
     'bed_assign' => [
         'bed_assign' => 'Назначение кровати',
@@ -637,7 +610,6 @@ return [
         'assign_date_should_not_be_smaller_than_patient_birth_date' => 'Дата назначения не должна быть меньше даты рождения пациента.',
         'ipd_patient_department_field_required' => 'Поле отделения пациентов с ИПЗ обязательно.',
     ],
-
     // packages keys
     'package' => [
         'package' => 'пакет',
@@ -655,7 +627,6 @@ return [
         'amount' => 'Количество',
         'select_service' => 'Выбрать сервис',
     ],
-
     // bills keys
     'bill' => [
         'print_bill' => 'Распечатать Билл',
@@ -693,7 +664,6 @@ return [
         'update_bill' => 'Обновить счет',
         'Calculate' => 'Рассчитать',
     ],
-
     // blood donors keys
     'blood_donor' => [
         'blood_donor' => 'Донор крови',
@@ -708,7 +678,6 @@ return [
         'donation_date' => 'Дата пожертвования',
         'last_donation_date' => 'Дата последнего пожертвования',
     ],
-
     // blood banks keys
     'hospital_blood_bank' => [
         'blood_bank' => 'Банк крови',
@@ -719,7 +688,6 @@ return [
         'blood_group' => 'Группа крови',
         'remained_bags' => 'Оставшиеся сумки',
     ],
-
     //Case
     'case' => [
         'case' => 'случай',
@@ -736,7 +704,6 @@ return [
         'description' => 'Описание',
         'case_date_should_not_be_smaller_than_patient_birth_date' => 'Дата случая не должна быть меньше даты рождения пациента',
     ],
-
     //services
     'service' => [
         'service' => 'Услуга',
@@ -748,7 +715,6 @@ return [
         'given' => 'дано',
         'not_given' => 'Не дано',
     ],
-
     //appointments
     'appointment' => [
         'new_appointment' => 'Новая встреча',
@@ -795,27 +761,23 @@ return [
         'appointment_exists' => 'Электронная почта пациента уже существует',
         'old_patient_email_exists' => 'Электронная почта уже существует, пожалуйста, выберите старого пациента.',
     ],
-
     'case_handler' => [
         'case_handler' => 'Обработчик дел',
         'new_case_handler' => 'новый случай укротитель',
         'edit_case_handler' => 'Редактировать обработчик дел',
         'case_handler_detail' => 'Сведения об обработчике дела',
     ],
-
     'lab_tech' => [
         'lab_technician' => 'Лаборант',
         'new_lab_tech' => 'Новый лаборант',
         'edit_lab_tech' => 'Редактировать Лаборант',
         'lab_tech_detail' => 'Сведения о лаборанте',
     ],
-
     'doc_type' => [
         'new_doc_type' => 'Новый тип документа',
         'edit_doc_type' => 'Изменить тип документа',
         'name' => 'имя',
     ],
-
     'document' => [
         'document' => 'Документ',
         'new_document' => 'Новый документ',
@@ -834,7 +796,6 @@ return [
         'validate_doc_type' => 'Документ должен быть файлом следующего типа: jpeg, jpg, png, pdf, doc, docx, webp',
         'select_attachment' => 'Пожалуйста, выберите вложение.',
     ],
-
     'patient_admission' => [
         'patient_admission' => 'Прием пациентов',
         'new_patient_admission' => 'Поступление нового пациента',
@@ -861,7 +822,6 @@ return [
         'admission_date_should_not_be_smaller_than_patient_birth_date' => 'Дата поступления не должна быть меньше даты рождения пациента',
         'Admission_field_required' => 'Поле «Идентификатор допуска» является обязательным.'
     ],
-
     'setting' => [
         'app_name' => 'Название приложения',
         'company_name' => 'Название компании',
@@ -879,7 +839,6 @@ return [
         'social_details' => 'Социальные данные',
         'country_code' => 'Код страны',
     ],
-
     'currency' => [
         'currency' => 'Валюта',
         'new_currency' => 'Новая валюта',
@@ -891,7 +850,6 @@ return [
         'you_can_find_out_here' => 'вы можете узнать здесь',
         'currency_setting_not_found' => 'Настройки валюты не найдены',
     ],
-
     'schedule' => [
         'new' => 'Новое расписание',
         'edit' => 'Редактировать расписание',
@@ -912,7 +870,6 @@ return [
         'available_to_time_greater_than_zero' => 'Время доступно до должно быть больше нуля',
         'available_time_less_than_hospital_schedule_time' => 'Время доступно до должно быть меньше времени работы больницы',
     ],
-
     'notice_board' => [
         'notice_board' => 'Доска объявлений',
         'new' => 'Новая доска объявлений',
@@ -922,7 +879,6 @@ return [
         'description' => 'Описание',
         'created_at' => 'создан в',
     ],
-
     'my_payroll' => [
         'my_payrolls' => 'Мои платежные ведомости',
         'basic_salary' => 'Базовая зарплата',
@@ -930,7 +886,6 @@ return [
         'deductions' => 'вычеты',
         'net_salary' => 'Чистая зарплата',
     ],
-
     'medicine' => [
         'medicine' => 'медицина',
         'medicine_category' => 'Медицина Категория',
@@ -967,7 +922,6 @@ return [
         'category_field_required' => 'Поле «Категория» обязательно для заполнения.',
         'brand_field_required' => 'Поле «Бренд» является обязательным.',
     ],
-
     'profile' => [
         'change_language' => 'Изменить язык',
         'language' => 'язык',
@@ -978,7 +932,6 @@ return [
         'phone' => 'Телефон',
         'profile' => 'Профиль',
     ],
-
     'dashboard' => [
         'dashboard' => 'Приборная доска',
         'total_invoices' => 'Сумма счета',
@@ -995,7 +948,6 @@ return [
         'no_enquiries_yet' => 'Запросов пока нет',
         'no_notice_yet' => 'Уведомлений пока нет',
     ],
-
     // enquiries keys
     'enquiry' => [
         'name' => 'название',
@@ -1012,20 +964,17 @@ return [
         'send_enquiry' => 'Отправить запрос',
         'enquiry_send_successfully' => 'Запрос успешно отправлен',
     ],
-
     'email' => [
         'to' => 'к',
         'subject' => 'Предмет',
         'message' => 'Сообщение',
         'attachment' => 'Вложения',
     ],
-
     'verification' => [
         'verify_your_email_address' => 'Проверьте свой адрес электронной почты.',
         'verify_message' => 'Прежде чем продолжить, проверьте свою электронную почту на наличие ссылки для подтверждения. Если вы не получили электронное письмо,',
         'another_verify_request' => 'нажмите здесь, чтобы запросить другой',
     ],
-
     // ambulances keys
     'ambulance' => [
         'ambulance' => 'скорая помощь',
@@ -1043,7 +992,6 @@ return [
         'new_ambulance' => 'Новая скорая помощь',
         'edit_ambulance' => 'Редактировать скорую помощь',
     ],
-
     // ambulance calls keys
     'ambulance_call' => [
         'ambulance_call' => 'Вызов скорой помощи',
@@ -1057,7 +1005,6 @@ return [
         'new_ambulance_call' => 'Новый вызов скорой помощи',
         'edit_ambulance_call' => 'Редактировать вызов скорой помощи',
     ],
-
     // prescription keys
     'prescription' => [
         'reference_id' => 'Идентификатор ссылки',
@@ -1103,7 +1050,6 @@ return [
         'month' => 'Месяц',
         'no_data_available' => 'данные не найдены',
     ],
-
     // radiology keys
     'radiology_category' => [
         'name' => 'название',
@@ -1111,7 +1057,6 @@ return [
         'new_radiology_category' => 'новый радиология категория',
         'edit_radiology_category' => 'редактировать радиология категория',
     ],
-
     // pathology keys
     'pathology_category' => [
         'pathology_categories' => 'патология категории',
@@ -1120,7 +1065,6 @@ return [
         'name' => 'название',
         'select_charge_category' => 'выберите категорию начисления',
     ],
-
     'charge_category' => [
         'charge_categories' => 'Категории оплаты',
         'new_charge_category' => 'Новая категория заряда',
@@ -1128,7 +1072,6 @@ return [
         'charge_type' => 'Тип заряда',
         'charge_category_details' => 'Детали категории заряда',
     ],
-
     'charge' => [
         'new_charge' => 'Новый заряд',
         'edit_charge' => 'Изменить заряд',
@@ -1137,7 +1080,6 @@ return [
         'standard_charge' => 'Стандартный заряд',
         'code' => 'Код',
     ],
-
     // radiology test keys
     'radiology_test' => [
         'radiology_tests' => 'радиология тесты',
@@ -1154,7 +1096,6 @@ return [
         'code' => 'код',
         'standard_charge' => 'Стандартный заряд',
     ],
-
     //doctor opd charge keys
     'doctor_opd_charge' => [
         'doctor_opd_charge' => 'Доктор OPD Зарядка',
@@ -1164,7 +1105,6 @@ return [
         'standard_charge' => 'Стандартный заряд',
         'doctor' => 'Доктор',
     ],
-
     // pathology test keys
     'pathology_test' => [
         'pathology_tests' => 'патология тесты',
@@ -1182,7 +1122,6 @@ return [
         'charge_category' => 'Категория заряда',
         'standard_charge' => 'Стандартный заряд',
     ],
-
     //expenses keys
     'expense' => [
         'expense' => 'Расход',
@@ -1201,7 +1140,6 @@ return [
         'select_expense_head' => 'Выберите главу расходов',
         'document_error' => 'Документ должен быть файлом типа: jpeg, jpg, png, pdf, doc, docx.',
     ],
-
     //income keys
     'incomes' => [
         'incomes' => 'доходов',
@@ -1220,7 +1158,6 @@ return [
         'select_income_head' => 'Выберите главу дохода',
         'document_error' => 'Документ должен быть файлом типа: jpeg, jpg, png, pdf, doc, docx.',
     ],
-
     'bed_status' => [
         'bed_status' => 'Состояние кровати',
         'assigned_beds' => 'Назначенные кровати',
@@ -1231,7 +1168,6 @@ return [
         'admission_date' => 'Дата поступления',
         'gender' => 'Пол',
     ],
-
     //Messages keys
     'message' => [
         'message' => 'Cообщение',
@@ -1244,7 +1180,6 @@ return [
         'date' => 'Свидание',
         'select_user' => 'Выберите пользователя',
     ],
-
     //SMS keys
     'sms' => [
         'sms' => 'смс',
@@ -1262,7 +1197,6 @@ return [
         'message_not_greater_than_160_characters' => 'Сообщение не должно быть длиннее 160 символов.',
         'set_credential' => 'Пожалуйста, укажите ваши учетные данные.',
     ],
-
     //Patient Diagnosis Test
     'patient_diagnosis_test' => [
         'diagnosis' => 'диагностика',
@@ -1295,7 +1229,6 @@ return [
         'cholesterol' => 'Холестерин',
         'print_diagnosis_test' => 'Распечатать диагностический тест',
     ],
-
     //Diagnosis Category
     'diagnosis_category' => [
         'diagnosis_category' => 'Категория диагноза',
@@ -1306,7 +1239,6 @@ return [
         'diagnosis_category_details' => 'Детали категории диагностики',
         'edit_diagnosis_category' => 'Изменить категорию диагноза',
     ],
-
     // Operation Category
     'operation_category' => [
         'operation_category' => 'Категория операции',
@@ -1315,7 +1247,6 @@ return [
         'edit_operation_category' => 'Изменить категорию операции',
         'operation_category_field_required' => 'Поле категории операции является обязательным.',
     ],
-
     // Operation
     'operation' => [
         'operation' => 'Операция',
@@ -1327,7 +1258,6 @@ return [
         'ot_technician' => 'ОТ-техник',
         'ot_assistant' => 'ОТ-ассистент',
     ],
-
     // Inventory Management keys
     'item_category' => [
         'item_category' => 'Категория товара',
@@ -1336,7 +1266,6 @@ return [
         'edit_item_category' => 'редактировать Категория товара',
         'name' => 'название',
     ],
-
     'item' => [
         'item' => 'Пункт',
         'items' => 'Предметы',
@@ -1349,7 +1278,6 @@ return [
         'description' => 'Описание',
         'available_quantity' => 'Доступное количество',
     ],
-
     'item_stock' => [
         'item_stock' => 'Товар на складе',
         'item_stocks' => 'Товар на складе',
@@ -1365,7 +1293,6 @@ return [
         'description' => 'Описание',
         'attachment' => 'Вложение',
     ],
-
     'issued_item' => [
         'issued_item' => 'Выданный предмет',
         'issued_items' => 'Выпущенные предметы',
@@ -1388,7 +1315,6 @@ return [
         'quantity_cannot_be_zero' => 'Количество не может быть нулевым.',
         'quantity_must_be_less_than_available_quantity' => 'Количество должно быть меньше доступного количества.',
     ],
-
     'ipd_patient' => [
         'ipd_patient_in' => 'IPD - Пациент в',
         'ipd_patient' => 'Пациент IPD',
@@ -1417,7 +1343,6 @@ return [
         'the_bed_type_is_required' => 'Поле типа кровати является обязательным.',
         'charge_required' => 'Поле «Начисление» Обязательно.',
     ],
-
     'ipd_patient_diagnosis' => [
         'new_ipd_diagnosis' => 'Добавить диагностику',
         'edit_ipd_diagnosis' => 'Изменить диагноз',
@@ -1426,7 +1351,6 @@ return [
         'document' => 'Документ',
         'description' => 'Описание',
     ],
-
     'ipd_patient_consultant_register' => [
         'consultant_instruction' => 'Консультант Инструкция',
         'consultant_doctor' => 'Врач-консультант',
@@ -1442,7 +1366,6 @@ return [
         'anesthetist' => 'Анестезиолог',
         'anesthesia_type' => 'Тип анестезии',
     ],
-
     'ipd_patient_charges' => [
         'new_charge' => 'Добавить начисления',
         'date' => 'Дата',
@@ -1452,7 +1375,6 @@ return [
         'standard_charge' => 'Стандартный сбор',
         'applied_charge' => 'Примененный заряд',
     ],
-
     'ipd_patient_prescription' => [
         'ipd_no' => 'IPD Нет',
         'header_note' => 'Заголовок',
@@ -1466,7 +1388,6 @@ return [
         'instruction' => 'Инструкция',
         'print_prescription' => 'Распечатать рецепт',
     ],
-
     'ipd_patient_timeline' => [
         'timeline' => 'Лента новостей',
         'new_ipd_timeline' => 'Добавить временную шкалу',
@@ -1478,14 +1399,12 @@ return [
         'visible_to_person' => 'Видно человеку',
         'no_timeline_found' => 'TimeLine не найден',
     ],
-
     'ipd_payments' => [
         'add_ipd_payment' => 'Добавить платеж Ipd',
         'edit_ipd_payment' => 'Edit IPD Payment',
         'payment_mode' => 'Режим оплаты',
         'make_payment' => 'Внести платеж',
     ],
-
     'ipd_bill' => [
         'paid_amount' => 'Оплаченная сумма',
         'total_charges' => 'Общие расходы',
@@ -1497,7 +1416,6 @@ return [
         'other_charges' => 'Прочие сборы',
         'net_payable_amount' => 'Чистая сумма к оплате',
     ],
-
     'opd_patient' => [
         'opd_patient_out' => 'OPD — пациент отсутствует',
         'opd_patient' => 'OPD Пациент',
@@ -1511,14 +1429,12 @@ return [
         'revisits' => 'Пересмотреть',
         'total_visits' => 'Всего посещений',
     ],
-
     'opd_payments' => [
         'add_opd_payment' => 'Добавить платеж Opd',
         'edit_opd_payment' => 'Изменить оплату Opd',
         'payment_mode' => 'Режим оплаты',
         'make_payment' => 'Совершать платеж',
     ],
-
     'call_log' => [
         'call_log' => 'Журнал вызовов',
         'new' => 'Новый журнал вызовов',
@@ -1532,7 +1448,6 @@ return [
         'incoming' => 'Входящий',
         'outgoing' => 'Исходящий',
     ],
-
     'visitor' => [
         'visitor' => 'Посетитель',
         'new' => 'Новый посетитель',
@@ -1547,7 +1462,6 @@ return [
         'out_time' => 'Время выхода',
         'note' => 'Запись',
     ],
-
     'postal' => [
         'postal' => 'Открытка',
         'new_receive' => 'Новое получение',
@@ -1564,7 +1478,6 @@ return [
         'validate_from_title' => 'Необходимо указать заголовок отправителя',
         'validate_to_title' => 'Необходимо указать заголовок получателя.',
     ],
-
     'testimonial' => [
         'testimonial' => 'Отзыв',
         'new_testimonial' => 'Новый отзыв',
@@ -1574,7 +1487,6 @@ return [
         'description' => 'Описание',
         'profile_error' => 'Документ должен быть файлом типа: jpeg, jpg, png.',
     ],
-
     'blood_donation' => [
         'blood_donation' => 'Сдача крови',
         'new_blood_donation' => 'Новое донорство крови',
@@ -1583,7 +1495,6 @@ return [
         'bags' => 'Сумки',
         'last_donate_date' => 'Дата последнего пожертвования',
     ],
-
     'blood_issue' => [
         'blood_issue' => 'Проблема крови',
         'new_blood_issue' => 'Выпуск новой крови',
@@ -1595,12 +1506,10 @@ return [
         'amount' => 'Сумма',
         'remarks' => 'Замечания',
     ],
-
     'ipd_operation' => [
         'ipd_operation' => 'Операция в стационаре (IPD)',
         'ipd_operation_created_successfully' => 'Операция в стационаре (IPD) успешно создана',
     ],
-
     'notification' => [
         'notifications' => 'Уведомления',
         'mark_all_as_read' => 'Отметить все как прочитанное',
@@ -1608,7 +1517,6 @@ return [
         'all_notification_read_successfully' => 'Все уведомления успешно прочитаны',
         'notification_read_successfully' => 'Уведомление успешно прочитано',
     ],
-
     'live_consultation' => [
         'live_consultation' => 'Онлайн-консультация',
         'new_live_consultation' => 'Новая онлайн-консультация',
@@ -1639,7 +1547,6 @@ return [
         'user_zoom_credential_saved' => 'Учетные данные пользователя Zoom успешно сохранены.',
         'add_credentials_for_zoom_meeting' => 'Пожалуйста, добавьте учетные данные для встречи в Zoom.',
     ],
-
     'vaccination' => [
         'vaccinations' => 'Прививки',
         'new_vaccination' => 'Новая вакцинация',
@@ -1649,7 +1556,6 @@ return [
         'brand' => 'Марка',
         'vaccinated' => 'Вакцинированный',
     ],
-
     'vaccinated_patient' => [
         'vaccinated_patient' => 'Вакцинированный пациент',
         'patient' => 'Пациент',
@@ -1665,7 +1571,6 @@ return [
         'vaccinate_patient' => 'Вакцинировать пациента',
         'already_registered_dose' => 'Пациент уже зарегистрирован с той же вакциной и дозой',
     ],
-
     'front_setting' => [
         'about_us_title' => 'Заголовок',
         'about_us_mission' => 'Миссия',
@@ -1721,14 +1626,12 @@ return [
         'about_us_description_required' => 'Поле описания "О нас" не должно содержать только пробелы.',
         'about_us_mission_required' => 'Поле миссии "О нас" не должно содержать только пробелы.',
     ],
-
     'change_password' => [
         'change_password' => 'Измени пароль',
         'current_password' => 'Текущий пароль',
         'new_password' => 'Новый пароль',
         'confirm_password' => 'Подтвердить Пароль',
     ],
-
     'web_home' => [
         'home' => 'Дом',
         'services' => 'Услуги',
@@ -1763,12 +1666,10 @@ return [
         'our_testimonials' => 'Наши отзывы',
         'what_our_patient_say_about_medical_treatments' => 'Что наши пациенты говорят о нашем лечении',
     ],
-
     'web_password' => [
         'please_fill_all_the_required_fields' => 'Пожалуйста, заполните все необходимые поля.',
         'password_and_confirm_password_not_match' => 'Пароль и подтверждение пароля не совпадают.',
     ],
-
     'web_contact' => [
         'call_today' => 'Звоните сегодня',
         'open_hours' => 'Открытые часы',
@@ -1787,7 +1688,6 @@ return [
         'write_your_message' => 'Напишите ваше сообщение',
         'type_your_message' => 'Напишите ваше сообщение',
     ],
-
     'web_menu' => [
         'about' => 'О',
         'our_features' => 'Наши особенности',
@@ -1799,13 +1699,11 @@ return [
         'copyright' => 'авторское право',
         'all_rights_reserved_by' => 'Все права защищены.',
     ],
-
     'front_services' => [
         'new_service' => 'Новая услуга',
         'edit_service' => 'Редактировать сервис',
         'select_icon_file' => 'Пожалуйста, выберите файл значка',
     ],
-
     'web_appointment' => [
         'make_an_appointment' => 'Записаться на прием',
         'call_now_and_get_a_free_consulting' => 'Звоните сейчас и получите бесплатную консультацию',
@@ -1818,12 +1716,10 @@ return [
         'enter_description' => 'Введите описание',
         'select_time' => 'Выберите время',
     ],
-
     'web_working_hours' => [
         'opening_hours' => 'Часы работы',
         'no_yet_opening_hours' => 'Еще нет часов работы',
     ],
-
     'purchase_medicine' => [
         'purchase_number' => 'Номер покупки',
         'total' => 'Общий',
@@ -1845,13 +1741,11 @@ return [
         'dose_duration' => 'Длительность дозы',
         'medicine_purchased_successfully' => 'Медицина успешно приобретена'
     ],
-
     'used_medicine' => [
         'used_medicine' => 'Используемая медицина',
         'used_quantity' => 'Используемое количество',
         'used_at' => 'Используется в',
     ],
-
     'medicine_bills' => [
         'medicine_bills' => 'Медицинские счета',
         'medicine_bill' => 'Медицинский счет',
@@ -1883,7 +1777,6 @@ return [
         'validate_quantity' => 'Количество должно быть больше 0.',
         'quantity_required' => 'Пожалуйста, введите количество.',
     ],
-
     'subscription_plans' => [
         'payment_type' => 'Выберите способ оплаты',
         'connect_with_zoom' => 'Подключиться к Zoom',

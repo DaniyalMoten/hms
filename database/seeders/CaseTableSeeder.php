@@ -1,14 +1,10 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Models\PatientCase;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
-
 class CaseTableSeeder extends Seeder
-{
-    /**
+{/**
      * Run the database seeds.
      */
     public function run(): void
@@ -31,7 +27,6 @@ class CaseTableSeeder extends Seeder
                 'fee' => 100,
             ],
         ];
-
         foreach ($input as $data) {
             PatientCase::create($data);
         }

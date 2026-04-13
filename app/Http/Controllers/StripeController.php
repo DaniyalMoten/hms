@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Models\IpdPatientDepartment;
 use App\Repositories\StripeRepository;
 use Exception;
@@ -12,19 +10,16 @@ use Illuminate\Http\Request;
 use Stripe\Checkout\Session;
 use Stripe\Exception\ApiErrorException;
 use Symfony\Component\HttpKernel\Exception\UnprocessableEntityHttpException;
-
 class StripeController extends AppBaseController
 {
     /**
      * @var StripeRepository
      */
     private $stripeRepository;
-
     public function __construct(StripeRepository $stripeRepository)
     {
         $this->stripeRepository = $stripeRepository;
     }
-
     public function createSession(Request $request)
     {
         $amount = $request->get('amount');
@@ -35,13 +30,11 @@ class StripeController extends AppBaseController
         } else {
             $final_amount = $amount * 100;
         }
-
         //        $checkMinimumAmount = checkMinimumAmount(getCurrentCurrency(), $final_amount);
         //
         //        if($checkMinimumAmount['result']) {
         //            return $this->sendError('can not pay amount less than '.getCurrencySymbol().$checkMinimumAmount['amount']);
         //        }
-
         $user = $request->user();
         $userEmail = $user->email;
         setStripeApiKey();
@@ -69,29 +62,21 @@ class StripeController extends AppBaseController
         $result = [
             'sessionId' => $session['id'],
         ];
-
         return $this->sendResponse($result, 'Session created successfully.');
     }
-
     public function paymentSuccess(Request $request)
     {
         $sessionId = $request->get('session_id');
-
         if (empty($sessionId)) {
             throw new UnprocessableEntityHttpException('session_id required');
         }
-
         $this->stripeRepository->patientPaymentSuccess($sessionId);
-
         Flash::success(__('messages.payment.your_payment_is_successfully_completed'));
-
         return redirect(route('patient.ipd'));
     }
-
     public function handleFailedPayment()
     {
         Flash::error(__('messages.payment.payment_failed'));
-
         return redirect(route('patient.ipd'));
     }
 }

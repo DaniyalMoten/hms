@@ -1,12 +1,9 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Repositories\LabTechnicianRepository;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\App;
-
 class LabTechnicianTableSeeder extends Seeder
 {
     /**
@@ -40,7 +37,6 @@ class LabTechnicianTableSeeder extends Seeder
             ],
             */
         ];
-
         foreach ($input as $key => $value) {
             /** @var LabTechnicianRepository $labTechnician */
             $labTechnician = App::make(LabTechnicianRepository::class);

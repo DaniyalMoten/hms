@@ -1,11 +1,8 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Models\BloodDonor;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
-
 class BloodDonorTableSeeder extends Seeder
 {
     /**

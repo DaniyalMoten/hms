@@ -6,4 +6,3 @@
    class="btn px-1 text-danger fs-3 ps-0 deleteOpdDiagnosisBtn">
     <i class="fa-solid fa-trash"></i>
 </a>
-

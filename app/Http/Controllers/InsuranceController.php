@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Exports\InsuranceExport;
 use App\Http\Requests\CreateInsuranceRequest;
 use App\Http\Requests\UpdateInsuranceRequest;
@@ -17,29 +15,23 @@ use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Maatwebsite\Excel\Facades\Excel;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
-
 class InsuranceController extends AppBaseController
 {
     /** @var InsuranceRepository */
     private $insuranceRepository;
-
     public function __construct(InsuranceRepository $insuranceRepo)
     {
         $this->insuranceRepository = $insuranceRepo;
     }
-
     public function index()
     {
         $data['statusArr'] = Insurance::STATUS_ARR;
-
         return view('insurances.index', $data);
     }
-
     public function create()
     {
         return view('insurances.create');
     }
-
     public function store(CreateInsuranceRequest $request)
     {
         $input = $request->all();
@@ -52,33 +44,25 @@ class InsuranceController extends AppBaseController
             DB::commit();
         } catch (Exception $e) {
             DB::rollBack();
-
             Flash::error($e->getMessage());
-
             return redirect(route('insurances.store'));
             //            return $this->sendError();
         }
-
         Flash::success(__('messages.insurance.insurance').' '.__('messages.common.saved_successfully'));
-
         return redirect(route('insurances.index'));
         //        return $this->sendSuccess('');
     }
-
     public function show(Insurance $insurance)
     {
         $diseases = $this->insuranceRepository->getInsuranceDisease($insurance->id);
-
         return view('insurances.show', compact('diseases', 'insurance'));
     }
 
     public function edit(Insurance $insurance)
     {
         $diseases = $this->insuranceRepository->getInsuranceDisease($insurance->id);
-
         return view('insurances.edit', compact('diseases', 'insurance'));
     }
-
     public function update(Insurance $insurance, UpdateInsuranceRequest $request)
     {
         $input = $request->all();
@@ -91,16 +75,12 @@ class InsuranceController extends AppBaseController
             DB::commit();
         } catch (Exception $e) {
             DB::rollBack();
-
             return $this->sendError($e->getMessage());
         }
-
         Flash::success(__('messages.insurance.insurance').' '.__('messages.common.updated_successfully'));
-
         return redirect(route('insurances.index'));
         //        return $this->sendSuccess('');
     }
-
     public function destroy(Insurance $insurance)
     {
         $insuranceModel = [
@@ -118,16 +98,13 @@ class InsuranceController extends AppBaseController
             return $this->sendError($exception->getMessage(), $exception->getCode());
         }
     }
-
     public function activeDeactiveInsurance($id)
     {
         $insurance = Insurance::findOrFail($id);
         $insurance->status = ! $insurance->status;
         $insurance->update(['status' => $insurance->status]);
-
         return $this->sendSuccess(__('messages.common.status_updated_successfully'));
     }
-
     public function insuranceExport()
     {
         return Excel::download(new InsuranceExport, 'insurances-'.time().'.xlsx');

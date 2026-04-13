@@ -1,7 +1,5 @@
 <?php
-
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Password Reset Language Lines
@@ -12,11 +10,9 @@ return [
     | has failed, such as for an invalid token or invalid new password.
     |
     */
-
     'reset' => 'Dein Passwort wurde zurück gesetzt!',
     'sent' => 'Wir haben Ihren Link zum Zurücksetzen Ihres Passworts per E-Mail gesendet!',
     'throttled' => 'Bitte warten Sie, bevor Sie es erneut versuchen.',
     'token' => 'Dieses Token zum Zurücksetzen des Passworts ist ungültig.',
     'user' => 'Wir können keinen Benutzer mit dieser E-Mail-Adresse finden. ',
-
 ];

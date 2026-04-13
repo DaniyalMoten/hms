@@ -83,7 +83,6 @@
                     {{ Form::label('facebook_url', __('messages.facebook_url') . ':', ['class' => 'form-label']) }}
                     {{ Form::text('facebook_url', null, ['class' => 'form-control', 'id' => 'userFacebookUrl', 'onkeypress' => 'return avoidSpace(event);']) }}
                 </div>
-
                 <!-- Instagram URL Field -->
                 <div class="col-lg-6 mb-5">
                     {{ Form::label('instagram_url', __('messages.instagram_url') . ':', ['class' => 'form-label']) }}
@@ -102,8 +101,6 @@
                 <div class="form-group col-md-4 mb-5">
                     <div class="row2" io-image-input="true">
                         {{ Form::label('image', __('messages.common.profile') . ':', ['class' => 'form-label']) }}
-
-
                         <div class="d-block">
                             @php
                                 if ($isEdit) {
@@ -112,13 +109,11 @@
                                     $image = asset('assets/img/avatar.png');
                                 }
                             @endphp
-
                             <div class="image-picker">
                                 <div class="image previewImage" id="userPreviewImage"
                                     style="background-image: url({{ $image }})">
                                     <span class="picker-edit rounded-circle text-gray-500 fs-small"
                                         title="{{ $isEdit ? __('messages.common.change_profile') : __('messages.common.profile') }}">
-
                                         <label>
                                             <i class="fa-solid fa-pen" id="profileImageIcon"></i>
                                             <input type="file" id="userProfileImage" name="image"

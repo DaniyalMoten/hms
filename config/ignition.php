@@ -1,7 +1,5 @@
 <?php
-
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Editor
@@ -13,9 +11,7 @@ return [
     |            "sublime", "atom"
     |
     */
-
     'editor' => env('IGNITION_EDITOR', 'phpstorm'),
-
     /*
     |--------------------------------------------------------------------------
     | Theme
@@ -26,9 +22,7 @@ return [
     | Supported: "light", "dark", "auto"
     |
     */
-
     'theme' => env('IGNITION_THEME', 'light'),
-
     /*
     |--------------------------------------------------------------------------
     | Sharing
@@ -40,9 +34,7 @@ return [
     | If necessary, you can completely disable sharing below.
     |
     */
-
     'enable_share_button' => env('IGNITION_SHARING_ENABLED', true),
-
     /*
     |--------------------------------------------------------------------------
     | Register Ignition commands
@@ -56,7 +48,6 @@ return [
     |
     */
     'register_commands' => env('REGISTER_IGNITION_COMMANDS', false),
-
     /*
     |--------------------------------------------------------------------------
     | Ignored Solution Providers
@@ -67,11 +58,9 @@ return [
     | and possible solutions provided by them will never be displayed.
     |
     */
-
     'ignored_solution_providers' => [
         //
     ],
-
     /*
     |--------------------------------------------------------------------------
     | Runnable Solutions
@@ -82,9 +71,7 @@ return [
     | debug mode enabled. You may also fully disable this feature.
     |
     */
-
     'enable_runnable_solutions' => env('IGNITION_ENABLE_RUNNABLE_SOLUTIONS', null),
-
     /*
     |--------------------------------------------------------------------------
     | Remote Path Mapping
@@ -107,10 +94,8 @@ return [
     | Example values: "/Users/<name>/Code", "C:\Users\<name>\Documents\Code"
     |
     */
-
     'remote_sites_path' => env('IGNITION_REMOTE_SITES_PATH', ''),
     'local_sites_path' => env('IGNITION_LOCAL_SITES_PATH', ''),
-
     /*
     |--------------------------------------------------------------------------
     | Housekeeping Endpoint Prefix
@@ -121,5 +106,4 @@ return [
     |
     */
     'housekeeping_endpoint_prefix' => '_ignition',
-
 ];

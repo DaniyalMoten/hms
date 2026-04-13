@@ -1,13 +1,10 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Models\Department;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
-
 class AdminUserSeeder extends Seeder
 {
     /**
@@ -16,7 +13,6 @@ class AdminUserSeeder extends Seeder
     public function run(): void
     {
         $adminRole = Department::whereName('Admin')->first();
-
         $input = [
             'first_name' => 'Super',
             'last_name' => 'Admin',
@@ -30,7 +26,6 @@ class AdminUserSeeder extends Seeder
             'email_verified_at' => Carbon::now(),
             'department_id' => $adminRole->id,
         ];
-
         $user = User::create($input);
         $user->assignRole($adminRole);
     }

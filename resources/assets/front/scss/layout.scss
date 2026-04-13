@@ -26,7 +26,7 @@
 
 body {
     font-family: "Product-sans", sans-serif;
-    font-weight: 400;   
+    font-weight: 400;
 }
 
 header {
@@ -85,15 +85,15 @@ header {
                     }
 
                     &::after {
-                       content: '';
-                       position: absolute;
-                       width: 15px;
-                       height: 2px;
-                       background-color: transparent; 
-                       left: 20px;
-                       bottom: 8px;
+                        content: '';
+                        position: absolute;
+                        width: 15px;
+                        height: 2px;
+                        background-color: transparent;
+                        left: 20px;
+                        bottom: 8px;
 
-                       @media (max-width: 1399px) and (min-width: 1200px) {
+                        @media (max-width: 1399px) and (min-width: 1200px) {
                             left: 12px;
                         }
                     }
@@ -105,7 +105,7 @@ header {
                             background-color: $primary;
                         }
                     }
-             
+
                 }
 
                 &:last-child {
@@ -135,7 +135,7 @@ header {
                     .nav-item {
                         &:last-child {
                             .nav-link {
-                               padding-right: 20px; 
+                                padding-right: 20px;
                             }
                         }
                     }
@@ -155,16 +155,18 @@ header {
 
                         .nav-link {
                             line-height: 21px;
+
                             &::after {
                                 content: none;
                             }
                         }
                     }
+
                     .country-flag {
                         width: 20px;
                     }
                 }
-                
+
             }
         }
 

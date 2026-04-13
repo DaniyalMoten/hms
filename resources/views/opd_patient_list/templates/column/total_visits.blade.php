@@ -3,4 +3,3 @@
 @else
     <span class="badge bg-light-info">{{$row->visits}}</span>
 @endif
-

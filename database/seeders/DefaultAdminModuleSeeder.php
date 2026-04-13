@@ -1,10 +1,7 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Models\Module;
 use Illuminate\Database\Seeder;
-
 class DefaultAdminModuleSeeder extends Seeder
 {
     /**

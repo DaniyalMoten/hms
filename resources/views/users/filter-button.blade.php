@@ -16,12 +16,10 @@
                     <label for="exampleInputSelect2" class="form-label">{{ __('messages.common.status').':' }}</label>
                     {{ Form::select('status', $filterHeads[0],null, ['id' => 'usersStatusArr', 'data-control' =>'select2', 'class' => 'form-select status-selector select2-hidden-accessible data-allow-clear="true"']) }}
                 </div>
-                
                 <div class="mb-5">
                     <label for="exampleInputSelect2" class="form-label">{{ __('messages.employee_payroll.role').':' }}</label>   <br>
                     {{ Form::select('department_id', $filterHeads[1],null, ['id' => 'userRoleArr', 'data-control' =>'select2', 'class' => 'form-select status-selector select2-hidden-accessible data-allow-clear="true"']) }}
                 </div>
-
                 <div class="d-flex justify-content-end">
                     <button type="reset" class="btn btn-secondary" id="userResetFilter">
                         {{ __('messages.common.reset') }}

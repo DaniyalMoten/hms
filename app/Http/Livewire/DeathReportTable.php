@@ -1,40 +1,30 @@
 <?php
-
 namespace App\Http\Livewire;
-
 use App\Models\DeathReport;
 use App\Models\Doctor;
 use App\Models\Patient;
 use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-
 class DeathReportTable extends LivewireTableComponent
 {
     protected $model = DeathReport::class;
-
     public $showButtonOnHeader = true;
-
     public $buttonComponent = 'death_reports.add-button';
-
     protected $listeners = ['refresh' => '$refresh', 'changeFilter', 'resetPage'];
-
     public function resetPage($pageName = 'page')
     {
         $rowsPropertyData = $this->getRows()->toArray();
         $prevPageNum = $rowsPropertyData['current_page'] - 1;
         $prevPageNum = $prevPageNum > 0 ? $prevPageNum : 1;
         $pageNum = count($rowsPropertyData['data']) > 0 ? $rowsPropertyData['current_page'] : $prevPageNum;
-
         $this->setPage($pageNum, $pageName);
     }
-
     public function configure(): void
     {
         $this->setPrimaryKey('id');
         $this->setDefaultSort('death_reports.created_at', 'desc');
         $this->setQueryStringStatus(false);
     }
-
     public function columns(): array
     {
         return [
@@ -70,10 +60,8 @@ class DeathReportTable extends LivewireTableComponent
                 ->view('death_reports.templates.columns.date')
                 ->sortable(),
             Column::make(__('messages.common.action'), 'id')->view('death_reports.action'),
-
         ];
     }
-
     public function builder(): Builder
     {
         $admin = getLoggedInUser()->hasRole(['Admin']);
@@ -87,7 +75,6 @@ class DeathReportTable extends LivewireTableComponent
             $doctorId = Doctor::where('user_id', getLoggedInUserId())->first();
             $query = DeathReport::with('patient', 'doctor', 'caseFromDeathReport')->where('doctor_id', $doctorId->id);
         }
-
         return $query;
     }
 }

@@ -1,7 +1,6 @@
 <div>
     @if ($paginator->hasPages())
         @php(isset($this->numberOfPaginatorsRendered[$paginator->getPageName()]) ? $this->numberOfPaginatorsRendered[$paginator->getPageName()]++ : $this->numberOfPaginatorsRendered[$paginator->getPageName()] = 1)
-        
         <nav role="navigation" aria-label="Pagination Navigation" class="flex items-center justify-between">
             <div class="flex justify-between flex-1 sm:hidden">
                 <span>
@@ -15,7 +14,6 @@
                         </button>
                     @endif
                 </span>
-
                 <span>
                     @if ($paginator->hasMorePages())
                         <button wire:click="nextPage('{{ $paginator->getPageName() }}')" wire:loading.attr="disabled" dusk="nextPage{{ $paginator->getPageName() == 'page' ? '' : '.' . $paginator->getPageName() }}.before" class="relative inline-flex items-center px-4 py-2 ml-3 text-sm font-medium text-gray-700 bg-white border border-gray-300 leading-5 rounded-md hover:text-gray-500 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
@@ -28,7 +26,6 @@
                     @endif
                 </span>
             </div>
-
             <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
                 <div>
                     <p class="text-sm text-gray-700 leading-5">
@@ -41,7 +38,6 @@
                         <span>{!! __('results') !!}</span>
                     </p>
                 </div>
-
                 <div>
                     <span class="relative z-0 inline-flex rounded-md shadow-sm">
                         <span>
@@ -62,7 +58,6 @@
                                 </button>
                             @endif
                         </span>
-
                         {{-- Pagination Elements --}}
                         @foreach ($elements as $element)
                             {{-- "Three Dots" Separator --}}
@@ -71,7 +66,6 @@
                                     <span class="relative inline-flex items-center px-4 py-2 -ml-px text-sm font-medium text-gray-700 bg-white border border-gray-300 cursor-default leading-5 select-none">{{ $element }}</span>
                                 </span>
                             @endif
-
                             {{-- Array Of Links --}}
                             @if (is_array($element))
                                 @foreach ($element as $page => $url)
@@ -89,7 +83,6 @@
                                 @endforeach
                             @endif
                         @endforeach
-
                         <span>
                             {{-- Next Page Link --}}
                             @if ($paginator->hasMorePages())

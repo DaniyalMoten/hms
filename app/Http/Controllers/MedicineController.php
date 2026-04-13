@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Exports\MedicineExport;
 use App\Http\Requests\CreateMedicineRequest;
 use App\Http\Requests\UpdateMedicineRequest;
@@ -20,65 +18,48 @@ use Illuminate\View\View;
 use Maatwebsite\Excel\Facades\Excel;
 use Response;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
-
 class MedicineController extends AppBaseController
 {
     /** @var MedicineRepository */
     private $medicineRepository;
-
     public function __construct(MedicineRepository $medicineRepo)
     {
         $this->medicineRepository = $medicineRepo;
     }
-
     public function index()
     {
         return view('medicines.index');
     }
-
     public function create()
     {
         $data = $this->medicineRepository->getSyncList();
-
         return view('medicines.create')->with($data);
     }
-
     public function store(CreateMedicineRequest $request)
     {
         $input = $request->all();
-
         $this->medicineRepository->create($input);
-
         Flash::success(__('messages.medicine.medicine').' '.__('messages.common.saved_successfully'));
-
         return redirect(route('medicines.index'));
     }
-
     public function show(Medicine $medicine)
     {
         $medicine->brand;
         $medicine->category;
-
         return view('medicines.show')->with('medicine', $medicine);
     }
-
     public function edit(Medicine $medicine)
     {
         $data = $this->medicineRepository->getSyncList();
         $data['medicine'] = $medicine;
-
         return view('medicines.edit')->with($data);
     }
-
     public function update(Medicine $medicine, UpdateMedicineRequest $request)
     {
         $this->medicineRepository->update($request->all(), $medicine->id);
-
         Flash::success(__('messages.medicine.medicine').' '.__('messages.common.updated_successfully'));
-
         return redirect(route('medicines.index'));
     }
-
     public function destroy(Medicine $medicine)
     {
 
@@ -93,21 +74,17 @@ class MedicineController extends AppBaseController
         if (isset($saleMedicine) && ! empty($saleMedicine)) {
             $saleMedicine->map->delete();
         }
-
         $this->medicineRepository->delete($medicine->id);
 
         return $this->sendSuccess(__('messages.medicine.medicine').' '.__('messages.common.deleted_successfully'));
     }
-
     public function medicineExport()
     {
         return Excel::download(new MedicineExport, 'medicines-'.time().'.xlsx');
     }
-
     public function showModal(Medicine $medicine)
     {
         $medicine->load(['brand', 'category']);
-
         $currency = $medicine->currency_symbol ? strtoupper($medicine->currency_symbol) : strtoupper(getCurrentCurrency());
         $medicine = [
             'name' => $medicine->name,
@@ -123,26 +100,19 @@ class MedicineController extends AppBaseController
             'quantity' => $medicine->quantity,
             'available_quantity' => $medicine->available_quantity,
         ];
-
         return $this->sendResponse($medicine, 'Medicine Retrieved Successfully');
     }
-
     public function checkUseOfMedicine(Medicine $medicine)
     {
-
         $SaleModel = [
             SaleMedicine::class,
             PurchasedMedicine::class,
         ];
         $result['result'] = canDelete($SaleModel, 'medicine_id', $medicine->id);
         $result['id'] = $medicine->id;
-
         if ($result) {
-
             return $this->sendResponse($result, __('This medicine is already used in medicine bills, are you sure want to delete it?'));
         }
-
         return $this->sendResponse($result, 'Not in use');
-
     }
 }

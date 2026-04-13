@@ -1,13 +1,10 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Models\Appointment;
 use App\Models\Invoice;
 use App\Models\PatientCase;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
-
 class DummyActivitySeeder extends Seeder
 {
     public function run(): void
@@ -16,7 +13,6 @@ class DummyActivitySeeder extends Seeder
         $this->createPatientCases();
         $this->createInvoices();
     }
-
     private function createAppointments(): void
     {
         // doctor_department_id: 1=Cardiologists, 4=Dermatologists, 6=Nephrologists
@@ -27,14 +23,12 @@ class DummyActivitySeeder extends Seeder
             ['patient_id' => 5,  'doctor_id' => 1, 'department_id' => 1, 'opd_date' => Carbon::now()->subDays(10), 'problem' => 'Hypertension control nahi ho raha. Dawai review karni hai.', 'is_completed' => 1],
             ['patient_id' => 7,  'doctor_id' => 1, 'department_id' => 1, 'opd_date' => Carbon::now()->subDays(5),  'problem' => 'Seene mein dard aur paseena aana – ECG karwana hai.', 'is_completed' => 0],
             ['patient_id' => 9,  'doctor_id' => 1, 'department_id' => 1, 'opd_date' => Carbon::now()->addDays(2),  'problem' => 'Follow up – angioplasty ke baad check-up.', 'is_completed' => 0],
-
             // Dr. Sara Ali (id=2, Dermatologist, dept=4)
             ['patient_id' => 2,  'doctor_id' => 2, 'department_id' => 4, 'opd_date' => Carbon::now()->subDays(18), 'problem' => 'Chehra par daane aur kharish. Allergy suspected.', 'is_completed' => 1],
             ['patient_id' => 4,  'doctor_id' => 2, 'department_id' => 4, 'opd_date' => Carbon::now()->subDays(12), 'problem' => 'Eczema ki wajah se haath par laal dhabbay.', 'is_completed' => 1],
             ['patient_id' => 6,  'doctor_id' => 2, 'department_id' => 4, 'opd_date' => Carbon::now()->subDays(7),  'problem' => 'Baalon ka girna aur scalp mein kharish.', 'is_completed' => 1],
             ['patient_id' => 8,  'doctor_id' => 2, 'department_id' => 4, 'opd_date' => Carbon::now()->subDays(2),  'problem' => 'Sunburn aur skin peeling after prolonged sun exposure.', 'is_completed' => 0],
             ['patient_id' => 10, 'doctor_id' => 2, 'department_id' => 4, 'opd_date' => Carbon::now()->addDays(3),  'problem' => 'Psoriasis treatment ke liye consultation.', 'is_completed' => 0],
-
             // Dr. Usman Malik (id=3, Nephrologist, dept=6)
             ['patient_id' => 1,  'doctor_id' => 3, 'department_id' => 6, 'opd_date' => Carbon::now()->subDays(22), 'problem' => 'Peshab mein jalan aur kidney stone ka doubt.', 'is_completed' => 1],
             ['patient_id' => 3,  'doctor_id' => 3, 'department_id' => 6, 'opd_date' => Carbon::now()->subDays(14), 'problem' => 'Creatinine level high hai – kidney function test.', 'is_completed' => 1],
@@ -42,17 +36,14 @@ class DummyActivitySeeder extends Seeder
             ['patient_id' => 7,  'doctor_id' => 3, 'department_id' => 6, 'opd_date' => Carbon::now()->addDays(1),  'problem' => 'Dialysis schedule discussion aur test reports review.', 'is_completed' => 0],
             ['patient_id' => 9,  'doctor_id' => 3, 'department_id' => 6, 'opd_date' => Carbon::now()->addDays(4),  'problem' => 'Urinary tract infection – urine culture report dekhna hai.', 'is_completed' => 0],
         ];
-
         foreach ($appointments as $appt) {
             Appointment::create(array_merge($appt, [
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ]));
         }
-
         $this->command->info('✅ 15 Appointments created!');
     }
-
     private function createPatientCases(): void
     {
         $cases = [
@@ -157,7 +148,6 @@ class DummyActivitySeeder extends Seeder
                 'description' => 'Recurrent UTI aur proteinuria. 24-hour urine collection test ordered.',
             ],
         ];
-
         foreach ($cases as $case) {
             PatientCase::create(array_merge($case, [
                 'currency_symbol' => 'Rs',
@@ -165,10 +155,8 @@ class DummyActivitySeeder extends Seeder
                 'updated_at'      => Carbon::now(),
             ]));
         }
-
         $this->command->info('✅ 10 Patient Cases created!');
     }
-
     private function createInvoices(): void
     {
         $invoices = [
@@ -183,7 +171,6 @@ class DummyActivitySeeder extends Seeder
             ['invoice_id' => 'INV-2024-009', 'patient_id' => 9,  'invoice_date' => Carbon::now()->subDays(4)->toDateString(),  'amount' => 2200, 'discount' => 0,   'status' => 0],
             ['invoice_id' => 'INV-2024-010', 'patient_id' => 10, 'invoice_date' => Carbon::now()->subDays(2)->toDateString(),  'amount' => 2800, 'discount' => 300, 'status' => 0],
         ];
-
         foreach ($invoices as $inv) {
             Invoice::create(array_merge($inv, [
                 'currency_symbol' => 'Rs',
@@ -191,7 +178,6 @@ class DummyActivitySeeder extends Seeder
                 'updated_at'      => Carbon::now(),
             ]));
         }
-
         $this->command->info('✅ 10 Invoices created!');
     }
 }

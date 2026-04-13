@@ -39,4 +39,3 @@
 @section('scripts')
     {{--    assets/js/visitors/create-edit.js --}}
 @endsection
-

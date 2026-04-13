@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Models\Accountant;
 use App\Models\AdvancedPayment;
 use App\Models\Bed;
@@ -24,25 +22,20 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
-
 class HomeController extends AppBaseController
 {
     private $dashboardRepository;
-
     public function __construct(DashboardRepository $dashboardRepository)
     {
         $this->middleware('auth');
         $this->dashboardRepository = $dashboardRepository;
     }
-
     public function index()
     {
         return view('home');
     }
-
     public function dashboard()
     {
-
         //        $data['invoiceAmount'] = Invoice::sum('amount');
         $data['invoiceAmount'] = totalAmount();
         $data['billAmount'] = Bill::sum('amount');
@@ -64,21 +57,16 @@ class HomeController extends AppBaseController
         $data['admins'] = $admin;
         $data['currency'] = Setting::CURRENCIES;
         $modules = Module::pluck('is_active', 'name')->toArray();
-
         return view('dashboard.index', compact('data', 'modules'));
     }
-
     public function dashboardChart()
     {
         $data = $this->dashboardRepository->incomeChartData();
-
         return $this->sendResponse($data, 'Income report generated');
     }
-
     public function incomeExpenseReport(Request $request)
     {
         $data = $this->dashboardRepository->getIncomeExpenseReport($request->all());
-
         return $this->sendResponse($data, 'Income and Expense report retrieved successfully.');
     }
 }

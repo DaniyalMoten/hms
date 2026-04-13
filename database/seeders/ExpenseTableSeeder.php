@@ -1,11 +1,8 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Models\Expense;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
-
 class ExpenseTableSeeder extends Seeder
 {
     /**
@@ -123,7 +120,6 @@ class ExpenseTableSeeder extends Seeder
 
             ],
         ];
-
         foreach ($input as $data) {
             Expense::create($data);
         }

@@ -1,16 +1,11 @@
 <?php
-
 return [
-
     /*
     |--------------------------------------------------------------------------
     | All Titles and static string in blade files
-    |
     | Web Front side localization - English Language
     |--------------------------------------------------------------------------
-    |
     */
-
     //Header Keys
     'departments' => 'Abteilungen',
     'backend_features' => 'Backend-Funktionen',
@@ -25,7 +20,6 @@ return [
     'buy_now' => 'Jetzt kaufen',
     'home' => 'Zuhause',
     'about_us' => 'Über uns',
-
     //Features keys
     'features' => [
         'features' => 'Eigenschaften',
@@ -38,7 +32,6 @@ return [
         'our_doctors_are_always_ready_for_outdoor_checkup_in_an_emergency_we_have_different_types_of_charges_as_per_checkup' => 'Unsere Ärzte sind im Notfall immer für eine Untersuchung im Freien bereit. Wir haben verschiedene Arten von Gebühren pro Überprüfung.',
         'our_clinic_provides_extensive_medical_support_and_healthcare_services_24/7' => 'Unsere Klinik bietet rund um die Uhr umfassende medizinische Unterstützung und Gesundheitsdienstleistungen.',
     ],
-
     //Backend Features keys
     'backend_feature' => [
         'dashboard' => 'Instrumententafel',
@@ -66,7 +59,6 @@ return [
         'email_service' => 'E-Mail-Dienst',
         'settings' => 'die Einstellungen',
     ],
-
     //MISCELLANEOUS FACILITIES keys
     'miscellaneous_facilities' => [
         'miscellaneous_facilities_of_infyhms' => 'VERSCHIEDENE EINRICHTUNGEN VON INFYHMEN',
@@ -93,7 +85,6 @@ return [
         'appointment_management_system' => 'Terminverwaltungssystem',
         'investigation_reports' => 'Untersuchungsberichte',
     ],
-
     //footer keys
     'footer' => [
         'follow_us' => 'FOLGE UNS',

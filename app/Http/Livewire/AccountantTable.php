@@ -1,48 +1,34 @@
 <?php
-
 namespace App\Http\Livewire;
-
 use App\Models\Accountant;
 use Illuminate\Database\Eloquent\Builder;
 use Livewire\WithPagination;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-
 class AccountantTable extends LivewireTableComponent
 {
     use WithPagination;
-
     public $showButtonOnHeader = true;
-
     public $showFilterOnHeader = true;
-
     public $paginationIsEnabled = true;
-
     public $buttonComponent = 'accountants.add-button';
-
     public $FilterComponent = ['accountants.filter-button', Accountant::FILTER_STATUS_ARR];
-
     //    public $FilterComponent = ['livewire.filter-button', Accountant::FILTER_STATUS_ARR];
     protected $model = Accountant::class;
-
     protected $listeners = ['refresh' => '$refresh', 'changeFilter', 'resetPage'];
-
     public function changeFilter($param, $value)
     {
         $this->resetPage($this->getComputedPageName());
         $this->statusFilter = $value;
         $this->setBuilder($this->builder());
     }
-
     public function resetPage($pageName = 'page')
     {
         $rowsPropertyData = $this->getRows()->toArray();
         $prevPageNum = $rowsPropertyData['current_page'] - 1;
         $prevPageNum = $prevPageNum > 0 ? $prevPageNum : 1;
         $pageNum = count($rowsPropertyData['data']) > 0 ? $rowsPropertyData['current_page'] : $prevPageNum;
-
         $this->setPage($pageNum, $pageName);
     }
-
     public function configure(): void
     {
         $this->setPrimaryKey('id')
@@ -60,11 +46,9 @@ class AccountantTable extends LivewireTableComponent
                     'width' => '8%',
                 ];
             }
-
             return [];
         });
     }
-
     public function columns(): array
     {
         return [
@@ -84,12 +68,10 @@ class AccountantTable extends LivewireTableComponent
             Column::make(__('email'), 'user.email')->hideIf(1),
         ];
     }
-
     public function builder(): Builder
     {
         /** @var Accountant $query */
         $query = Accountant::whereHas('user')->with('user')->select('accountants.*');
-
         $query->when(isset($this->statusFilter), function (Builder $q) {
             $q->whereHas('user', function (Builder $query) {
                 if ($this->statusFilter == 1) {
@@ -100,7 +82,6 @@ class AccountantTable extends LivewireTableComponent
                 }
             });
         });
-
         return $query;
     }
 }

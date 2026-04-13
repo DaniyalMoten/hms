@@ -1,37 +1,25 @@
 <?php
-
 namespace App\Http\Livewire;
-
 use App\Models\BloodDonor;
 use Livewire\WithPagination;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-
 class BloodDonorTable extends LivewireTableComponent
 {
     use WithPagination;
-
     public $showButtonOnHeader = true;
-
     public $showFilterOnHeader = false;
-
     public $paginationIsEnabled = true;
-
     public $buttonComponent = 'blood_donors.add-button';
-
     protected $listeners = ['refresh' => '$refresh', 'resetPage'];
-
     public function resetPage($pageName = 'page')
     {
         $rowsPropertyData = $this->getRows()->toArray();
         $prevPageNum = $rowsPropertyData['current_page'] - 1;
         $prevPageNum = $prevPageNum > 0 ? $prevPageNum : 1;
         $pageNum = count($rowsPropertyData['data']) > 0 ? $rowsPropertyData['current_page'] : $prevPageNum;
-
         $this->setPage($pageNum, $pageName);
     }
-
     protected $model = BloodDonor::class;
-
     public function configure(): void
     {
         $this->setPrimaryKey('id')
@@ -43,17 +31,14 @@ class BloodDonorTable extends LivewireTableComponent
                     'width' => '8%',
                 ];
             }
-
             if ($column->isField('age') || $column->isField('name') || $column->isField('gender') || $column->isField('blood_group')) {
                 return [
                     'class' => 'p-5',
                 ];
             }
-
             return [];
         });
     }
-
     public function columns(): array
     {
         return [

@@ -29,7 +29,6 @@
                                 $style = 'style=';
                                 $background = 'background-image:';
                                 ?>
-
                                 <div class="image-picker">
                                     <div class="image previewImage" id="editTestimonialPreviewImage"
                                         {{ $style }}"{{ $background }}

@@ -42,10 +42,11 @@ class PatientRepository extends BaseRepository
             $input['department_id'] = Department::whereName('Patient')->first()->id;
             $input['password'] = Hash::make($input['password']);
             $input['dob'] = (! empty($input['dob'])) ? $input['dob'] : null;
+            $input['email_verified_at'] = \Carbon\Carbon::now();
             $user = User::create($input);
-            if ($mail) {
-                $user->sendEmailVerificationNotification();
-            }
+            // if ($mail) {
+            //     $user->sendEmailVerificationNotification();
+            // }
 
             if (isset($input['image']) && ! empty($input['image'])) {
                 $mediaId = storeProfileImage($user, $input['image']);

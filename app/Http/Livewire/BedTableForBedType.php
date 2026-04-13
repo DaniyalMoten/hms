@@ -1,38 +1,26 @@
 <?php
-
 namespace App\Http\Livewire;
-
 use App\Models\Bed;
 use Illuminate\Database\Eloquent\Builder;
 use Livewire\WithPagination;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-
 class BedTableForBedType extends LivewireTableComponent
 {
     public $bedTypeId;
-
     use WithPagination;
-
     public $showButtonOnHeader = false;
-
     public $showFilterOnHeader = false;
-
     public $paginationIsEnabled = true;
-
     protected $model = Bed::class;
-
     protected $listeners = ['refresh' => '$refresh', 'resetPage'];
-
     public function resetPage($pageName = 'page')
     {
         $rowsPropertyData = $this->getRows()->toArray();
         $prevPageNum = $rowsPropertyData['current_page'] - 1;
         $prevPageNum = $prevPageNum > 0 ? $prevPageNum : 1;
         $pageNum = count($rowsPropertyData['data']) > 0 ? $rowsPropertyData['current_page'] : $prevPageNum;
-
         $this->setPage($pageNum, $pageName);
     }
-
     public function configure(): void
     {
         $this->setQueryStringStatus(false);
@@ -43,7 +31,6 @@ class BedTableForBedType extends LivewireTableComponent
                 'class' => '',
             ];
         });
-
         $this->setTdAttributes(function (Column $column, $row, $columnIndex, $rowIndex) {
             if ($columnIndex == '4') {
                 return [
@@ -55,10 +42,8 @@ class BedTableForBedType extends LivewireTableComponent
                     'class' => 'pt-5',
                 ];
             }
-
             return [];
         });
-
         $this->setThAttributes(function (Column $column) {
             if ($column->isField('charge')) {
                 return [
@@ -66,22 +51,18 @@ class BedTableForBedType extends LivewireTableComponent
                     'style' => 'padding-right: 5rem !important',
                 ];
             }
-
             return [];
         });
     }
-
     public function mount(int $bedTypeId)
     {
         $this->bedTypeId = $bedTypeId;
     }
-
     public function changeFilter($param, $value)
     {
         $this->resetPage($this->getComputedPageName());
         $this->statusFilter = $value;
     }
-
     public function columns(): array
     {
         return [
@@ -103,11 +84,9 @@ class BedTableForBedType extends LivewireTableComponent
                 ->sortable(),
         ];
     }
-
     public function builder(): Builder
     {
         $query = Bed::with('bedType')->select('beds.*')->where('bed_type', $this->bedTypeId);
-
         return $query;
     }
 }

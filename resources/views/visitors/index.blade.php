@@ -16,7 +16,6 @@
         </div>
     </div>
 @endsection
-
 @section('scripts')
 
     {{--   assets/js/visitors/visitor.js --}}

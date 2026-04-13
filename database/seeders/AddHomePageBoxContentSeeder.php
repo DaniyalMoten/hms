@@ -1,10 +1,7 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Models\FrontSetting;
 use Illuminate\Database\Seeder;
-
 class AddHomePageBoxContentSeeder extends Seeder
 {
     /**
@@ -22,7 +19,6 @@ class AddHomePageBoxContentSeeder extends Seeder
             'value' => 'Proin gravida nibh vel velit auctor aliquet.',
             'type' => FrontSetting::HOME_PAGE,
         ]);
-
         // Home Page Step Section
         FrontSetting::create([
             'key' => 'home_page_step_1_title',
@@ -34,7 +30,6 @@ class AddHomePageBoxContentSeeder extends Seeder
             'value' => 'Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin lorem quis bibendum auctor nisi elit.',
             'type' => FrontSetting::HOME_PAGE,
         ]);
-
         FrontSetting::create([
             'key' => 'home_page_step_2_title',
             'value' => 'Request Consulting',
@@ -45,7 +40,6 @@ class AddHomePageBoxContentSeeder extends Seeder
             'value' => 'Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin lorem quis bibendum auctor nisi elit.',
             'type' => FrontSetting::HOME_PAGE,
         ]);
-
         FrontSetting::create([
             'key' => 'home_page_step_3_title',
             'value' => 'Receive Consulting',
@@ -56,7 +50,6 @@ class AddHomePageBoxContentSeeder extends Seeder
             'value' => 'Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin lorem quis bibendum auctor nisi elit.',
             'type' => FrontSetting::HOME_PAGE,
         ]);
-
         FrontSetting::create([
             'key' => 'home_page_step_4_title',
             'value' => 'Get Your Solution',
@@ -67,7 +60,6 @@ class AddHomePageBoxContentSeeder extends Seeder
             'value' => 'Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin lorem quis bibendum auctor nisi elit.',
             'type' => FrontSetting::HOME_PAGE,
         ]);
-
         // Home Page Certified Section
         FrontSetting::create([
             'key' => 'home_page_certified_box_title',

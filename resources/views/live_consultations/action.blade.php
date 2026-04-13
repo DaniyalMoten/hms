@@ -4,14 +4,12 @@ $adminRole = getLoggedInUser()->hasRole('Admin') ? true : false;
 $today = Carbon\Carbon::now()->format('Y-m-d h:i A');
 $meetingTime = \Carbon\Carbon::parse($row->consultation_date)->format('Y-m-d h:i A');
 ?>
-
 @if ($row->status == 0 && $meetingTime > $today)
     <a title="{{ $patientRole ? __('messages.live_consultation.join_meeting') : __('messages.live_consultation.start_meeting') }}"
         class="btn px-1 text-info fs-3 ps-0 startConsultationBtn" data-id="{{ $row->id }}">
         <i class="fa-solid fa-video"></i>
     </a>
 @endif
-
 @if ($doctorRole || $adminRole)
     @if ($row->status == 0 && $meetingTime > $today)
         <a href="javascript:void(0)" title="<?php echo __('messages.common.edit'); ?>"

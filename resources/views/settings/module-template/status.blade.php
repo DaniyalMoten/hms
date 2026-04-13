@@ -7,4 +7,3 @@
         <span class="switch-slider" data-checked="&#x2713;" data-unchecked="&#x2715;"></span>
     </label>    
 </div>
-

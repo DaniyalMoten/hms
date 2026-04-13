@@ -42,7 +42,7 @@ header {
   }
 }
 header .header-logo img {
-  max-width: 50px;
+  max-width: 100%;
 }
 @media (max-width: 1199px) {
   header .navbar {

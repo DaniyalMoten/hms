@@ -119,7 +119,6 @@
             </div>
         </div>
     </div>
-
     <div class="row">
         {{-- <!-- App Logo Field --> --}}
         <div class="col-md-6">
@@ -157,7 +156,6 @@
                     $style = 'style=';
                     $background = 'background-image:';
                     ?>
-
                     <div class="image-picker">
                         <div class="image previewImage" id="previewImage" {{ $style }}"{{ $background }}
                             url('{{ $settings['favicon'] ? $settings['favicon'] : asset('web/img/favicon.png') }}')">
@@ -176,7 +174,6 @@
                 </div>
             </div>
         </div>
-
         <hr>
         <div class="row">
             <div class="col-md-12 mb-3">

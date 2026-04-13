@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Exports\DoctorExport;
 use App\Http\Requests\CreateDoctorRequest;
 use App\Http\Requests\UpdateDoctorRequest;
@@ -30,40 +28,31 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\View\View;
 use Maatwebsite\Excel\Facades\Excel;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
-
 class DoctorController extends AppBaseController
 {
     /** @var DoctorRepository */
     private $doctorRepository;
-
     public function __construct(DoctorRepository $doctorRepo)
     {
         $this->doctorRepository = $doctorRepo;
     }
-
     public function index()
     {
         $data['statusArr'] = Doctor::STATUS_ARR;
-
         return view('doctors.index', $data);
     }
-
     public function create()
     {
         $doctorsDepartments = getDoctorsDepartments();
         $bloodGroup = getBloodGroups();
-
         return view('doctors.create', compact('doctorsDepartments', 'bloodGroup'));
     }
-
     public function store(CreateDoctorRequest $request)
     {
         $input = $request->all();
         $input['status'] = isset($input['status']) ? 1 : 0;
         $doctor = $this->doctorRepository->store($input);
-
         $days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-
         foreach ($days as $scheduleDay) {
             ScheduleDay::create([
                 'doctor_id' => Session::get('doctor_id'),
@@ -77,7 +66,6 @@ class DoctorController extends AppBaseController
 
         return redirect(route('doctors.index'));
     }
-
     public function show($doctorId)
     {
         if (! getLoggedInUser()->hasRole('Receptionist') && checkRecordAccess($doctorId) && ! getLoggedInUser()->hasRole('Nurse')) {
@@ -85,7 +73,6 @@ class DoctorController extends AppBaseController
             if (! $doctor) {
                 return view('errors.404');
             }
-
             return view('employees.doctors.show')->with('doctor', $doctor);
         } else {
             //            $data = $this->doctorRepository->getDoctorAssociatedData($doctorId);
@@ -94,28 +81,22 @@ class DoctorController extends AppBaseController
             if (! $data) {
                 return view('errors.404');
             }
-
             return view('doctors.show')->with($data);
         }
     }
-
     public function edit(Doctor $doctor)
     {
         $user = $doctor->doctorUser;
         $doctorsDepartments = getDoctorsDepartments();
         $bloodGroup = getBloodGroups();
-
         return view('doctors.edit', compact('doctor', 'user', 'doctorsDepartments', 'bloodGroup'));
     }
-
     public function update(Doctor $doctor, UpdateDoctorRequest $request)
     {
         if ($doctor->is_default == 1) {
             Flash::error(_('messages.common.this_action_is_not_allowed_for_default_record'));
-
             return redirect(route('doctors.index'));
         }
-
         if (empty($doctor)) {
             Flash::error(__('messages.case.doctor').' '.__('messages.common.not_found'));
 
@@ -125,18 +106,14 @@ class DoctorController extends AppBaseController
         $input['status'] = isset($input['status']) ? 1 : 0;
         $doctor = $this->doctorRepository->update($doctor, $input);
         Flash::success(__('messages.case.doctor').' '.__('messages.common.saved_successfully'));
-
         return redirect(route('doctors.index'));
     }
-
     public function destroy(Doctor $doctor)
     {
         if ($doctor->is_default == 1) {
             Flash::error(_('messages.common.this_action_is_not_allowed_for_default_record'));
-
             return redirect(route('doctors.index'));
         }
-
         $doctorModels = [
             PatientCase::class, PatientAdmission::class, Appointment::class, BirthReport::class,
             DeathReport::class, InvestigationReport::class, OperationReport::class, Prescription::class,
@@ -152,19 +129,15 @@ class DoctorController extends AppBaseController
         $doctor->user()->delete();
         $doctor->address()->delete();
         $doctor->delete();
-
         return $this->sendSuccess(__('messages.case.doctor').' '.__('messages.common.saved_successfully'));
     }
-
     public function activeDeactiveStatus($id)
     {
         $doctor = Doctor::findOrFail($id);
         $status = ! $doctor->doctorUser->status;
         $doctor->doctorUser()->update(['status' => $status]);
-
         return $this->sendSuccess(__('messages.common.status_updated_successfully'));
     }
-
     public function doctorExport()
     {
         return Excel::download(new DoctorExport, 'doctors-'.time().'.xlsx');

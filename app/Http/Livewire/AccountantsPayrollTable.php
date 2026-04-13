@@ -1,62 +1,48 @@
 <?php
-
 namespace App\Http\Livewire;
-
 use App\Models\Accountant;
 use App\Models\EmployeePayroll;
 use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-
 class AccountantsPayrollTable extends LivewireTableComponent
 {
     protected $model = EmployeePayroll::class;
-
     public $accountantId;
-
     protected $listeners = ['refresh' => '$refresh', 'changeFilter', 'resetPage'];
-
     public function resetPage($pageName = 'page')
     {
         $rowsPropertyData = $this->getRows()->toArray();
         $prevPageNum = $rowsPropertyData['current_page'] - 1;
         $prevPageNum = $prevPageNum > 0 ? $prevPageNum : 1;
         $pageNum = count($rowsPropertyData['data']) > 0 ? $rowsPropertyData['current_page'] : $prevPageNum;
-
         $this->setPage($pageNum, $pageName);
     }
-
     public function configure(): void
     {
         $this->setPrimaryKey('id')
             ->setDefaultSort('employee_payrolls.created_at', 'desc')
             ->setQueryStringStatus(false);
-
         $this->setTdAttributes(function (Column $column, $row, $columnIndex, $rowIndex) {
             if ($column->isField('payroll_id') || $column->isField('month') || $column->isField('year') || $column->isField('basic_salary') || $column->isField('allowance') || $column->isField('deductions') || $column->isField('net_salary') || $column->isField('status')) {
                 return [
                     'class' => 'pt-5',
                 ];
             }
-
             return [];
         });
-
         $this->setThAttributes(function (Column $column) {
             if ($column->isField('basic_salary') || $column->isField('allowance') || $column->isField('deductions') || $column->isField('net_salary')) {
                 return [
                     'class' => 'text-end',
                 ];
             }
-
             return [];
         });
     }
-
     public function mount(string $accountantId): void
     {
         $this->accountantId = $accountantId;
     }
-
     public function columns(): array
     {
         return [
@@ -94,7 +80,6 @@ class AccountantsPayrollTable extends LivewireTableComponent
                 ->sortable(),
         ];
     }
-
     public function builder(): Builder
     {
         /** @var EmployeePayroll $query */
@@ -110,7 +95,6 @@ class AccountantsPayrollTable extends LivewireTableComponent
                     });
                 }
             })->where('owner_id', $this->accountantId)->with('owner.user')->select('employee_payrolls.*');
-
         return $query;
     }
 }

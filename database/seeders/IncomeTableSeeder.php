@@ -1,11 +1,8 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Models\Income;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
-
 class IncomeTableSeeder extends Seeder
 {
     /**

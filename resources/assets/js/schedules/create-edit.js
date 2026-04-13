@@ -137,7 +137,7 @@ function loadSchedules() {
             if ($("#availableFrom-" + j).val() != "00:00:00") {
                 availableFrom = false;
                 if (
-                    hospitalStartTime[j + 1] !== "undefined" &&
+                    typeof hospitalStartTime[j + 1] !== "undefined" &&
                     $("#availableFrom-" + j).val() < hospitalStartTime[j + 1][0]
                 ) {
                     $("#availableFrom-" + j).focus();
@@ -168,7 +168,7 @@ function loadSchedules() {
             if ($("#availableTo-" + i).val() != "00:00:00") {
                 availableTo = false;
                 if (
-                    hospitalStartTime[i + 1] !== "undefined" &&
+                    typeof hospitalStartTime[i + 1] !== "undefined" &&
                     $("#availableTo-" + i).val() >
                         hospitalStartTime[i + 1][1] + ":00"
                 ) {

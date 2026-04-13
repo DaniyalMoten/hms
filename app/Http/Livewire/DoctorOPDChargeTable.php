@@ -1,31 +1,22 @@
 <?php
-
 namespace App\Http\Livewire;
-
 use App\Models\DoctorOPDCharge;
 use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-
 class DoctorOPDChargeTable extends LivewireTableComponent
 {
     public $buttonComponent = 'doctor_opd_charges.templates.button.add-button';
-
     public $showButtonOnHeader = true;
-
     protected $model = DoctorOPDCharge::class;
-
     protected $listeners = ['refresh' => '$refresh', 'resetPage'];
-
     public function resetPage($pageName = 'page')
     {
         $rowsPropertyData = $this->getRows()->toArray();
         $prevPageNum = $rowsPropertyData['current_page'] - 1;
         $prevPageNum = $prevPageNum > 0 ? $prevPageNum : 1;
         $pageNum = count($rowsPropertyData['data']) > 0 ? $rowsPropertyData['current_page'] : $prevPageNum;
-
         $this->setPage($pageNum, $pageName);
     }
-
     public function configure(): void
     {
         $this->setPrimaryKey('id')
@@ -38,11 +29,9 @@ class DoctorOPDChargeTable extends LivewireTableComponent
                     'style' => 'padding-right: 7rem !important',
                 ];
             }
-
             return [];
         });
     }
-
     public function columns(): array
     {
         return [
@@ -58,14 +47,12 @@ class DoctorOPDChargeTable extends LivewireTableComponent
                 ->view('doctor_opd_charges.action'),
         ];
     }
-
     /**
      * @return Builder|DoctorOPDCharge|\Illuminate\Database\Query\Builder
      */
     public function builder(): Builder
     {
         $query = DoctorOPDCharge::whereHas('doctor')->with('doctor')->select('doctor_opd_charges.*');
-
         return $query;
     }
 }

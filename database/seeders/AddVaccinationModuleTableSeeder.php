@@ -1,10 +1,7 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Models\Module;
 use Illuminate\Database\Seeder;
-
 class AddVaccinationModuleTableSeeder extends Seeder
 {
     /**
@@ -24,7 +21,6 @@ class AddVaccinationModuleTableSeeder extends Seeder
                 'route' => 'vaccinated-patients.index',
             ],
         ];
-
         foreach ($input as $data) {
             Module::create($data);
         }

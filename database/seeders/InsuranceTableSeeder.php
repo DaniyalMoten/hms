@@ -1,11 +1,8 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Repositories\InsuranceRepository;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\App;
-
 class InsuranceTableSeeder extends Seeder
 {
     /**
@@ -27,8 +24,8 @@ class InsuranceTableSeeder extends Seeder
                     1 => 'Infectious Diseases',
                 ],
                 'disease_charge' => [
-                    0 => 100,
-                    1 => 300,
+                    0 => 10000,
+                    1 => 600,
                 ],
             ],
             [
@@ -38,14 +35,14 @@ class InsuranceTableSeeder extends Seeder
                 'insurance_code' => 'INSC-2',
                 'hospital_rate' => 1000,
                 'status' => 1,
-                'total' => 1620,
+                'total' => 7000,
                 'disease_name' => [
                     0 => 'Liver Disease',
                     1 => 'Celiac Disease',
                 ],
                 'disease_charge' => [
-                    0 => 200,
-                    1 => 400,
+                    0 => 2000,
+                    1 => 4000,
                 ],
             ],
         ];

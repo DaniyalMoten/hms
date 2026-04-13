@@ -175,12 +175,10 @@
         <div class="col sidebar mb-3">
             <h1><i class="fa fa-calendar" aria-hidden="true"></i> Laravel Log Viewer</h1>
             <p class="text-muted"><i>by Rap2h</i></p>
-
             <div class="custom-control custom-switch" style="padding-bottom:20px;">
                 <input type="checkbox" class="custom-control-input" id="darkSwitch">
                 <label class="custom-control-label" for="darkSwitch" style="margin-top: 6px;">Dark Mode</label>
             </div>
-
             <div class="list-group div-scroll">
                 @foreach($folders as $folder)
                     <div class="list-group-item">
@@ -227,7 +225,6 @@
                     </tr>
                     </thead>
                     <tbody>
-
                     @foreach($logs as $key => $log)
                         <tr data-display="stack{{{$key}}}">
                             @if ($standardFormat)
@@ -258,7 +255,6 @@
                             </td>
                         </tr>
                     @endforeach
-
                     </tbody>
                 </table>
             @endif
@@ -298,16 +294,12 @@
 <!-- Datatables -->
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
-
 <script>
-
     // dark mode by https://github.com/coliff/dark-mode-switch
     const darkSwitch = document.getElementById('darkSwitch')
-
     // this is here so we can get the body dark mode before the page displays
     // otherwise the page will be white for a second... 
     initTheme();
-
     window.addEventListener('load', () => {
         if (darkSwitch) {
             initTheme();
@@ -316,9 +308,7 @@
             });
         }
     });
-
     // end darkmode js
-
     $(document).ready(function () {
         $('.table-container tr').on('click', function () {
             $('#' + $(this).data('display')).toggle();

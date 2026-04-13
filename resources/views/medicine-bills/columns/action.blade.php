@@ -1,4 +1,3 @@
-
 <a href="{{ route('medicine-bills.show', [$row->id]) }}"
     class='btn px-2 text-primary fs-3 ps-0'> <i class="fas fa-eye text-success"></i></a>
 {{--  @if(isset($row->payment_status) && $row->payment_status == false)  --}}

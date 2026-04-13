@@ -1,38 +1,26 @@
 <?php
-
 namespace App\Http\Livewire;
-
 use App\Models\BloodIssue;
 use Illuminate\Database\Eloquent\Builder;
 use Livewire\WithPagination;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-
 class BloodIssueTable extends LivewireTableComponent
 {
     use WithPagination;
-
     public $showButtonOnHeader = true;
-
     public $showFilterOnHeader = false;
-
     public $paginationIsEnabled = true;
-
     public $buttonComponent = 'blood_issues.add-button';
-
     protected $model = BloodIssue::class;
-
     protected $listeners = ['refresh' => '$refresh', 'resetPage'];
-
     public function resetPage($pageName = 'page')
     {
         $rowsPropertyData = $this->getRows()->toArray();
         $prevPageNum = $rowsPropertyData['current_page'] - 1;
         $prevPageNum = $prevPageNum > 0 ? $prevPageNum : 1;
         $pageNum = count($rowsPropertyData['data']) > 0 ? $rowsPropertyData['current_page'] : $prevPageNum;
-
         $this->setPage($pageNum, $pageName);
     }
-
     public function configure(): void
     {
         $this->setPrimaryKey('id')
@@ -45,11 +33,9 @@ class BloodIssueTable extends LivewireTableComponent
                     'style' => 'padding-right: 7rem !important',
                 ];
             }
-
             return [];
         });
     }
-
     public function columns(): array
     {
         return [
@@ -79,7 +65,6 @@ class BloodIssueTable extends LivewireTableComponent
                 ->view('blood_issues.action'),
         ];
     }
-
     public function builder(): Builder
     {
         return BloodIssue::whereHas('patient.patientUser')->whereHas('doctor.doctorUser')->with([

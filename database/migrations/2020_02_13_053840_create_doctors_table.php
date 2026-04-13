@@ -1,9 +1,7 @@
 <?php
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-
 return new class extends Migration
 {
     /**
@@ -25,7 +23,6 @@ return new class extends Migration
             $table->foreign('doctor_department_id')->references('id')->on('doctor_departments');
         });
     }
-
     /**
      * Reverse the migrations.
      */

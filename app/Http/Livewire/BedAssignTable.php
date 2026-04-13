@@ -1,54 +1,39 @@
 <?php
-
 namespace App\Http\Livewire;
-
 use App\Models\BedAssign;
 use Illuminate\Database\Eloquent\Builder;
 use Livewire\WithPagination;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-
 class BedAssignTable extends LivewireTableComponent
 {
     use WithPagination;
-
     public $showButtonOnHeader = true;
-
     public $showFilterOnHeader = true;
-
     public $paginationIsEnabled = true;
-
     public $buttonComponent = 'bed_assigns.add-button';
-
     public $FilterComponent = ['bed_assigns.filter-button', BedAssign::FILTER_STATUS_ARR];
-
     protected $model = BedAssign::class;
-
     protected $listeners = ['refresh' => '$refresh', 'changeFilter', 'resetPage'];
-
     public function resetPage($pageName = 'page')
     {
         $rowsPropertyData = $this->getRows()->toArray();
         $prevPageNum = $rowsPropertyData['current_page'] - 1;
         $prevPageNum = $prevPageNum > 0 ? $prevPageNum : 1;
         $pageNum = count($rowsPropertyData['data']) > 0 ? $rowsPropertyData['current_page'] : $prevPageNum;
-
         $this->setPage($pageNum, $pageName);
     }
-
     public function changeFilter($param, $value)
     {
         $this->resetPage($this->getComputedPageName());
         $this->statusFilter = $value;
         $this->setBuilder($this->builder());
     }
-
     public function configure(): void
     {
         $this->setPrimaryKey('id')
             ->setDefaultSort('bed_assigns.created_at', 'desc')
             ->setQueryStringStatus(false);
     }
-
     public function columns(): array
     {
         return [
@@ -80,7 +65,6 @@ class BedAssignTable extends LivewireTableComponent
                 ->view('bed_assigns.action'),
         ];
     }
-
     public function builder(): Builder
     {
         $query = BedAssign::whereHas('patient.patientUser')->with('patient.patientUser', 'bed', 'caseFromBedAssign', 'ipdPatient')
@@ -93,7 +77,6 @@ class BedAssignTable extends LivewireTableComponent
                 $q->where('bed_assigns.status', BedAssign::INACTIVE);
             }
         });
-
         return $query;
     }
 }

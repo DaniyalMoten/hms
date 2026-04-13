@@ -1,12 +1,9 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Repositories\CaseHandlerRepository;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\App;
-
 class CaseHandlerTableSeeder extends Seeder
 {
     /**
@@ -40,7 +37,6 @@ class CaseHandlerTableSeeder extends Seeder
                 'email_verified_at' => Carbon::now(),
             ],
         ];
-
         foreach ($input as $key => $value) {
             /** @var CaseHandlerRepository $caseHandler */
             $caseHandler = App::make(CaseHandlerRepository::class);

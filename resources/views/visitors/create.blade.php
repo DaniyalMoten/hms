@@ -31,9 +31,7 @@
                 {{ Form::hidden('defaultDocumentImageUrl', asset('assets/img/default_image.jpg'), ['class' => 'defaultDocumentImageUrl']) }}
                 <div class="card-body p-12">
                     {{ Form::open(['route' => 'visitors.store','id' => 'createVisitorForm','files' => true, 'enctype' => 'multipart/form-data']) }}
-
                     @include('visitors.fields')
-
                     {{ Form::close() }}
                 </div>
             </div>
@@ -43,4 +41,3 @@
 @section('scripts')
     {{--    assets/js/visitors/create-edit.js --}}
 @endsection
-

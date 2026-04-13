@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Exports\PathologyTestExport;
 use App\Http\Requests\CreatePathologyTestRequest;
 use App\Http\Requests\UpdatePathologyTestRequest;
@@ -18,29 +16,24 @@ use Illuminate\Routing\Redirector;
 use Illuminate\View\View;
 use Maatwebsite\Excel\Facades\Excel;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
-
 class PathologyTestController extends AppBaseController
 {
     /** @var PathologyTestRepository */
     private $pathologyTestRepository;
-
     public function __construct(PathologyTestRepository $pathologyTestRepo)
     {
         $this->pathologyTestRepository = $pathologyTestRepo;
     }
-
     public function index()
     {
         return view('pathology_tests.index');
     }
-
     public function create()
     {
         $data = $this->pathologyTestRepository->getPathologyAssociatedData();
 
         return view('pathology_tests.create', compact('data'));
     }
-
     public function store(CreatePathologyTestRequest $request)
     {
         $input = $request->all();
@@ -51,22 +44,17 @@ class PathologyTestController extends AppBaseController
         $input['report_days'] = ! empty($input['report_days']) ? $input['report_days'] : null;
         $this->pathologyTestRepository->create($input);
         Flash::success(__('messages.pathology_tests').' '.__('messages.common.saved_successfully'));
-
         return redirect(route('pathology.test.index'));
     }
-
     public function show(PathologyTest $pathologyTest)
     {
         return view('pathology_tests.show', compact('pathologyTest'));
     }
-
     public function edit(PathologyTest $pathologyTest)
     {
         $data = $this->pathologyTestRepository->getPathologyAssociatedData();
-
         return view('pathology_tests.edit', compact('pathologyTest', 'data'));
     }
-
     public function update(PathologyTest $pathologyTest, UpdatePathologyTestRequest $request)
     {
         $input = $request->all();
@@ -77,33 +65,25 @@ class PathologyTestController extends AppBaseController
         $input['report_days'] = ! empty($input['report_days']) ? $input['report_days'] : null;
         $this->pathologyTestRepository->update($input, $pathologyTest->id);
         Flash::success(__('messages.pathology_tests').' '.__('messages.common.updated_successfully'));
-
         return redirect(route('pathology.test.index'));
     }
-
     public function destroy(PathologyTest $pathologyTest)
     {
         $pathologyTest->delete();
-
         return $this->sendSuccess(__('messages.pathology_tests').' '.__('messages.common.deleted_successfully'));
     }
-
     public function getStandardCharge($id)
     {
         $standardCharges = Charge::where('charge_category_id', $id)->value('standard_charge');
-
         return $this->sendResponse($standardCharges, 'StandardCharge retrieved successfully.');
     }
-
     public function pathologyTestExport()
     {
         return Excel::download(new PathologyTestExport, 'pathology-tests-'.time().'.xlsx');
     }
-
     public function showModal(PathologyTest $pathologyTest)
     {
         $pathologyTest->load(['pathologycategory', 'chargecategory']);
-
         $currency = $pathologyTest->currency_symbol ? strtoupper($pathologyTest->currency_symbol) : strtoupper(getCurrentCurrency());
         $pathologyTest = [
             'test_name' => $pathologyTest->test_name,
@@ -119,7 +99,6 @@ class PathologyTestController extends AppBaseController
             'created_at' => $pathologyTest->created_at,
             'updated_at' => $pathologyTest->updated_at,
         ];
-
         return $this->sendResponse($pathologyTest, 'Pathology Test Retrieved Successfully.');
     }
 }

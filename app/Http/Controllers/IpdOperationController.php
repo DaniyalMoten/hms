@@ -1,11 +1,8 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Http\Requests\CreateIPDOperationRequest;
 use App\Models\IpdOperation;
 use Str;
-
 class IpdOperationController extends AppBaseController
 {
     public function store(CreateIPDOperationRequest $request)
@@ -18,7 +15,6 @@ class IpdOperationController extends AppBaseController
             }
             break;
         }
-
         $input = [
             'ref_no' => $operationRefNo,
             'operation_category_id' => $request->operation_category_id,
@@ -35,31 +31,23 @@ class IpdOperationController extends AppBaseController
             'remark' => $request->remark,
             'result' => $request->result,
         ];
-
         IpdOperation::create($input);
-
         return $this->sendSuccess(__('messages.ipd_operation.ipd_operation_created_successfully'));
     }
-
     public function edit($id)
     {
         $data = IpdOperation::where('id', $id)->first();
-
         return $this->sendResponse($data, 'IPD operation retrieved successfully.');
     }
-
     public function update($id, CreateIPDOperationRequest $request)
     {
         $ipdOperation = IpdOperation::where('id', $id)->first();
         $ipdOperation->update($request->all());
-
         return $this->sendSuccess(__('messages.ipd_operation.ipd_operation').' '.__('messages.common.updated_successfully'));
     }
-
     public function delete($id)
     {
         IpdOperation::where('id', $id)->delete();
-
         return $this->sendSuccess(__('messages.ipd_operation.ipd_operation').' '.__('messages.common.deleted_successfully'));
     }
 }

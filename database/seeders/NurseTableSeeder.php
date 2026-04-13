@@ -1,12 +1,9 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Repositories\NurseRepository;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\App;
-
 class NurseTableSeeder extends Seeder
 {
     /**
@@ -40,7 +37,6 @@ class NurseTableSeeder extends Seeder
             ],
             */
         ];
-
         foreach ($input as $key => $value) {
             /** @var NurseRepository $nurse */
             $nurse = App::make(NurseRepository::class);

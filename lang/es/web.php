@@ -1,7 +1,5 @@
 <?php
-
 return [
-
     /*
     |--------------------------------------------------------------------------
     | All Titles and static string in blade files
@@ -10,7 +8,6 @@ return [
     |--------------------------------------------------------------------------
     |
     */
-
     //Header Keys
     'departments' => 'Departamentos',
     'backend_features' => 'Funciones de backend',
@@ -25,7 +22,6 @@ return [
     'buy_now' => 'Comprar ahora',
     'home' => 'Hogar',
     'about_us' => 'Sobre nosotros',
-
     //Features keys
     'features' => [
         'features' => 'Características',
@@ -38,7 +34,6 @@ return [
         'our_doctors_are_always_ready_for_outdoor_checkup_in_an_emergency_we_have_different_types_of_charges_as_per_checkup' => 'Nuestros médicos siempre están listos para un chequeo al aire libre en caso de emergencia. tenemos diferentes tipos de cargos por chequeo. ',
         'our_clinic_provides_extensive_medical_support_and_healthcare_services_24/7' => 'Nuestra clínica brinda un amplio apoyo médico y servicios de atención médica 24/7.',
     ],
-
     //Backend Features keys
     'backend_feature' => [
         'dashboard' => 'Panel de control',
@@ -66,7 +61,6 @@ return [
         'email_service' => 'Servicio de correo electrónico',
         'settings' => 'Configuración',
     ],
-
     //MISCELLANEOUS FACILITIES keys
     'miscellaneous_facilities' => [
         'miscellaneous_facilities_of_infyhms' => 'DIVERSAS INSTALACIONES DE INFYHMS',
@@ -93,7 +87,6 @@ return [
         'appointment_management_system' => 'Sistema de gestión de citas',
         'investigation_reports' => 'Informes de investigación',
     ],
-
     //footer keys
     'footer' => [
         'follow_us' => 'SÍGUENOS',

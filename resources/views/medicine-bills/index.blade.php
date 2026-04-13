@@ -2,7 +2,6 @@
 @section('title')
     {{ __('messages.medicine_bills.medicine_bill') }}
 @endsection
-
 @section('content')
     <div class="container-fluid">
         @include('flash::message')

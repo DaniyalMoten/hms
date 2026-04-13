@@ -1,45 +1,32 @@
 <?php
-
 namespace App\Http\Livewire;
-
 use App\Models\Ambulance;
 use Illuminate\Database\Eloquent\Builder;
 use Livewire\WithPagination;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-
 class AmbulanceTable extends LivewireTableComponent
 {
     use WithPagination;
-
     protected $model = Ambulance::class;
-
     public $showButtonOnHeader = true;
-
     public $showFilterOnHeader = true;
-
     public $buttonComponent = 'ambulances.add-button';
-
     public $FilterComponent = ['ambulances.filter-button', Ambulance::FILTER_STATUS_ARR];
-
     protected $listeners = ['refresh' => '$refresh', 'changeFilter', 'resetPage'];
-
     public function resetPage($pageName = 'page')
     {
         $rowsPropertyData = $this->getRows()->toArray();
         $prevPageNum = $rowsPropertyData['current_page'] - 1;
         $prevPageNum = $prevPageNum > 0 ? $prevPageNum : 1;
         $pageNum = count($rowsPropertyData['data']) > 0 ? $rowsPropertyData['current_page'] : $prevPageNum;
-
         $this->setPage($pageNum, $pageName);
     }
-
     public function changeFilter($param, $value)
     {
         $this->resetPage($this->getComputedPageName());
         $this->statusFilter = $value;
         $this->setBuilder($this->builder());
     }
-
     public function configure(): void
     {
         $this->setPrimaryKey('id')
@@ -51,11 +38,9 @@ class AmbulanceTable extends LivewireTableComponent
                     'class' => 'pt-5',
                 ];
             }
-
             return [];
         });
     }
-
     public function columns(): array
     {
         return [
@@ -86,7 +71,6 @@ class AmbulanceTable extends LivewireTableComponent
                 ->view('ambulances.action-button'),
         ];
     }
-
     public function builder(): BUIlder
     {
         $query = Ambulance::select('ambulances.*');
@@ -98,7 +82,6 @@ class AmbulanceTable extends LivewireTableComponent
                 $q->where('is_available', Ambulance::FALSE);
             }
         });
-
         return $query;
     }
 }

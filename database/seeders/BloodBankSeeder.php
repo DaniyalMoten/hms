@@ -1,10 +1,7 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Models\BloodBank;
 use Illuminate\Database\Seeder;
-
 class BloodBankSeeder extends Seeder
 {
     /**
@@ -22,7 +19,6 @@ class BloodBankSeeder extends Seeder
             ['blood_group' => 'O+', 'remained_bags' => 0],
             ['blood_group' => 'O-', 'remained_bags' => 0],
         ];
-
         foreach ($input as $data) {
             BloodBank::create($data);
         }

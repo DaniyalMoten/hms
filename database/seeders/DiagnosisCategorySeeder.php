@@ -1,10 +1,7 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Models\DiagnosisCategory;
 use Illuminate\Database\Seeder;
-
 class DiagnosisCategorySeeder extends Seeder
 {
     /**
@@ -90,7 +87,6 @@ class DiagnosisCategorySeeder extends Seeder
             ],
 
         ];
-
         foreach ($input as $data) {
             DiagnosisCategory::create($data);
         }

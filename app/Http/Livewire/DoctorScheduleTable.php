@@ -1,41 +1,31 @@
 <?php
-
 namespace App\Http\Livewire;
-
 use App\Models\ScheduleDay;
 use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-
 class DoctorScheduleTable extends LivewireTableComponent
 {
     protected $model = ScheduleDay::class;
-
     public $docId;
-
     protected $listeners = ['refresh' => '$refresh', 'resetPage'];
-
     public function resetPage($pageName = 'page')
     {
         $rowsPropertyData = $this->getRows()->toArray();
         $prevPageNum = $rowsPropertyData['current_page'] - 1;
         $prevPageNum = $prevPageNum > 0 ? $prevPageNum : 1;
         $pageNum = count($rowsPropertyData['data']) > 0 ? $rowsPropertyData['current_page'] : $prevPageNum;
-
         $this->setPage($pageNum, $pageName);
     }
-
     public function configure(): void
     {
         $this->setPrimaryKey('id')
             ->setDefaultSort('schedule_days.created_at', 'desc')
             ->setQueryStringStatus(false);
     }
-
     public function mount(string $docId): void
     {
         $this->docId = $docId;
     }
-
     public function columns(): array
     {
         return [
@@ -57,12 +47,10 @@ class DoctorScheduleTable extends LivewireTableComponent
 
         ];
     }
-
     public function builder(): Builder
     {
         /** @var ScheduleDay $query */
         $query = ScheduleDay::where('doctor_id', $this->docId);
-
         return $query;
     }
 }

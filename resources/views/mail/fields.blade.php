@@ -24,8 +24,6 @@
     <div class="form-group col-md-4 mb-5">
         <div class="row2" io-image-input="true">
             {{ Form::label('image',__('messages.common.profile').(':'), ['class' => 'form-label']) }}
-
-
             <div class="d-block">
                 <?php
                 $style = 'style=';
@@ -54,4 +52,3 @@
     <a href="{{ route('mail') }}"
        class="btn btn-secondary">{{ __('messages.common.cancel') }}</a>
 </div>
-

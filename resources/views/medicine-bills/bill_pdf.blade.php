@@ -1,6 +1,5 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "//www.w3.org/TR/html4/strict.dtd">
 <html lang="en">
-
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <link rel="icon" href="{{ asset('web/img/hms-saas-favicon.ico') }}" type="image/png">
@@ -19,7 +18,6 @@
         }
     </style>
 </head>
-
 <body>
     <table width="100%">
         <tr>
@@ -169,5 +167,4 @@
         </tr>
     </table>
 </body>
-
 </html>

@@ -1,10 +1,7 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Models\Bed;
 use Illuminate\Database\Seeder;
-
 class BedTableSeeder extends Seeder
 {
     /**
@@ -38,7 +35,6 @@ class BedTableSeeder extends Seeder
                 'is_available' => 1,
             ],
         ];
-
         foreach ($input as $data) {
             Bed::create($data);
         }

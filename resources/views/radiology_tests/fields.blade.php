@@ -39,8 +39,6 @@
             {{ Form::number('report_days', null, ['class' => 'form-control']) }}
         </div>
     </div>
-
-
     <div class="col-md-3">
         <div class="form-group mb-5">
             {{ Form::label('charge_category_id', __('messages.radiology_test.charge_category') . ':', ['class' => 'form-label']) }}
@@ -55,9 +53,6 @@
             {{ Form::select('charge_id', [], null, ['class' => 'form-select charge-code', 'required', 'disabled', 'id' => 'chargeCode', 'placeholder' => __('messages.common.choose') . ' ' . __('messages.bed.charge'), 'required', 'data-control' => 'select2']) }}
         </div>
     </div>
-
-
-
     <div class="col-md-3">
         <div class="form-group mb-5">
             {{ Form::label('standard_charge', __('messages.radiology_test.standard_charge') . ':', ['class' => 'form-label ']) }}

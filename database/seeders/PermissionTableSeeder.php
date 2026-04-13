@@ -1,10 +1,7 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Models\Permission;
 use Illuminate\Database\Seeder;
-
 class PermissionTableSeeder extends Seeder
 {
     public function run()
@@ -33,7 +30,6 @@ class PermissionTableSeeder extends Seeder
             'manage_department',
             'manage_doctor_departments',
         ];
-
         foreach ($permissions as $permission) {
             Permission::create(['name' => $permission]);
         }

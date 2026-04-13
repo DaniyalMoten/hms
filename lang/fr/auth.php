@@ -1,7 +1,5 @@
 <?php
-
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Authentication Language Lines
@@ -12,7 +10,6 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-
     'failed' => 'Ces informations d\'identification ne correspondent pas à nos enregistrements.',
     'throttle' => 'Trop de tentatives de connexion. Veuillez réessayer dans: seconds secondes.',
     'save' => 'Sauver',
@@ -40,12 +37,10 @@ return [
         'reset_pwd_btn' => 'réinitialiser le mot de passe',
         'already_reset' => 'Vous avez déjà réinitialisé votre mot de passe ?',
     ],
-
     'new_here' => 'Nouveau ici?',
     'create_an_account' => 'Créer un compte',
     'please_wait' => "S'il vous plaît, attendez...",
     'submit' => 'Soumettre',
     'already_user' => 'Déjà utilisateur ?',
     'logins' => 'Connexion',
-
 ];

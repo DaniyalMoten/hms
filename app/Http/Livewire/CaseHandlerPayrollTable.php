@@ -1,36 +1,27 @@
 <?php
-
 namespace App\Http\Livewire;
-
 use App\Models\CaseHandler;
 use App\Models\EmployeePayroll;
 use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-
 class CaseHandlerPayrollTable extends LivewireTableComponent
 {
     public $caseHandlerId = null;
-
     protected $model = EmployeePayroll::class;
-
     protected $listeners = ['refresh' => '$refresh', 'resetPage'];
-
     public function resetPage($pageName = 'page')
     {
         $rowsPropertyData = $this->getRows()->toArray();
         $prevPageNum = $rowsPropertyData['current_page'] - 1;
         $prevPageNum = $prevPageNum > 0 ? $prevPageNum : 1;
         $pageNum = count($rowsPropertyData['data']) > 0 ? $rowsPropertyData['current_page'] : $prevPageNum;
-
         $this->setPage($pageNum, $pageName);
     }
-
     public function mount(string $caseHandlerId): void
     {
         $this->caseHandlerId = $caseHandlerId;
         $this->setDefaultSort('employee_payrolls.created_at', 'desc');
     }
-
     public function configure(): void
     {
         $this->setPrimaryKey('id')
@@ -43,11 +34,9 @@ class CaseHandlerPayrollTable extends LivewireTableComponent
                     'style' => 'padding-right: 2rem !important',
                 ];
             }
-
             return [];
         });
     }
-
     public function columns(): array
     {
         return [
@@ -79,16 +68,13 @@ class CaseHandlerPayrollTable extends LivewireTableComponent
             Column::make(__('messages.common.status'), 'status')
                 ->view('case_handlers.templates.case_handler_payroll.status')
                 ->sortable(),
-
         ];
     }
-
     public function builder(): Builder
     {
         /** @var EmployeePayroll $query */
         //        $query = EmployeePayroll::where('owner_id', $this->caseHandlerId)
         //            ->where('owner_type', 'App\Models\CaseHandler');
-
         $query = EmployeePayroll::whereHasMorph(
             'owner', [
                 CaseHandler::class,
@@ -99,7 +85,6 @@ class CaseHandlerPayrollTable extends LivewireTableComponent
                     });
                 }
             })->where('owner_id', $this->caseHandlerId)->with('owner.user')->select('employee_payrolls.*');
-
         return $query;
     }
 }

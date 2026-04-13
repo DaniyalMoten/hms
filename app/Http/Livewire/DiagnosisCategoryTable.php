@@ -1,32 +1,22 @@
 <?php
-
 namespace App\Http\Livewire;
-
 use App\Models\DiagnosisCategory;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-
 class DiagnosisCategoryTable extends LivewireTableComponent
 {
     public $showButtonOnHeader = true;
-
     public $buttonComponent = 'diagnosis_categories.add-button';
-
     protected $model = DiagnosisCategory::class;
-
     public $showFilterOnHeader = false;
-
     protected $listeners = ['refresh' => '$refresh', 'resetPage'];
-
     public function resetPage($pageName = 'page')
     {
         $rowsPropertyData = $this->getRows()->toArray();
         $prevPageNum = $rowsPropertyData['current_page'] - 1;
         $prevPageNum = $prevPageNum > 0 ? $prevPageNum : 1;
         $pageNum = count($rowsPropertyData['data']) > 0 ? $rowsPropertyData['current_page'] : $prevPageNum;
-
         $this->setPage($pageNum, $pageName);
     }
-
     public function configure(): void
     {
         $this->setPrimaryKey('id')
@@ -39,7 +29,6 @@ class DiagnosisCategoryTable extends LivewireTableComponent
                     'style' => 'padding-left: 150px !important',
                 ];
             }
-
             return [
                 'class' => 'w-75',
             ];
@@ -50,11 +39,9 @@ class DiagnosisCategoryTable extends LivewireTableComponent
                     'class' => 'p-5',
                 ];
             }
-
             return [];
         });
     }
-
     public function columns(): array
     {
         return [
@@ -63,7 +50,6 @@ class DiagnosisCategoryTable extends LivewireTableComponent
                 ->searchable(),
             Column::make(__('messages.common.action'), 'id')
                 ->view('diagnosis_categories.action'),
-
         ];
     }
 }

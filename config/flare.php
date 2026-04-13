@@ -1,5 +1,4 @@
 <?php
-
 return [
     /*
     |
@@ -12,9 +11,7 @@ return [
     | More info: https://flareapp.io/docs/general/projects
     |
     */
-
     'key' => env('FLARE_KEY'),
-
     /*
     |--------------------------------------------------------------------------
     | Reporting Options
@@ -23,7 +20,6 @@ return [
     | These options determine which information will be transmitted to Flare.
     |
     */
-
     'reporting' => [
         'anonymize_ips' => true,
         'collect_git_information' => true,
@@ -33,7 +29,6 @@ return [
         'report_view_data' => true,
         'grouping_type' => null,
     ],
-
     /*
     |--------------------------------------------------------------------------
     | Reporting Log statements
@@ -43,6 +38,5 @@ return [
     | no matter which error level you specified in the Flare log channel.
     |
     */
-
     'send_logs_as_events' => true,
 ];

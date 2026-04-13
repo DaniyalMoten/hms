@@ -431,16 +431,20 @@ function loadAppointmentCreateEdit() {
 
         //slot click change color
         var appointmentSelectedTime
-        listenClick('.time-interval', function (event) {
-            let appointmentId = $(event.currentTarget).attr('data-id');
-            if ($(this).data('id') == appointmentId) {
-                if ($(this).parent().hasClass('booked')) {
+        listenClick('.time-slot', function (event) {
+            let interval = $(this).find('.time-interval');
+            if (interval.length === 0) {
+                interval = $(this);
+            }
+            let appointmentId = interval.attr('data-id');
+            if (interval.data('id') == appointmentId) {
+                if ($(this).hasClass('booked')) {
                     $('.time-slot-book').css('background-color', '#ffa0a0')
                 }
             }
-            appointmentSelectedTime = ($(this).text())
+            appointmentSelectedTime = (interval.text())
             $('.time-slot').removeClass('time-slot-book')
-            $(this).parent().addClass('time-slot-book')
+            $(this).addClass('time-slot-book')
         })
 
         //create appointment
@@ -477,8 +481,12 @@ function loadAppointmentCreateEdit() {
         })
 
         var appointmentEditTimeSlot
-        listenClick('.time-interval', function () {
-            appointmentEditTimeSlot = ($(this).text())
+        listenClick('.time-slot', function () {
+            let interval = $(this).find('.time-interval');
+            if (interval.length === 0) {
+                interval = $(this);
+            }
+            appointmentEditTimeSlot = (interval.text())
         })
 
         //Edit appointment

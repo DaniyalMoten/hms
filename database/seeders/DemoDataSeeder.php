@@ -1,7 +1,5 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Models\Department;
 use App\Models\Doctor;
 use App\Models\DoctorDepartment;
@@ -11,7 +9,6 @@ use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
-
 class DemoDataSeeder extends Seeder
 {
     public function run(): void
@@ -19,11 +16,9 @@ class DemoDataSeeder extends Seeder
         $this->createDoctors();
         $this->createPatients();
     }
-
     private function createDoctors(): void
     {
         $doctorDept = Department::whereName('Doctor')->first();
-
         $doctors = [
             [
                 'user' => [
@@ -83,7 +78,6 @@ class DemoDataSeeder extends Seeder
                 'specialist'           => 'Kidney',
             ],
         ];
-
         foreach ($doctors as $data) {
             $user = User::create($data['user']);
             $user->assignRole($doctorDept);
@@ -104,14 +98,11 @@ class DemoDataSeeder extends Seeder
                 'owner_type' => Doctor::class,
             ]);
         }
-
         $this->command->info('✅ 3 Doctors created successfully!');
     }
-
     private function createPatients(): void
     {
         $patientDept = Department::whereName('Patient')->first();
-
         $patients = [
             ['first_name' => 'Bilal',   'last_name' => 'Ahmed',     'email' => 'bilal.ahmed@gmail.com',    'gender' => 0, 'dob' => '1990-03-15', 'blood_group' => 'A+', 'phone' => '+923001111111'],
             ['first_name' => 'Fatima',  'last_name' => 'Sheikh',    'email' => 'fatima.sheikh@gmail.com',  'gender' => 1, 'dob' => '1995-07-22', 'blood_group' => 'B+', 'phone' => '+923002222222'],
@@ -124,7 +115,6 @@ class DemoDataSeeder extends Seeder
             ['first_name' => 'Kamran',  'last_name' => 'Hussain',   'email' => 'kamran.hussain@gmail.com', 'gender' => 0, 'dob' => '1982-09-09', 'blood_group' => 'O+', 'phone' => '+923009999999'],
             ['first_name' => 'Nida',    'last_name' => 'Farooq',    'email' => 'nida.farooq@gmail.com',    'gender' => 1, 'dob' => '1993-02-28', 'blood_group' => 'A+', 'phone' => '+923010000000'],
         ];
-
         foreach ($patients as $data) {
             $userData = array_merge($data, [
                 'password'          => Hash::make('123456'),
@@ -132,21 +122,16 @@ class DemoDataSeeder extends Seeder
                 'email_verified_at' => Carbon::now(),
                 'department_id'     => $patientDept ? $patientDept->id : null,
             ]);
-
             $user = User::create($userData);
-
             if ($patientDept) {
                 $user->assignRole($patientDept);
             }
-
             $patient = Patient::create(['user_id' => $user->id]);
-
             $user->update([
                 'owner_id'   => $patient->id,
                 'owner_type' => Patient::class,
             ]);
         }
-
         $this->command->info('✅ 10 Patients created successfully!');
     }
 }

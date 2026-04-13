@@ -1,12 +1,9 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Repositories\ReceptionistRepository;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\App;
-
 class ReceptionistTableSeeder extends Seeder
 {
     /**
@@ -40,7 +37,6 @@ class ReceptionistTableSeeder extends Seeder
             ],
             */
         ];
-
         foreach ($input as $key => $value) {
             /** @var ReceptionistRepository $receptionist */
             $receptionist = App::make(ReceptionistRepository::class);

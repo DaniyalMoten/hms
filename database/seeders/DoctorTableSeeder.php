@@ -1,12 +1,9 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Repositories\DoctorRepository;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\App;
-
 class DoctorTableSeeder extends Seeder
 {
     /**
@@ -15,7 +12,6 @@ class DoctorTableSeeder extends Seeder
     public function run(): void
     {
         $input = [
-            /*
             [
                 'first_name'           => 'Monika',
                 'last_name'            => 'Vagasiya',
@@ -29,7 +25,6 @@ class DoctorTableSeeder extends Seeder
                 'specialist'           => 'Heart',
                 'email_verified_at'    => Carbon::now(),
             ],
-            */
             [
                 'first_name' => 'Vatsal',
                 'last_name' => 'Sakariya',
@@ -43,7 +38,6 @@ class DoctorTableSeeder extends Seeder
                 'specialist' => 'Liver',
                 'email_verified_at' => Carbon::now(),
             ],
-            /*
             [
                 'first_name'           => 'Vikas',
                 'last_name'            => 'Patil',
@@ -96,9 +90,7 @@ class DoctorTableSeeder extends Seeder
                 'specialist'           => 'Bones',
                 'email_verified_at'    => Carbon::now(),
             ],
-            */
         ];
-
         foreach ($input as $key => $value) {
             /** @var DoctorRepository $doctor */
             $doctor = App::make(DoctorRepository::class);

@@ -86,12 +86,15 @@ class ScheduleRepository extends BaseRepository
         $scheduleDayItemInput = $this->prepareInputForScheduleDayItem($scheduleDayArray);
 
         foreach ($scheduleDayItemInput as $key => $data) {
-            $scheduleDay = ScheduleDay::whereScheduleId($id)
-                ->where('available_on', $data['available_on']);
-
             $data['doctor_id'] = $input['doctor_id'];
             $data['schedule_id'] = $schedule->id;
-            $scheduleDay->update($data);
+            ScheduleDay::updateOrCreate(
+                [
+                    'schedule_id' => $id,
+                    'available_on' => $data['available_on']
+                ],
+                $data
+            );
         }
 
         return true;

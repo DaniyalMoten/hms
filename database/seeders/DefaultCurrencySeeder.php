@@ -1,10 +1,7 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Models\CurrencySetting;
 use Illuminate\Database\Seeder;
-
 class DefaultCurrencySeeder extends Seeder
 {
     /**
@@ -25,7 +22,6 @@ class DefaultCurrencySeeder extends Seeder
                 'currency_code' => 'INR',
             ],
         ];
-
         foreach ($input as $data) {
             CurrencySetting::create($data);
         }

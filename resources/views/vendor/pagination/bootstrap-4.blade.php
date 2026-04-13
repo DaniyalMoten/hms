@@ -5,7 +5,6 @@
         background-color: var(--main-color);
         border-color: var(--main-color);
     }
-
     .page-item:not(:first-child) .page-link {
         margin-left: inherit;
     }
@@ -25,7 +24,6 @@
                        aria-label="@lang('pagination.previous')"><i class="fa-solid fa-angle-left"></i></a>
                 </li>
             @endif
-
             {{-- Pagination Elements --}}
             @foreach ($elements as $element)
                 {{-- "Three Dots" Separator --}}
@@ -33,7 +31,6 @@
                     <li class="page-item disabled" aria-disabled="true"><span
                             class="page-link page-numbers p-0">{{ $element }}</span></li>
                 @endif
-
                 {{-- Array Of Links --}}
                 @if (is_array($element))
                     @foreach ($element as $page => $url)
@@ -47,7 +44,6 @@
                     @endforeach
                 @endif
             @endforeach
-
             {{-- Next Page Link --}}
             @if ($paginator->hasMorePages())
                 <li class="page-item">

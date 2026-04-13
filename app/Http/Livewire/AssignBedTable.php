@@ -1,17 +1,12 @@
 <?php
-
 namespace App\Http\Livewire;
-
 use App\Models\BedAssign;
 use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-
 class AssignBedTable extends LivewireTableComponent
 {
     protected $model = BedAssign::class;
-
     public $bedId;
-
     public function configure(): void
     {
         $this->setQueryStringStatus(false);
@@ -22,16 +17,13 @@ class AssignBedTable extends LivewireTableComponent
                     'class' => 'pt-5',
                 ];
             }
-
             return [];
         });
     }
-
     public function mount(string $bedId): void
     {
         $this->bedId = $bedId;
     }
-
     public function columns(): array
     {
         return [
@@ -44,21 +36,17 @@ class AssignBedTable extends LivewireTableComponent
                 ->view('beds.assignBed.patient_name')
                 ->searchable()
                 ->sortable(),
-
             Column::make(__('messages.bed_assign.assign_date'), 'assign_date')
                 ->view('beds.assignBed.assign_date')
                 ->sortable()->searchable(),
             Column::make(__('messages.bed_assign.discharge_date'), 'discharge_date')
                 ->view('beds.assignBed.discharge_date')
                 ->sortable()->searchable(),
-
             Column::make(__('messages.common.status'), 'status')
                 ->view('beds.assignBed.status')
                 ->sortable(),
-
         ];
     }
-
     public function builder(): Builder
     {
         /** @var BedAssign $query */

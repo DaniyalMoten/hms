@@ -2,7 +2,6 @@
 @php
     $settingValue = getSettingValue();
 @endphp
-
 <footer class="footer">
     <div class="container">
         <div class="row justify-content-between">

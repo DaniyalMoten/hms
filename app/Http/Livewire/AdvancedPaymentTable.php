@@ -1,33 +1,23 @@
 <?php
-
 namespace App\Http\Livewire;
-
 use App\Models\AdvancedPayment;
 use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-
 class AdvancedPaymentTable extends LivewireTableComponent
 {
     protected $model = AdvancedPayment::class;
-
     public $showButtonOnHeader = true;
-
     public $buttonComponent = 'advanced_payments.add-button';
-
     public $showFilterOnHeader = false;
-
     protected $listeners = ['refresh' => '$refresh', 'changeFilter', 'resetPage'];
-
     public function resetPage($pageName = 'page')
     {
         $rowsPropertyData = $this->getRows()->toArray();
         $prevPageNum = $rowsPropertyData['current_page'] - 1;
         $prevPageNum = $prevPageNum > 0 ? $prevPageNum : 1;
         $pageNum = count($rowsPropertyData['data']) > 0 ? $rowsPropertyData['current_page'] : $prevPageNum;
-
         $this->setPage($pageNum, $pageName);
     }
-
     public function configure(): void
     {
         $this->setPrimaryKey('id')
@@ -39,7 +29,6 @@ class AdvancedPaymentTable extends LivewireTableComponent
                     'width' => '8%',
                 ];
             }
-
             return [];
         });
         $this->setThAttributes(function (Column $column) {
@@ -49,11 +38,9 @@ class AdvancedPaymentTable extends LivewireTableComponent
                     'style' => 'padding-right: 7rem !important',
                 ];
             }
-
             return [];
         });
     }
-
     public function columns(): array
     {
         return [
@@ -79,11 +66,9 @@ class AdvancedPaymentTable extends LivewireTableComponent
                 ->view('advanced_payments.action'),
         ];
     }
-
     public function builder(): Builder
     {
         $query = AdvancedPayment::whereHas('patient.patientUser')->with('patient.patientUser')->select('advanced_payments.*');
-
         return $query;
     }
 }

@@ -53,7 +53,6 @@
             </div>
         </div>
     </div>
-
     <div class="mt-7 overflow-hidden">
         <ul class="nav nav-tabs mb-5 pb-1 overflow-auto flex-nowrap text-nowrap">
             <li class="nav-item position-relative me-7 mb-3">
@@ -74,7 +73,6 @@
             </li>
         </ul>
     </div>
-
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="opdPatientOverview" role="tabpanel">
             <div class="card">

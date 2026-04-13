@@ -1,7 +1,5 @@
 <?php
-
 return [
-
     /*
     |--------------------------------------------------------------------------
     | All Titles and static string in blade files
@@ -10,7 +8,6 @@ return [
     |--------------------------------------------------------------------------
     |
     */
-
     //Header Keys
     'departments' => 'Departments',
     'backend_features' => 'Backend Features',
@@ -25,7 +22,6 @@ return [
     'buy_now' => 'Buy Now',
     'home' => 'Home',
     'about_us' => 'About Us',
-
     //Features keys
     'features' => [
         'features' => 'Features',
@@ -38,7 +34,6 @@ return [
         'our_doctors_are_always_ready_for_outdoor_checkup_in_an_emergency_we_have_different_types_of_charges_as_per_checkup' => 'Our doctors are always ready for outdoor checkup in an emergency. we have different types of charges as per checkup.',
         'our_clinic_provides_extensive_medical_support_and_healthcare_services_24/7' => 'Our clinic provides extensive medical support and healthcare services 24/7.',
     ],
-
     //Backend Features keys
     'backend_feature' => [
         'dashboard' => 'Dashboard',
@@ -66,7 +61,6 @@ return [
         'email_service' => 'Email Service',
         'settings' => 'Settings',
     ],
-
     //MISCELLANEOUS FACILITIES keys
     'miscellaneous_facilities' => [
         'miscellaneous_facilities_of_infyhms' => 'MISCELLANEOUS FACILITIES OF INFYHMS',
@@ -93,7 +87,6 @@ return [
         'appointment_management_system' => 'Appointment Management System',
         'investigation_reports' => 'Investigation Reports',
     ],
-
     //footer keys
     'footer' => [
         'follow_us' => 'FOLLOW US',

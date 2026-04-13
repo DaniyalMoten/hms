@@ -8,7 +8,6 @@
             </span>
         @endif
     </a>
-
     <script>
         if (!window.chatToastListenerAdded) {
             window.addEventListener('new-chat-message', event => {
@@ -20,13 +19,12 @@
                     toastContainer.style.zIndex = '1050';
                     document.body.appendChild(toastContainer);
                 }
-
                 let toastHtml = `
                 <div class="toast border-0 shadow" role="alert" aria-live="assertive" aria-atomic="true">
-                  <div class="toast-header bg-white border-bottom-0">
+                  <div class="toast-header border-bottom-0" style="background-color: #ffffff !important;">
                     <i class="fa-solid fa-comment-dots text-primary me-2"></i>
-                    <strong class="me-auto text-dark" style="color: black !important;">${event.detail.sender}</strong>
-                    <small class="text-muted">just now</small>
+                    <strong class="me-auto" style="color: #000000 !important; font-weight: bold;">${event.detail.sender}</strong>
+                    <small style="color: #6c757d !important;">just now</small>
                     <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                   </div>
                   <div class="toast-body bg-light rounded-bottom">

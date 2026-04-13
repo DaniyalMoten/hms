@@ -1,10 +1,7 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Models\ChargeCategory;
 use Illuminate\Database\Seeder;
-
 class ChargeCategoryTableSeeder extends Seeder
 {
     /**
@@ -24,7 +21,6 @@ class ChargeCategoryTableSeeder extends Seeder
                 'charge_type' => 2,
             ],
         ];
-
         foreach ($input as $data) {
             ChargeCategory::create($data);
         }

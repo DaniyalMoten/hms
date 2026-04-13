@@ -1,10 +1,7 @@
 <?php
-
 namespace Database\Seeders;
-
 use App\Models\Category;
 use Illuminate\Database\Seeder;
-
 class MedicineCategoryTableSeeder extends Seeder
 {
     /**
@@ -34,7 +31,6 @@ class MedicineCategoryTableSeeder extends Seeder
                 'is_active' => 1,
             ],
         ];
-
         foreach ($input as $data) {
             Category::create($data);
         }
